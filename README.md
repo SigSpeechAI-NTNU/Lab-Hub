@@ -1,6 +1,6 @@
 # Lab-Hub
 
-SigSpeech-NTNU 實驗室的研究方法教材：給碩博班研究生，教你怎麼入門一個題目、怎麼用 AI 工具做深度研究並核對、怎麼讀論文、怎麼做論文閱讀投影片、怎麼記錄實驗與報告進度。
+SigSpeechAI-NTNU 實驗室的研究方法教材：給碩博班研究生，教你怎麼入門一個題目、怎麼用 AI 工具做深度研究並核對、怎麼讀論文、怎麼做論文閱讀投影片、怎麼記錄實驗與報告進度。
 
 教材是用來照著做的，不是用來讀過就算。每份都有步驟、要自己填的欄位（用 `〔〕` 標示）、產出長什麼樣，以及「要先問教授的事」。
 
@@ -12,6 +12,7 @@ SigSpeech-NTNU 實驗室的研究方法教材：給碩博班研究生，教你�
 | Deep Research 第二輪：深挖路線 | [`guides/deep_research/round2_dive.md`](guides/deep_research/round2_dive.md) | 和教授討論、選定一條技術路線後，以投一篇會議論文為目標，收斂成具體題目與時程 |
 | 出題：idea card 與 idea log | [`guides/ideation/idea_card.md`](guides/ideation/idea_card.md) | Round 2 之後、每次進度報告之前：把你的想法寫成教授一眼能判斷的半頁，退掉的也留著累積 |
 | 實驗設計：先畫 Table 1 | [`guides/experiment_design/design_table1.md`](guides/experiment_design/design_table1.md) | 教授挑定你的 idea 之後、寫任何程式之前：畫出主結果表、消融表、方法圖，決定 baseline 與資料集，寫一頁決策紀錄給教授審 |
+| 復現 baseline、錯誤分析、實驗紀錄 | [`guides/experiment_log/reproduce_and_log.md`](guides/experiment_log/reproduce_and_log.md) | Table 1 審過之後：開 repo、把必備 baseline 復現到對上論文數字、分析它錯在哪、之後每個實驗怎麼記 |
 
 ## 三件先講清楚的事
 
@@ -21,4 +22,4 @@ SigSpeech-NTNU 實驗室的研究方法教材：給碩博班研究生，教你�
 
 ## 之後會加
 
-怎麼復現 baseline 與記錄實驗、group meeting 怎麼報、論文閱讀投影片怎麼做。
+group meeting 怎麼報、論文閱讀投影片怎麼做。
