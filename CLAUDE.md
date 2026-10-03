@@ -1,6 +1,6 @@
 # CLAUDE.md — ~/Lab-Hub repo 規範（2026-10-02 建立）
 
-> 每次對話起手都會讀本檔。本 repo 對應 GitHub `SigSpeech-NTNU/Lab-Hub`，**學生看得到**。
+> 每次對話起手都會讀本檔。本 repo 對應 GitHub `SigSpeechAI-NTNU/Lab-Hub`，**學生看得到**。
 > 給人讀的入口在 `README.md`；Project 指令備份在 `project-instructions/`。本檔保持短。
 
 ## 一、目的與讀者
@@ -14,7 +14,7 @@
 | Research-Hub | 只讀 `docs/` | 研究方法的做法（改寫成學生版）。其他資料夾含未發表內容，使用者點名某檔時才讀 |
 | Paper-Hub | 只讀 `writer/` | 論文閱讀與寫作的規範（改寫成學生版）。`papers/`（審查中的稿件）與 `reviewing/`（替期刊審的稿，保密）不讀 |
 | Course-Hub | 只讀 | 投影片製作的做法 |
-| Coach-Hub、Company-Hub | **不讀** | —（含個資或與教材無關） |
+| Coach-Hub 與其他未列出的 Hub | **不讀** | —（含個資，或與教材無關） |
 
 一份檔案只有一個 Project 會改它：本 repo 的檔案只有 Lab-Hub 改；其他 Hub 的檔案本 Project 不碰。取材一律改寫，不整段搬。
 開對話時只勾選需要的資料夾（可直接勾子資料夾，例如 `~/Paper-Hub/writer`）。本 repo 是公開的，**跨 Hub 的待辦不寫進本 repo**，在對話中告訴使用者。（2026-10-03）
