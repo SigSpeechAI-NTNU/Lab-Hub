@@ -31,6 +31,7 @@
     ideation/                     出題：idea card 與 idea log（idea_card.md）
     experiment_design/            實驗設計：先畫 Table 1（design_table1.md）
     experiment_log/               復現 baseline、錯誤分析、實驗紀錄（reproduce_and_log.md）
+    progress_report/              進度報告：group meeting 怎麼報（group_meeting.md）
     <主題>/                       之後的教材各自一個資料夾
   conventions/                    實驗室慣例（建立時再開）
 ```
@@ -51,7 +52,7 @@
 | 2 實驗設計 | 畫 Table 1、消融表、method figure、定 baseline 與資料、pilot | 三張表圖＋一頁決策紀錄，group meeting 審，檔尾留審核紀錄 | `guides/experiment_design/design_table1.md` | ✅ v1，待使用者審 |
 | 3 復現＋錯誤分析 | 復現 baseline 到對上數字；看它在哪類輸入上失敗 → 回 1b 改 card | `reproduce.md`、`error_analysis.csv` | `guides/experiment_log/reproduce_and_log.md`（與 4 合寫） | ✅ v1，待使用者審 |
 | 4 執行與紀錄 | 填 Table 1；實驗日誌、config、版本管理 | repo、`results.csv`、`notes/log.md` | 同上 | ✅ v1，待使用者審 |
-| 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | 固定格式的報告（含 card 欄位） | `guides/progress_report/`（暫名） | ⬜ |
+| 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | Quarto 投影片＋GitHub Issue | `guides/progress_report/group_meeting.md` | ✅ v1，待使用者審；**§3 投影片頁面為草案，待使用者定稿** |
 | 6 寫作 | 把 Table 1 變成初稿 | 初稿 | 從 Paper-Hub 取材改寫學生版；最後做；commit 前使用者親審 | ⬜ |
 | 貫穿 | 讀論文、做閱讀投影片 | 投影片 | `guides/paper_reading_slides/`；可從 Paper-Hub、Course-Hub 取材 | ⬜ |
 
@@ -65,6 +66,7 @@
 - 3＋4：學生 repo 在 `SigSpeechAI-NTNU` 底下、private、命名 `〔名字〕_〔題目簡稱〕`；不強制追蹤工具，必備 config 進 git＋`results.csv`＋日誌；復現判準相對 ±5%／±10%，各指標暫同一套；卡住 3 個工作天先找 partner 再問教授、復現 3 週找教授；錯誤分析 100 個樣本親耳聽、學生先擬 5–8 類；GPU 是學校機器，共用規矩教材不寫
 - 實驗室慣例（待開 `conventions/`）：partner 制——相關議題 2–3 人一組，各有主責題目，彼此知道對方的題目
 - 2 的但書：seed 數與顯著性依目標會議、資料量、算力和教授討論後定（語音會議通常不要求 multi-seed）
+- 5：group meeting 每週一次、partner 一定出席；進度報告每人每週都報（每人 30 分鐘），論文報告在 partner 組內輪流（一篇 20 分鐘）；順序：先全部人的進度，再論文；學生先報 card、教授後講。學生自己的紀錄用 Markdown（第 4 站）；對教授用固定格式投影片，由學生請 AI 以 Quarto（qmd → html）製作、附演講稿；進度與論文兩種投影片格式不同，**格式待使用者與 Claude 討論後定**。書面不用提前交。教授回饋用 GitHub Issue 留痕（不用 Notion／Teams 做紀錄）；partner 不另外報告
 - 6：選 B（改寫學生版放 Lab-Hub），Paper-Hub 不公開
 
 ### Round 2 待補 5 點

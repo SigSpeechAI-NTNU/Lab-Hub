@@ -13,6 +13,7 @@ SigSpeechAI-NTNU 實驗室的研究方法教材：給碩博班研究生，教你
 | 出題：idea card 與 idea log | [`guides/ideation/idea_card.md`](guides/ideation/idea_card.md) | Round 2 之後、每次進度報告之前：把你的想法寫成教授一眼能判斷的半頁，退掉的也留著累積 |
 | 實驗設計：先畫 Table 1 | [`guides/experiment_design/design_table1.md`](guides/experiment_design/design_table1.md) | 教授挑定你的 idea 之後、寫任何程式之前：畫出主結果表、消融表、方法圖，決定 baseline 與資料集，寫一頁決策紀錄給教授審 |
 | 復現 baseline、錯誤分析、實驗紀錄 | [`guides/experiment_log/reproduce_and_log.md`](guides/experiment_log/reproduce_and_log.md) | Table 1 審過之後：開 repo、把必備 baseline 復現到對上論文數字、分析它錯在哪、之後每個實驗怎麼記 |
+| 進度報告：group meeting 怎麼報 | [`guides/progress_report/group_meeting.md`](guides/progress_report/group_meeting.md) | 每週：把日誌週小結、Table 1 進度、一張 idea card 組裝成 Quarto 投影片；教授回饋用 GitHub Issue 留痕 |
 
 ## 三件先講清楚的事
 
@@ -22,4 +23,4 @@ SigSpeechAI-NTNU 實驗室的研究方法教材：給碩博班研究生，教你
 
 ## 之後會加
 
-group meeting 怎麼報、論文閱讀投影片怎麼做。
+論文閱讀投影片怎麼做。
