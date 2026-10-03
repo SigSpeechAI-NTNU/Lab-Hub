@@ -10,6 +10,8 @@ SigSpeech-NTNU 實驗室的研究方法教材：給碩博班研究生，教你�
 |---|---|---|
 | Deep Research 第一輪：建地圖 | [`guides/deep_research/round1_map.md`](guides/deep_research/round1_map.md) | 教授給了一個題目或一段應用情境，你完全不熟，要在一個月內看懂全貌、準備 group meeting 報告 |
 | Deep Research 第二輪：深挖路線 | [`guides/deep_research/round2_dive.md`](guides/deep_research/round2_dive.md) | 和教授討論、選定一條技術路線後，以投一篇會議論文為目標，收斂成具體題目與時程 |
+| 出題：idea card 與 idea log | [`guides/ideation/idea_card.md`](guides/ideation/idea_card.md) | Round 2 之後、每次進度報告之前：把你的想法寫成教授一眼能判斷的半頁，退掉的也留著累積 |
+| 實驗設計：先畫 Table 1 | [`guides/experiment_design/design_table1.md`](guides/experiment_design/design_table1.md) | 教授挑定你的 idea 之後、寫任何程式之前：畫出主結果表、消融表、方法圖，決定 baseline 與資料集，寫一頁決策紀錄給教授審 |
 
 ## 三件先講清楚的事
 
@@ -19,4 +21,4 @@ SigSpeech-NTNU 實驗室的研究方法教材：給碩博班研究生，教你�
 
 ## 之後會加
 
-論文閱讀投影片怎麼做、實驗怎麼記錄、group meeting 怎麼報。
+怎麼復現 baseline 與記錄實驗、group meeting 怎麼報、論文閱讀投影片怎麼做。
