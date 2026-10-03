@@ -13,8 +13,7 @@
 |---|---|---|
 | Research-Hub | 只讀 `docs/` | 研究方法的做法（改寫成學生版）。其他資料夾含未發表內容，使用者點名某檔時才讀 |
 | Paper-Hub | 只讀 `writer/` | 論文閱讀與寫作的規範（改寫成學生版）。`papers/`（審查中的稿件）與 `reviewing/`（替期刊審的稿，保密）不讀 |
-| Course-Hub | 只讀 | 投影片製作的做法 |
-| Coach-Hub 與其他未列出的 Hub | **不讀** | —（含個資，或與教材無關） |
+| Coach-Hub、Course-Hub 與其他未列出的 Hub | **不讀** | —（含個資、教師端內容，或與教材無關；Course-Hub 自 2026-10-03 起不讀） |
 
 一份檔案只有一個 Project 會改它：本 repo 的檔案只有 Lab-Hub 改；其他 Hub 的檔案本 Project 不碰。取材一律改寫，不整段搬。
 開對話時只勾選需要的資料夾（可直接勾子資料夾，例如 `~/Paper-Hub/writer`）。本 repo 是公開的，**跨 Hub 的待辦不寫進本 repo**，在對話中告訴使用者。（2026-10-03）
@@ -54,7 +53,7 @@
 | 4 執行與紀錄 | 填 Table 1；實驗日誌、config、版本管理 | repo、`results.csv`、`notes/log.md` | 同上 | ✅ v1，待使用者審 |
 | 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | Quarto 投影片＋GitHub Issue | `guides/progress_report/group_meeting.md` | ✅ v1，待使用者審；**§3 投影片頁面為草案，待使用者定稿** |
 | 6 寫作 | 把 Table 1 變成初稿 | 初稿 | 從 Paper-Hub 取材改寫學生版；最後做；commit 前使用者親審 | ⬜ |
-| 貫穿 | 讀論文、做閱讀投影片 | 投影片 | `guides/paper_reading_slides/`；可從 Paper-Hub、Course-Hub 取材 | ⬜ |
+| 貫穿 | 讀論文、做閱讀投影片 | 投影片 | `guides/paper_reading_slides/`；可從 Paper-Hub `writer/` 取材 | ⬜ |
 
 橫向文件（各站都用到，最後收尾）：要問教授的事總表、AI 使用規範（每站可做什麼、怎麼核對、怎麼標明）、檔案與命名慣例 → `conventions/`。
 
