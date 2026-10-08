@@ -1,4 +1,4 @@
-# 復現 baseline、錯誤分析、實驗紀錄（v1.1，2026-10-08）
+# 復現 baseline、錯誤分析、實驗紀錄（v1.2，2026-10-08）
 
 > 位置：第 3 站與第 4 站，合寫一份。前置是第 2 站的 `_design.md` 已經有教授的審核紀錄。
 > 這一站的目的有三個，依序做：(1) 把 Table 1 的必備 baseline 復現到對上論文數字；(2) 分析它錯在哪，回第 1b 站改 card；(3) 從此之後每一個實驗都用同一套方式記錄，Table 1 的格子從紀錄裡填。
@@ -202,11 +202,13 @@ sample_id,reference,hypothesis,category,human_can_tell,note
 
 復現與錯誤分析做完，教授挑了 card、Table 1 審過，就進入填格子的階段。規則：
 
+0. **任何新程式或新 config，先拿 10 句話訓到 loss 接近 0。** 過不了就是 bug，不是超參數；過了才開真正的訓練。這一步 10 分鐘，省掉「跑三天發現 loss 沒降」
 1. **一個 run 只改一個東西。** 改了兩個就不知道效果來自哪個。要試組合，先各自跑過
 2. 跑之前 commit，`git_commit` 進 `results.csv`
 3. 跑完當天記日誌，不管結果好壞
 4. seed 數照 `_design.md` 「公平比較」寫的做；主結果的 run 跑完才跑 seed，不要每個嘗試都跑三個 seed
 5. 數字比 baseline 好得不像話（相對改善 > 30%）時，**先懷疑 bug**：test set 有沒有混進訓練、評測腳本對不對、正規化是否一致
+5b. **評測腳本在填第一格 Table 1 之前，partner 盲測一次**：你給 partner 一份 20 句的小集合（含參考文字）與你的評測指令，他自己算 WER 或主指標，和你的腳本對；對不上先修腳本。研究生論文最常見的錯不在方法，在評測——正規化、切分洩漏、指標算法。一小時的事，擋掉投稿後最難看的那種錯
 6. 每週小結對照 Table 1：填了幾格、還剩幾格、以目前速度截稿前填得完嗎。填不完要提早說，教授才能決定砍格子還是改投下一個場合
 
 ---
@@ -250,6 +252,7 @@ run_id,date,config_path,dataset,split,metric,value,seed,git_commit,note
 1. **復現數字**：對回論文的表格編號與列，確認 split 與指標名稱一字不差；論文的數字抄進 `reproduce.md` 時附頁碼
 2. **`results.csv` 與 Table 1**：每個填進 Table 1 的數字都能在 `results.csv` 找到一行、那一行有 commit hash、那個 commit 能 checkout 出來
 3. **錯誤分析**：隨機抽 10 個已標的樣本，請 partner 盲標一次；對不上超過 3 個就要重定義類別
+3b. **評測腳本**：§6 第 5b 條的 partner 盲測做過、對上了，日誌記一行
 4. AI 可以幫你寫腳本、查 toolkit 的 config 怎麼設；復現對不對、錯誤樣本是哪一類，要你自己聽、自己看
 
 ---
@@ -268,6 +271,9 @@ run_id,date,config_path,dataset,split,metric,value,seed,git_commit,note
 ---
 
 ## 修改紀錄
+
+### v1.2（2026-10-08）
+- §6 加第 0 條「10 句話過擬合」與第 5b 條「評測腳本 partner 盲測」；§8 同步
 
 ### v1.1（2026-10-08）
 - §1.1 補從範本 repo 建立

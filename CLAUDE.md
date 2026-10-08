@@ -75,6 +75,17 @@
 ### 學生 repo 範本（2026-10-08）
 住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，private、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
+### 2026-10-08 整體審閱後的補強（已做）
+- 第 2 站：決策紀錄加「論文骨架」（英文題目、150 字摘要、三條 contribution）
+- 第 3＋4 站：10 句話過擬合；評測腳本 partner 盲測
+- 論文報告：淺讀 log（每週 2 篇 5 行）；審稿預測練習（OpenReview，每三次論文報告輪一次）
+- 第 5 站：第 4 頁「距上次新數字 N 週」＋月度停損（> 4 週固定討論）；第 8 頁加淺讀
+- 範本同步：design_template、reading_log.md、進度 qmd、Issue 模板、README
+
+### 備忘：第 −1 站 bootcamp（使用者計畫 2027 暑假前規劃，現在不做）
+進 lab 前 4–6 週，四項可檢核的產出：(1) 從頭跑通一個標準 recipe 並對上數字（第 3 站預演）；(2) 自己實作最小的 CTC 或 Conformer block 在小資料訓到收斂，不用現成模組；(3) 讀 5 篇論文各填核對紀錄；(4) 一頁英文摘要重寫。另附「新生第一個月」週課表。可能一併處理：Round 1 §8 商機對學生無用，考慮砍或改選填。
+其他建議未採行、留待使用者決定：雙週 15 分鐘一對一；第一篇投 Interspeech、第二篇才投 ML 主會的投稿順序。
+
 ### 交叉引用檢查（2026-10-08 做過一次）
 七份教材＋總表＋範本的節號引用全部對過，一致。`design_table1.md` §3.2 引用的「Round 2 §8 接受論文解剖」與 `idea_card.md` §7 的「Round 2 §7 補充點」在 v4.1 之後都已存在。之後改任一教材的節號，grep `§` 與 `第 N 站` 重做一次。
 
