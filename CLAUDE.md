@@ -77,6 +77,7 @@
 住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，private、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
 ### 2026-10-08 邏輯修正（已做）
+- 七份教材各加一節「審稿人會怎麼看這一站的產出」（README 的宣稱因此成立）；之後新教材也要有這一節
 - README 整份重寫（含時程表、四件先講清楚、工具表）；六份教材各加一張 Mermaid 流程圖（round1 操作流程、card 的一生＋品味循環、card 到開跑、復現判準與卡住、一週的循環、論文報告五步）；Mermaid 節點標籤不含括號引號斜線
 - 第 5 站：每週報告從第 2 站起；第 0、1 站只報兩次（Round 1 的 10 分鐘骨架、Round 2 的 one-pager），不做每週變體（使用者 2026-10-08 定）；論文報告教材兩處殘留引用修掉
 - README 加「一個會議週期」示例時程表（約 24 週）
