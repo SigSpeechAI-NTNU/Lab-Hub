@@ -74,6 +74,9 @@
 ### 學生 repo 範本（2026-10-08）
 住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，private、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
+### 交叉引用檢查（2026-10-08 做過一次）
+七份教材＋總表＋範本的節號引用全部對過，一致。兩處引用的是 Round 2 待補的內容（`design_table1.md` §3.2「Round 2 §8 的接受論文解剖」、`idea_card.md` §7「Round 2 §7 的補充點」），補完 5 點就對上。之後改任一教材的節號，grep `§` 與 `第 N 站` 重做一次。
+
 ### Round 2 待補 5 點
 - [ ] §7 每題加「最接近的 2–3 篇 prior work 與差異」
 - [ ] §7 每題加「2 週 pilot 與放棄判準」；one-pager 時程加 pilot 里程碑

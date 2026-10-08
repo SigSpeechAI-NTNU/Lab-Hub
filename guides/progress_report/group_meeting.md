@@ -9,7 +9,7 @@
 
 ## 0. 這一站怎麼接前後
 
-- 輸入：`notes/log.md` 的本週小結（第 4 站 §1.3）、`_design.md` 的 Table 1（第 2 站）、`idea_log.md` 裡最新的一張 card（1b）
+- 輸入：`notes/log.md` 的本週小結（第 3＋4 站 §1.3）、`_design.md` 的 Table 1（第 2 站）、`idea_log.md` 裡最新的一張 card（1b）
 - 輸出：教授在 Issue 裡的回饋 → 下週報告的第一行、`_design.md` 的審核紀錄、card 的狀態與代碼
 - 兩份紀錄分工：**給自己看的是 Markdown**（repo 裡的日誌，當天寫），**給教授看的是投影片**（每週從日誌整理出來）。投影片的每個數字都要能在日誌和 `results.csv` 找到
 
