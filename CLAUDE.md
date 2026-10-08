@@ -49,17 +49,17 @@
 |---|---|---|---|---|
 | 0 入門 | 跑 Round 1、核對、親讀 5 篇 | `_r1_checked.md`、10 分鐘報告 | `guides/deep_research/round1_map.md` | ✅ |
 | 1 選路線 | 帶 §9 問教授 → Round 2 → one-pager | `_r2_*.md`、教授改過的 one-pager | `guides/deep_research/round2_dive.md` | ✅ v4.1，5 點已補（2026-10-08） |
-| 1b 出題 | 寫 idea card，教授挑；之後每次進度報告帶一張新的或改過的 | idea card、idea log | `guides/ideation/idea_card.md` | ✅ v1，待使用者審 |
-| 2 實驗設計 | 畫 Table 1、消融表、method figure、定 baseline 與資料、pilot | 三張表圖＋一頁決策紀錄，group meeting 審，檔尾留審核紀錄 | `guides/experiment_design/design_table1.md` | ✅ v1，待使用者審 |
-| 3 復現＋錯誤分析 | 復現 baseline 到對上數字；看它在哪類輸入上失敗 → 回 1b 改 card | `reproduce.md`、`error_analysis.csv` | `guides/experiment_log/reproduce_and_log.md`（與 4 合寫） | ✅ v1，待使用者審 |
-| 4 執行與紀錄 | 填 Table 1；實驗日誌、config、版本管理 | repo、`results.csv`、`notes/log.md` | 同上 | ✅ v1，待使用者審 |
-| 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | Quarto 投影片＋GitHub Issue | `guides/progress_report/group_meeting.md` | ✅ v1.2，頁面已定稿 |
+| 1b 出題 | 寫 idea card，教授挑；之後每次進度報告帶一張新的或改過的 | idea card、idea log | `guides/ideation/idea_card.md` | ✅ v1，使用者已審（2026-10-08） |
+| 2 實驗設計 | 畫 Table 1、消融表、method figure、定 baseline 與資料、pilot | 三張表圖＋一頁決策紀錄，group meeting 審，檔尾留審核紀錄 | `guides/experiment_design/design_table1.md` | ✅ v1.1，使用者已審（2026-10-08） |
+| 3 復現＋錯誤分析 | 復現 baseline 到對上數字；看它在哪類輸入上失敗 → 回 1b 改 card | `reproduce.md`、`error_analysis.csv` | `guides/experiment_log/reproduce_and_log.md`（與 4 合寫） | ✅ v1.1，使用者已審（2026-10-08） |
+| 4 執行與紀錄 | 填 Table 1；實驗日誌、config、版本管理 | repo、`results.csv`、`notes/log.md` | 同上 | ✅ 同上 |
+| 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | Quarto 投影片＋GitHub Issue | `guides/progress_report/group_meeting.md` | ✅ v1.2，使用者已審（2026-10-08） |
 | 6 寫作 | 把 Table 1 變成初稿 | 初稿 | 從 Paper-Hub 取材改寫學生版；commit 前使用者親審 | ⏸ 保留，使用者約 2026-12 再談 |
-| 貫穿 | 讀論文、做論文報告投影片 | 論文卡＋Quarto 投影片 | `guides/paper_reading/paper_to_slides.md` | ✅ v2，待使用者審 |
+| 貫穿 | 讀論文、做論文報告投影片 | 論文卡＋Quarto 投影片 | `guides/paper_reading/paper_to_slides.md` | ✅ v2.1，使用者已審（2026-10-08） |
 
 橫向文件：AI 使用規範不做；要問教授的事總表 ✅ `conventions/ask_professor.md`（各站教材改「要問教授」時同步）；檔案與命名慣例不另寫，在範本 repo 的 README（2026-10-08）。命名：週報 `progress_YYMMDD`、Issue `YYMMDD 進度`；論文報告 `〔會議〕_〔年份〕_〔第一作者的姓〕` 全小寫。
 
-討論順序：2 → 1b → 3+4 → 5 → 貫穿 → 6 與橫向。
+2026-10-08：0–5 站與論文報告全部定稿並經使用者審過；剩第 6 站（約 12 月）。下一階段是**實際用**：第一個學生走完一輪後，把卡住的地方回填各教材。
 
 ### 已定的設計決策（寫教材時遵守）
 - 1b：學生先講、教授後講；教授給的 idea 由學生寫成 card（含「我為什麼沒看到」一格）；idea log 連退掉的一起留並註明原因；考核寫 card 的動作不考核好壞；AI 可發散但 card 上的痛點要附學生自己的證據；退回代碼七種 BIG／DONE／DATA／DULL／VAGUE／GPU／LATER
