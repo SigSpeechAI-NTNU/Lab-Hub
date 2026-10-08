@@ -66,7 +66,7 @@
 ### 已定的設計決策（寫教材時遵守）
 - 1b：學生先講、教授後講；教授給的 idea 由學生寫成 card（含「我為什麼沒看到」一格）；idea log 連退掉的一起留並註明原因；考核寫 card 的動作不考核好壞；AI 可發散但 card 上的痛點要附學生自己的證據；退回代碼七種 BIG／DONE／DATA／DULL／VAGUE／GPU／LATER
 - 2：預設長論文（4 頁照長論文修剪）；產出含 method figure；顯著性列為考量但一句話交代不走火入魔；工具鏈與資料集寫具體名稱、授權不設關卡；研究倫理只寫原則（方案 A）；示例 contextual biasing STT、baseline 以方法類型標示。Table 1 先畫再寫程式；baseline 四層（必備／最強公開／消融／簡單）3–5 個；貢獻點只動一格；資料三層（標準公開／公開自組／自建），主實驗至少一個標準公開資料集，自建不得是唯一評測集；截稿日不到 4 個月不開新蒐集
-- 3＋4：學生 repo 在 `SigSpeechAI-NTNU` 底下、private、命名 `〔名字〕_〔題目簡稱〕`；不強制追蹤工具，必備 config 進 git＋`results.csv`＋日誌；復現判準相對 ±5%／±10%，各指標暫同一套；卡住 3 個工作天先找 partner 再問教授、復現 3 週找教授；錯誤分析 100 個樣本親耳聽、學生先擬 5–8 類；GPU 是學校機器，共用規矩教材不寫
+- 3＋4：學生 repo 在 `SigSpeechAI-NTNU` 底下、private、命名 `〔名字〕_〔題目簡稱〕`；不強制追蹤工具，必備 config 進 git＋`results.csv`＋日誌；W&B 列為建議（方案 B，2026-10-08）：曲線歸 W&B、數字歸 csv；復現判準相對 ±5%／±10%，各指標暫同一套；卡住 3 個工作天先找 partner 再問教授、復現 3 週找教授；錯誤分析 100 個樣本親耳聽、學生先擬 5–8 類；GPU 是學校機器，共用規矩教材不寫
 - 環境：只用 uv（2026-10-08 使用者定）——pyproject.toml＋uv.lock＋.python-version 進 git，不用 conda／pip／poetry；範本已附
 - Repo：一切跟著題目走（讀法 1，2026-10-08）——一題一 repo，論文筆記、idea log、週報都在裡面，不開個人 notes repo；題目結束封存，idea log 與 papers 複製到新 repo；repo 可改名。程式與筆記同一 repo（方案 A），toolkit fork 或釋出時再拆
 - 實驗室慣例：partner 制——相關議題 2–3 人一組，各有主責題目，彼此知道對方的題目；分組由使用者定，學生都已知道，不另寫文件。GPU 共用規矩不訂（2026-10-08）

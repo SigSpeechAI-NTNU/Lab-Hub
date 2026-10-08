@@ -1,4 +1,4 @@
-# 復現 baseline、錯誤分析、實驗紀錄（v1.6，2026-10-08）
+# 復現 baseline、錯誤分析、實驗紀錄（v1.7，2026-10-08）
 
 > 位置：第 3 站與第 4 站，合寫一份。前置是第 2 站的 `_design.md` 已經有教授的審核紀錄。
 > 這一站的目的有三個，依序做：(1) 把 Table 1 的必備 baseline 復現到對上論文數字；(2) 分析它錯在哪，回第 1b 站改 card；(3) 從此之後每一個實驗都用同一套方式記錄，Table 1 的格子從紀錄裡填。
@@ -100,6 +100,23 @@ Table 1 的每一格就是從這個檔篩出來的：同 dataset、同 split、�
 ```
 
 這一段就是第 5 站進度報告的骨架，也是 README「目前結果」要更新的時候。
+
+### 1.4 訓練曲線用 W&B（建議，不強制）
+
+`results.csv` 記的是每個 run 的最終數字；訓練過程的 loss、learning rate、GPU 用量這類**曲線**，建議用 [Weights & Biases](https://wandb.ai/)（學術帳號免費）。復現對不上數字時，第一件事就是比你的 loss 曲線和原作的——沒有工具你會自己拼 matplotlib。分工寫死：
+
+| | `results.csv` | W&B |
+|---|---|---|
+| 管什麼 | 每個 run 的最終數字；Table 1 從這裡填 | 訓練曲線、超參數、GPU 用量 |
+| 真相來源 | **是**；不刪列、有 commit hash | 不是；只看趨勢，數字以 csv 為準 |
+| 對得上嗎 | — | 每個 W&B run 的 config 記 `run_id` 與 `git_commit`，和 csv 同名 |
+
+三條規則：
+- `uv add wandb`；W&B 的 project 設 **private**（裡面是未發表結果），project 名用 repo 名
+- `wandb.init(name=run_id, config={..., "git_commit": ...})`——名字和 csv 的 `run_id` 一字不差，之後才對得回去
+- W&B 掛了、或機器沒網路，實驗照跑、csv 照記；它是輔助，不是流程的一部分
+
+不想用 W&B 的話，把曲線存成 `results/curves/<run_id>.csv` 自己畫也可以；規則一樣，數字以 `results.csv` 為準。
 
 ---
 
@@ -331,6 +348,9 @@ run_id,date,config_path,dataset,split,metric,value,seed,git_commit,note
 ---
 
 ## 修改紀錄
+
+### v1.7（2026-10-08）
+- §1.4 加「訓練曲線用 W&B」：建議不強制；曲線歸 W&B、數字歸 results.csv；run 名與 run_id 一致、project 設 private
 
 ### v1.6（2026-10-08）
 - §2 環境管理限定 uv：pyproject.toml＋uv.lock＋.python-version 進 git，`uv sync`／`uv add`／`uv run`；PyTorch CUDA index、toolkit、非 Python 依賴三個注意點；README 安裝段同步
