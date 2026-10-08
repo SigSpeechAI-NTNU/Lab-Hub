@@ -1,8 +1,8 @@
-# 復現 baseline、錯誤分析、實驗紀錄（v1.2，2026-10-08）
+# 復現 baseline、錯誤分析、實驗紀錄（v1.3，2026-10-08）
 
 > 位置：第 3 站與第 4 站，合寫一份。前置是第 2 站的 `_design.md` 已經有教授的審核紀錄。
 > 這一站的目的有三個，依序做：(1) 把 Table 1 的必備 baseline 復現到對上論文數字；(2) 分析它錯在哪，回第 1b 站改 card；(3) 從此之後每一個實驗都用同一套方式記錄，Table 1 的格子從紀錄裡填。
-> 產出：一個 GitHub repo（lab org 底下、private）、一個 `results.csv`、一個實驗日誌、一份復現紀錄、一份錯誤分析。
+> 產出：repo 裡的 `results.csv`、實驗日誌、復現紀錄、錯誤分析，以及一份**寫給外人看的 README**（目的、安裝、怎麼跑、目前結果）。
 > 鐵律：**復現沒對上之前，不改方法。** 這條在 Round 2 操作方法第 11 點已經寫過，這裡重申，因為它是學生最常違反的一條。
 
 ---
@@ -20,27 +20,42 @@
 
 第一個實驗跑之前就要有，不是之後補。
 
-### 1.1 Repo
+### 1.1 Repo 與 README
 
-在 lab 的 GitHub org `SigSpeechAI-NTNU` 底下開一個 **private** repo，教授是 collaborator。從範本 `SigSpeechAI-NTNU/student-template` 的 **Use this template** 建立，結構、模板、Issue 模板都已經在裡面。命名：`〔名字〕_〔題目簡稱〕`，例如 `Kai-Jun_CtxBias`。一個題目一個 repo；partner 做相關題目的另開自己的。
-
-建議的結構（照 toolkit 的習慣調整，但下面五個資料夾要有）：
+你的 repo 在第 0 站就從範本 `SigSpeechAI-NTNU/student-template` 建好了（lab org 底下、private、教授是 collaborator、命名 `〔名字〕_〔題目簡稱〕`）。一個題目一個 repo；partner 做相關題目的另開自己的。結構照範本：
 
 ```
 〔名字〕_〔題目簡稱〕/
-  README.md          一段話說這個 repo 是什麼題目、對應哪份 _design.md、怎麼跑
+  README.md          寫給外人看的：目的、安裝、怎麼跑、目前結果（見下）
+  research/          Deep Research 報告、one-pager（第 0、1 站）
+  design/            設計文件：Table 1、消融表、決策紀錄（第 2 站）
   configs/           每個 run 一個 config 檔，檔名＝run_id
-  scripts/           訓練、評測、資料準備的腳本
+  scripts/           訓練、評測、資料準備的腳本；run.sh 一行能跑
   results/
     results.csv      一行一個 run（格式見 1.2）
     error_analysis.csv
   notes/
     log.md           實驗日誌（格式見 1.3）
     reproduce.md     復現紀錄（格式見 3.4）
+    idea_log.md      idea card（1b）
+    papers/          論文核對紀錄、reading_log.md
+  reports/           進度與論文報告的 qmd 與 html（第 5 站）
   .gitignore
 ```
 
-**不進 git 的東西**：資料集、checkpoint、任何金鑰或 token、超過幾 MB 的 log。`.gitignore` 第一天就寫好。資料和 checkpoint 放機器上，路徑寫在 `README.md`。
+**README 的規格**——它是這個 repo 唯一寫給「沒看過你任何東西的人」的檔案，教授、partner、一年後的學弟妹、審稿時的 artifact reviewer 都從這裡進來。五段，範本已有骨架：
+
+| 段 | 寫什麼 | 什麼時候更新 |
+|---|---|---|
+| 目的 | 題目一句話、一句話主張（第 2 站的）、對應的設計文件 | 第 2 站審過後 |
+| 安裝 | Python／CUDA／toolkit 版本、`pip install -r requirements.txt`、資料與 checkpoint 放哪 | 第一個 run 之前 |
+| 怎麼跑 | `scripts/run.sh configs/<run_id>.yaml`；復現 baseline 用哪個 config、主實驗用哪個 | 每加一種 run 就補 |
+| 目前結果 | **Table 1 的現況**（從 `results.csv` 抄，標日期），和論文數字的對照 | **每週**，和週報同步 |
+| 結構 | 資料夾對照表（範本已有） | 不用動 |
+
+「目前結果」那段是最重要的：教授打開 repo 第一眼看的就是它。它和投影片第 4 頁是同一張表，週報做好順手更新。
+
+**不進 git 的東西**：資料集、checkpoint、任何金鑰或 token、超過幾 MB 的 log。範本的 `.gitignore` 已經擋了常見的；資料和 checkpoint 放機器上，路徑寫在 README。
 
 每個 run 跑之前 commit 一次，commit hash 記進 `results.csv`——這樣任何一個數字都能回到產生它的那版程式碼。
 
@@ -71,17 +86,19 @@ Table 1 的每一格就是從這個檔篩出來的：同 dataset、同 split、�
 - 下一步：〔明天做什麼〕
 ```
 
-每週最後一天多一段：
+每週最後一天多一段，欄位和第 5 站進度報告的五格一樣：
 
 ```markdown
-### 本週小結（10/13–10/17）
-- Table 1 填了：〔哪幾格，數字〕
-- 退回或改掉的 run：〔run_id 與原因〕
-- 下週：〔　〕
-- 要問教授：〔　〕
+### 本週小結（〔MM/DD–MM/DD〕）
+- 對帳：上週說要做〔　〕→ 做到了〔是／否：原因〕
+- Table 1 填了：〔哪幾格，數字，run_id〕；距上次新數字〔N〕週
+- 卡住：〔問題／試過／卡在哪〕
+- Card：〔編號與一句話；新的或改了哪格〕
+- 下週與要問教授：〔　〕
+- 本週淺讀：〔2 篇短名〕
 ```
 
-這一段就是第 5 站進度報告的骨架。
+這一段就是第 5 站進度報告的骨架，也是 README「目前結果」要更新的時候。
 
 ---
 
@@ -92,10 +109,10 @@ Table 1 的每一格就是從這個檔篩出來的：同 dataset、同 split、�
 | 要做的 | 怎麼做 |
 |---|---|
 | 固定 Python 與套件版本 | `requirements.txt`（pip freeze）或 `environment.yml`（conda）進 git；toolkit 用 git submodule 或記 commit hash |
-| 記錄系統版本 | `README.md` 寫 CUDA、cuDNN、PyTorch、GPU 型號 |
+| 記錄系統版本 | README「安裝」段寫 CUDA、cuDNN、PyTorch、GPU 型號 |
 | 所有 seed 寫進 config | Python、NumPy、PyTorch 的 seed；data loader 的 shuffle seed |
-| 資料版本 | 資料集版本號、切分檔的 md5 或行數，寫在 `README.md` |
-| 一行就能重跑 | `scripts/run.sh 〔config〕` 就能從頭跑；不能的話寫 `README.md` 的步驟 |
+| 資料版本 | 資料集版本號、切分檔的 md5 或行數，寫在 README「安裝」段 |
+| 一行就能重跑 | `scripts/run.sh 〔config〕` 就能從頭跑；不能的話寫在 README「怎麼跑」段 |
 
 lab 的 GPU 是學校的機器，共用規矩（排隊、能佔幾張、跑多久要說）問教授或 partner；教材不寫，因為會變。
 
@@ -261,7 +278,7 @@ run_id,date,config_path,dataset,split,metric,value,seed,git_commit,note
 
 | 問題 | 什麼時候問 |
 |---|---|
-| 我的 partner 是誰？ | 開 repo 之前 |
+| 我的 partner 是誰？ | 第一週 |
 | GPU 的共用規矩？ | 第一個 run 之前 |
 | 復現超過 3 週對不上，降一層 baseline 可以嗎？ | 帶著 `reproduce.md` 問 |
 | 錯誤類別這樣分可以嗎？ | 標完 100 個的那次 group meeting |
@@ -271,6 +288,10 @@ run_id,date,config_path,dataset,split,metric,value,seed,git_commit,note
 ---
 
 ## 修改紀錄
+
+### v1.3（2026-10-08）
+- §1.1 改為「repo 第 0 站已建」，結構對齊範本，加 README 五段規格（目的／安裝／怎麼跑／目前結果／結構），「目前結果」每週更新
+- §1.3 週小結改為和第 5 站五格一致，加淺讀
 
 ### v1.2（2026-10-08）
 - §6 加第 0 條「10 句話過擬合」與第 5b 條「評測腳本 partner 盲測」；§8 同步

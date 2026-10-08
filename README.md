@@ -42,7 +42,7 @@ flowchart LR
 
 ## 先讀哪份
 
-- **剛進實驗室、教授剛給題目**：第 0 站。讀完跑完再看第 1 站，中間要和教授談一次。
+- **剛進實驗室、教授剛給題目**：先從範本建自己的研究 repo（第 0 站操作方法第 0 步），然後第 0 站。讀完跑完再看第 1 站，中間要和教授談一次。
 - **已經有題目、要開始做實驗**：1b → 2 → 3＋4，照順序，不要跳。第 2 站的 Table 1 沒經教授審過不要寫程式。
 - **這週要報進度**：第 5 站。它假設你已經在做第 2–4 站的事。
 - **這週輪到報論文**：貫穿那份。
@@ -58,7 +58,7 @@ flowchart LR
 | 工具 | 用在哪 | 哪份教材教 |
 |---|---|---|
 | AI 的 Deep Research 功能 | 第 0、1 站建地圖與深挖 | 第 0、1 站 |
-| GitHub（lab 的 org `SigSpeechAI-NTNU`） | 你的程式碼、實驗紀錄、每週報告的 Issue；從範本 [`student-template`](https://github.com/SigSpeechAI-NTNU/student-template) 建 repo | 第 3＋4、5 站 |
+| GitHub（lab 的 org `SigSpeechAI-NTNU`） | 你這個題目的一切：Deep Research 報告、設計文件、程式碼、實驗紀錄、投影片、每週報告的 Issue；拿到題目第一天就從範本 [`student-template`](https://github.com/SigSpeechAI-NTNU/student-template) 建 | 第 0 站建，第 3＋4、5 站用 |
 | Quarto | 進度與論文的投影片（qmd → html，含講稿） | 第 5 站、論文報告 |
 | Markdown | 日誌、idea log、決策紀錄、核對紀錄——所有給自己看的紀錄 | 各站 |
 

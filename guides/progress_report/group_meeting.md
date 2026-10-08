@@ -38,7 +38,7 @@
 
 ## 2. 報告的內容：五格
 
-投影片的內容就是日誌週小結的五格，排序不變：
+投影片的內容就是日誌週小結的五格（第 3＋4 站 §1.3），排序不變：
 
 | 格 | 寫什麼 | 第一行放什麼 |
 |---|---|---|
@@ -89,38 +89,23 @@ reports/
 
 `261008` 是開會日期（YYMMDD）；檔名和 Issue 標題用同一個日期（§5）。html 一起 commit 是為了教授直接在瀏覽器開；若 lab 有開 GitHub Pages，網址貼進 Issue。
 
-### 4.2 最小的 qmd 骨架
+### 4.2 qmd 骨架
+
+範本 repo 的 `reports/_template_progress.qmd` 就是 8 頁的骨架，YAML（1280×800、講稿數學腳本）已設好；複製成 `progress_〔YYMMDD〕.qmd` 填內容。每頁長這樣：
 
 ```markdown
----
-title: "〔題目簡稱〕 進度 〔261008〕"
-author: "〔名字〕"
-date: "〔YYYY-MM-DD〕"
-format:
-  revealjs:
-    slide-number: true
----
-
-## 對帳
-
-| 上週說要做 | 做到了？ |
-|---|---|
-| 〔　〕 | 〔是／否：原因〕 |
-
-::: {.notes}
-〔演講稿〕
-:::
-
 ## Table 1 現況
 
-〔從 _design.md 貼整張表，本週新填的格子加粗〕
+距上次新數字：〔N〕週
+
+〔從 design 貼整張表，本週新填的格子加粗〕
 
 ::: {.notes}
 〔每個新格子來自哪個 run_id〕
 :::
 ```
 
-後面四頁同樣格式。render：
+render：
 
 ```
 quarto render reports/progress_261008.qmd
@@ -158,7 +143,7 @@ AI 做完你要做的事：每一個數字對回 `results.csv`；每一句結論
 
 1. **會前**：在自己的 repo 開一個 Issue，標題 `〔261008〕 進度`，內容貼週小結五格＋投影片的連結或路徑。加 label `progress`
 2. **會中**：教授的回饋與決定，由你當場在 Issue 下留言記錄；教授也可能自己留言或另開 Issue。**當場寫**，不要會後憑記憶補——細節會掉。你記的版本教授看過沒異議就算數，有出入以教授的留言為準
-3. **會後**：教授的留言裡有決定的（例如「card C03 通過」「Table 1 砍掉 B 資料集」），同步寫進對應的檔案：`_design.md` 的審核紀錄、`idea_log.md` 的狀態、`notes/log.md`。然後關掉 Issue
+3. **會後**：教授的留言裡有決定的（例如「card C03 通過」「Table 1 砍掉 B 資料集」），同步寫進對應的檔案：`_design.md` 的審核紀錄、`idea_log.md` 的狀態、`notes/log.md`；README「目前結果」更新成最新的 Table 1。然後關掉 Issue
 4. **下週**：新 Issue 的第一行引用上週教授的留言（`#12` 之類的連結），對帳就從這裡開始
 
 要問教授但不急的事，另開 Issue，label `question`；教授回了就關。這是「要問教授的事」清單的收件匣，比聊天軟體好找。
@@ -203,10 +188,12 @@ Label 三種：你開的週報 `progress`、你的問題 `question`、教授自�
 
 ```markdown
 ### 本週小結（10/13–10/17）
-- Table 1 填了：deep biasing R 格 test-other WER 9.1、B-WER 21.4（run 20261019_deepbias_s0）
-- 退回或改掉的 run：20261018 OOM，batch 減半重跑
-- 下週：錯誤分析 100 個樣本；開始 C03 的 pilot 資料準備
-- 要問教授：pilot 用 train-clean-100 夠嗎
+- 對帳：上週說要做「復現 deep biasing 對上數字」→ 做到了
+- Table 1 填了：deep biasing R 格 test-other WER 9.1、B-WER 21.4（run 20261019_deepbias_s0）；距上次新數字 0 週
+- 卡住：20261018 OOM，batch 減半重跑，已解
+- Card：C03 新的，來源 2
+- 下週與要問教授：錯誤分析 100 個樣本；開始 C03 的 pilot 資料準備；pilot 用 train-clean-100 夠嗎
+- 本週淺讀：icassp_2026_lee、arxiv_2026_wang
 ```
 
 對應的投影片第 4 頁（Table 1 現況）就是整張 Table 1，deep biasing 那列的 test-other 兩格加粗；第 5 頁放復現紀錄的那三行（論文數字 20.8、我的 21.4、相對差距 2.9%）；第 6 頁是 OOM 那件事（已解決，一句話帶過）；第 7 頁是 card C03；第 8 頁列「錯誤分析」「pilot 資料準備」兩項與一個要問的問題。
@@ -243,6 +230,7 @@ Issue `261015 進度` 的第一行：
 ## 修改紀錄
 
 ### v1.3（2026-10-08）
+- §4.2 改為指向範本的 `_template_progress.qmd`；§5 會後加更新 README「目前結果」；§9 示例的週小結改五格
 - §1 順序加「預測」一步
 - 第 4 頁加「距上次新數字 N 週」與月度停損規則（> 4 週固定討論換題／砍格子）；第 8 頁加本週淺讀；§7 論文報告每三次輪一次審稿預測練習
 

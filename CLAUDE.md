@@ -75,6 +75,11 @@
 ### 學生 repo 範本（2026-10-08）
 住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，private、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
+### 2026-10-08 邏輯修正（已做）
+- **repo 從第 0 站就建**（原本第 3＋4 站才建，Deep Research 報告與設計文件無處放）：round1 操作方法加第 0 步；round1／round2／第 2 站／1b 的檔案位置全改為 repo 內的 `research/`、`design/`、`notes/`
+- 第 3＋4 站 §1.1 結構對齊範本；README 定為五段（目的／安裝／怎麼跑／目前結果／結構），「目前結果」每週更新，是教授看 repo 的第一眼
+- 週小結五格和第 5 站投影片對齊（原本四格對不上）；第 5 站 §4.2 不再自己放一份不完整的 YAML，指向範本
+
 ### 2026-10-08 整體審閱後的補強（已做）
 - 第 2 站：決策紀錄加「論文骨架」（英文題目、150 字摘要、三條 contribution）
 - 第 3＋4 站：10 句話過擬合；評測腳本 partner 盲測
