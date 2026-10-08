@@ -52,11 +52,11 @@
 | 2 實驗設計 | 畫 Table 1、消融表、method figure、定 baseline 與資料、pilot | 三張表圖＋一頁決策紀錄，group meeting 審，檔尾留審核紀錄 | `guides/experiment_design/design_table1.md` | ✅ v1，待使用者審 |
 | 3 復現＋錯誤分析 | 復現 baseline 到對上數字；看它在哪類輸入上失敗 → 回 1b 改 card | `reproduce.md`、`error_analysis.csv` | `guides/experiment_log/reproduce_and_log.md`（與 4 合寫） | ✅ v1，待使用者審 |
 | 4 執行與紀錄 | 填 Table 1；實驗日誌、config、版本管理 | repo、`results.csv`、`notes/log.md` | 同上 | ✅ v1，待使用者審 |
-| 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | Quarto 投影片＋GitHub Issue | `guides/progress_report/group_meeting.md` | ✅ v1，待使用者審；**§3 投影片頁面為草案，待使用者定稿** |
-| 6 寫作 | 把 Table 1 變成初稿 | 初稿 | 從 Paper-Hub 取材改寫學生版；最後做；commit 前使用者親審 | ⬜ |
+| 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | Quarto 投影片＋GitHub Issue | `guides/progress_report/group_meeting.md` | ✅ v1.2，頁面已定稿 |
+| 6 寫作 | 把 Table 1 變成初稿 | 初稿 | 從 Paper-Hub 取材改寫學生版；commit 前使用者親審 | ⏸ 保留，使用者約 2026-12 再談 |
 | 貫穿 | 讀論文、做論文報告投影片 | 論文卡＋Quarto 投影片 | `guides/paper_reading/paper_to_slides.md` | ✅ v2，待使用者審 |
 
-橫向文件（各站都用到，最後收尾）：要問教授的事總表、AI 使用規範（每站可做什麼、怎麼核對、怎麼標明）、檔案與命名慣例 → `conventions/`。
+橫向文件：AI 使用規範不做（2026-10-08 使用者決定，各教材自己的「怎麼核對」與 AI 規則已足夠）；要問教授的事總表、檔案與命名慣例待使用者決定。
 
 討論順序：2 → 1b → 3+4 → 5 → 貫穿 → 6 與橫向。
 
@@ -64,11 +64,14 @@
 - 1b：學生先講、教授後講；教授給的 idea 由學生寫成 card（含「我為什麼沒看到」一格）；idea log 連退掉的一起留並註明原因；考核寫 card 的動作不考核好壞；AI 可發散但 card 上的痛點要附學生自己的證據；退回代碼七種 BIG／DONE／DATA／DULL／VAGUE／GPU／LATER
 - 2：預設長論文（4 頁照長論文修剪）；產出含 method figure；顯著性列為考量但一句話交代不走火入魔；工具鏈與資料集寫具體名稱、授權不設關卡；研究倫理只寫原則（方案 A）；示例 contextual biasing STT、baseline 以方法類型標示。Table 1 先畫再寫程式；baseline 四層（必備／最強公開／消融／簡單）3–5 個；貢獻點只動一格；資料三層（標準公開／公開自組／自建），主實驗至少一個標準公開資料集，自建不得是唯一評測集；截稿日不到 4 個月不開新蒐集
 - 3＋4：學生 repo 在 `SigSpeechAI-NTNU` 底下、private、命名 `〔名字〕_〔題目簡稱〕`；不強制追蹤工具，必備 config 進 git＋`results.csv`＋日誌；復現判準相對 ±5%／±10%，各指標暫同一套；卡住 3 個工作天先找 partner 再問教授、復現 3 週找教授；錯誤分析 100 個樣本親耳聽、學生先擬 5–8 類；GPU 是學校機器，共用規矩教材不寫
-- 實驗室慣例（待開 `conventions/`）：partner 制——相關議題 2–3 人一組，各有主責題目，彼此知道對方的題目
+- 實驗室慣例：partner 制——相關議題 2–3 人一組，各有主責題目，彼此知道對方的題目；分組由使用者定，學生都已知道，不另寫文件。GPU 共用規矩不訂（2026-10-08）
 - 2 的但書：seed 數與顯著性依目標會議、資料量、算力和教授討論後定（語音會議通常不要求 multi-seed）
-- 5：group meeting 每週一次、partner 一定出席；進度報告每人每週都報（每人 30 分鐘），論文報告在 partner 組內輪流（一篇 20 分鐘）；順序：先全部人的進度，再論文；學生先報 card、教授後講。學生自己的紀錄用 Markdown（第 4 站）；對教授用固定格式投影片，由學生請 AI 以 Quarto（qmd → html）製作、附演講稿；進度與論文兩種投影片格式不同，**格式待使用者與 Claude 討論後定**。書面不用提前交。教授回饋用 GitHub Issue 留痕（不用 Notion／Teams 做紀錄）；partner 不另外報告
+- 5：group meeting 每週一次、partner 一定出席；進度報告每人每週都報（每人 30 分鐘），論文報告在 partner 組內輪流（一篇 20 分鐘）；順序：先全部人的進度，再論文；學生先報 card、教授後講。學生自己的紀錄用 Markdown（第 4 站）；對教授用固定格式投影片，由學生請 AI 以 Quarto（qmd → html）製作、附演講稿；進度投影片固定 8 頁：問題定義示意圖、idea／架構示意圖（每週沿用）、對帳、Table 1 現況、關鍵結果、卡住、card、下週與要問（2026-10-08 定稿）；30 分鐘含討論，報告 10 分鐘以內。書面不用提前交。教授回饋用 GitHub Issue 留痕（不用 Notion／Teams 做紀錄）：學生當場記，教授也可自己留言或開 Issue；partner 不另外報告
 - 論文報告：固定 13 頁（一句話／背景／痛點／架構／訓練／推論／走線／物理意義／設定與公平性／主結果／消融與賣點圖／我的判斷／啟發）、方法 8 分鐘、走線必講；架構圖可截圖但必加標註，沒有就自己畫或請 AI 畫；流程為 PDF 餵 AI 生草稿 → 學生帶著草稿讀論文逐頁核對 → 和 AI 對話修正；走線、我的判斷、啟發三頁 AI 不生、學生自己寫；講稿格式【講述】＋【提示】、YAML 1280×800 與講稿數學 MathML 腳本（機制取自 Course-Hub，改寫）
 - 6：選 B（改寫學生版放 Lab-Hub），Paper-Hub 不公開
+
+### 學生 repo 範本（2026-10-08）
+`student-template/` 是暫放：內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
 ### Round 2 待補 5 點
 - [ ] §7 每題加「最接近的 2–3 篇 prior work 與差異」

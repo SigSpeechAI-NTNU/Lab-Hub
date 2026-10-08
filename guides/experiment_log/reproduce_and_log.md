@@ -1,4 +1,4 @@
-# 復現 baseline、錯誤分析、實驗紀錄（v1，2026-10-03）
+# 復現 baseline、錯誤分析、實驗紀錄（v1.1，2026-10-08）
 
 > 位置：第 3 站與第 4 站，合寫一份。前置是第 2 站的 `_design.md` 已經有教授的審核紀錄。
 > 這一站的目的有三個，依序做：(1) 把 Table 1 的必備 baseline 復現到對上論文數字；(2) 分析它錯在哪，回第 1b 站改 card；(3) 從此之後每一個實驗都用同一套方式記錄，Table 1 的格子從紀錄裡填。
@@ -22,7 +22,7 @@
 
 ### 1.1 Repo
 
-在 lab 的 GitHub org `SigSpeechAI-NTNU` 底下開一個 **private** repo，教授是 collaborator。命名：`〔名字〕_〔題目簡稱〕`，例如 `Kai-Jun_CtxBias`。一個題目一個 repo；partner 做相關題目的另開自己的。
+在 lab 的 GitHub org `SigSpeechAI-NTNU` 底下開一個 **private** repo，教授是 collaborator。從範本 `SigSpeechAI-NTNU/student-template` 的 **Use this template** 建立，結構、模板、Issue 模板都已經在裡面。命名：`〔名字〕_〔題目簡稱〕`，例如 `Kai-Jun_CtxBias`。一個題目一個 repo；partner 做相關題目的另開自己的。
 
 建議的結構（照 toolkit 的習慣調整，但下面五個資料夾要有）：
 
@@ -268,6 +268,9 @@ run_id,date,config_path,dataset,split,metric,value,seed,git_commit,note
 ---
 
 ## 修改紀錄
+
+### v1.1（2026-10-08）
+- §1.1 補從範本 repo 建立
 
 ### v1（2026-10-03）
 - 初版。設計決策見 `CLAUDE.md` 第五節：repo 在 `SigSpeechAI-NTNU` 底下、private、命名 `〔名字〕_〔題目簡稱〕`；不強制追蹤工具，必備 config 進 git＋`results.csv`＋日誌；復現判準相對 ±5%／±10%；卡住 3 天先找 partner 再問教授、復現 3 週找教授；錯誤分析 100 個樣本親耳聽、學生先擬 5–8 類
