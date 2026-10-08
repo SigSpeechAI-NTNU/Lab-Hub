@@ -104,6 +104,7 @@ flowchart LR
 | AI 的 Deep Research 功能 | 第 0、1 站建地圖與深挖 | 第 0、1 站 |
 | AI 的一般對話 | 核對報告、發散 idea、壓力測試 card、生投影片草稿、解釋看不懂的段落——每份教材都有「AI 怎麼用」與「不可以」 | 各站 |
 | GitHub（lab 的 org `SigSpeechAI-NTNU`） | 你這個題目的一切：Deep Research 報告、設計文件、程式碼、實驗紀錄、投影片、每週報告的 Issue。拿到題目第一天就從範本 [`student-template`](https://github.com/SigSpeechAI-NTNU/student-template) 建，一題一個 repo | 第 0 站建，第 3＋4、5 站用 |
+| uv | 所有 Python 環境：`uv sync`、`uv add`、`uv run`；不用 conda 或裸 pip | 第 3＋4 站 §2 |
 | Quarto | 進度與論文的投影片（qmd → html，含講稿，按 `S` 看講稿） | 第 5 站、論文報告 |
 | Markdown | 日誌、idea log、決策紀錄、核對紀錄——所有給自己看的紀錄 | 各站 |
 | arXiv、Google Scholar、OpenReview | novelty 檢查、Scholar alert、審稿預測練習 | 1b、第 1 站、論文報告 |

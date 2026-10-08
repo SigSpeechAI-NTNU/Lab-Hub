@@ -1,4 +1,4 @@
-# 復現 baseline、錯誤分析、實驗紀錄（v1.5，2026-10-08）
+# 復現 baseline、錯誤分析、實驗紀錄（v1.6，2026-10-08）
 
 > 位置：第 3 站與第 4 站，合寫一份。前置是第 2 站的 `_design.md` 已經有教授的審核紀錄。
 > 這一站的目的有三個，依序做：(1) 把 Table 1 的必備 baseline 復現到對上論文數字；(2) 分析它錯在哪，回第 1b 站改 card；(3) 從此之後每一個實驗都用同一套方式記錄，Table 1 的格子從紀錄裡填。
@@ -40,6 +40,7 @@
     idea_log.md      idea card（1b）
     papers/          論文核對紀錄、reading_log.md
   reports/           進度與論文報告的 qmd 與 html（第 5 站）
+  pyproject.toml     環境定義（uv）；uv.lock 與 .python-version 一起進 git
   .gitignore
 ```
 
@@ -48,7 +49,7 @@
 | 段 | 寫什麼 | 什麼時候更新 |
 |---|---|---|
 | 目的 | 題目一句話、一句話主張（第 2 站的）、對應的設計文件 | 第 2 站審過後 |
-| 安裝 | Python／CUDA／toolkit 版本、`pip install -r requirements.txt`、資料與 checkpoint 放哪 | 第一個 run 之前 |
+| 安裝 | `uv sync` 一行；Python 版本（`.python-version`）、CUDA／PyTorch／toolkit 版本、資料與 checkpoint 放哪 | 第一個 run 之前 |
 | 怎麼跑 | `scripts/run.sh configs/<run_id>.yaml`；復現 baseline 用哪個 config、主實驗用哪個 | 每加一種 run 就補 |
 | 目前結果 | **Table 1 的現況**（從 `results.csv` 抄，標日期），和論文數字的對照 | **每週**，和週報同步 |
 | 結構 | 資料夾對照表（範本已有） | 不用動 |
@@ -102,17 +103,30 @@ Table 1 的每一格就是從這個檔篩出來的：同 dataset、同 split、�
 
 ---
 
-## 2. 環境重現
+## 2. 環境重現：只用 uv
 
 目標：三個月後的你、或你的 partner，能在另一台機器上跑出同一個數字。
 
+**lab 的 Python 環境一律用 [uv](https://docs.astral.sh/uv/) 管理，不用 conda、不用裸 pip、不用 poetry。** 理由：一個 `pyproject.toml` 加一個 `uv.lock` 就把 Python 版本與每個套件的精確版本鎖死，`uv sync` 一行在任何機器重建；lock 檔進 git，所以 `results.csv` 的每個 commit hash 都對應一個可重建的環境。範本已附 `pyproject.toml` 與 `.python-version`，你要做的只有：
+
+```
+uv sync                      # 建 .venv、裝 lock 檔裡的版本
+uv add <套件>                # 加套件（會更新 pyproject.toml 與 uv.lock，一起 commit）
+uv run scripts/run.sh ...    # 跑任何東西都用 uv run，不要手動 activate
+```
+
+三個會踩到的地方：
+- **PyTorch 的 CUDA 版本**：PyTorch 不是從 PyPI 預設 index 裝的，要在 `pyproject.toml` 的 `[tool.uv.sources]` 指定 PyTorch 的 index（哪個 CUDA 版本對應哪個 index，照 PyTorch 官網與 uv 文件的說明，請自行查證目前寫法）。範本留了註解位置
+- **toolkit（ESPnet、SpeechBrain 等）**：能 `uv add` 的就 `uv add`；要改內部程式的，fork 後用 `uv add --editable <本機路徑>` 或 git submodule，commit hash 記在 README
+- **非 Python 的依賴**（sox、ffmpeg、CUDA toolkit）：uv 管不到，寫在 README「安裝」段，用機器的套件管理或 module 裝
+
 | 要做的 | 怎麼做 |
 |---|---|
-| 固定 Python 與套件版本 | `requirements.txt`（pip freeze）或 `environment.yml`（conda）進 git；toolkit 用 git submodule 或記 commit hash |
+| 固定 Python 與套件版本 | `pyproject.toml`、`uv.lock`、`.python-version` 三個檔進 git；**不要**手寫 `requirements.txt` |
 | 記錄系統版本 | README「安裝」段寫 CUDA、cuDNN、PyTorch、GPU 型號 |
 | 所有 seed 寫進 config | Python、NumPy、PyTorch 的 seed；data loader 的 shuffle seed |
 | 資料版本 | 資料集版本號、切分檔的 md5 或行數，寫在 README「安裝」段 |
-| 一行就能重跑 | `scripts/run.sh 〔config〕` 就能從頭跑；不能的話寫在 README「怎麼跑」段 |
+| 一行就能重跑 | `uv run scripts/run.sh 〔config〕` 就能從頭跑；不能的話寫在 README「怎麼跑」段 |
 
 lab 的 GPU 是學校的機器，共用規矩（排隊、能佔幾張、跑多久要說）問教授或 partner；教材不寫，因為會變。
 
@@ -317,6 +331,9 @@ run_id,date,config_path,dataset,split,metric,value,seed,git_commit,note
 ---
 
 ## 修改紀錄
+
+### v1.6（2026-10-08）
+- §2 環境管理限定 uv：pyproject.toml＋uv.lock＋.python-version 進 git，`uv sync`／`uv add`／`uv run`；PyTorch CUDA index、toolkit、非 Python 依賴三個注意點；README 安裝段同步
 
 ### v1.5（2026-10-08）
 - 加 §8b「審稿人會怎麼看這一站的產出」
