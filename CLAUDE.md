@@ -41,7 +41,7 @@
 
 不放：學生個資、未發表的實驗結果、授權語料的內容或路徑、其他 Hub 的內部規範、金鑰。
 
-本 repo 自 2026-10-08 起為 **public**，授權 CC BY 4.0（`LICENSE`）。`student-template/` 維持 private。`conventions/taste.md` 的每一條進來時先問使用者能不能公開。
+本 repo 自 2026-10-08 起為 **public**，授權 CC BY 4.0（`LICENSE`）。`student-template/` 也是 public 且 CC BY 4.0（2026-10-08）；學生從它建出的 repo 才是 private。`conventions/taste.md` 的每一條進來時先問使用者能不能公開。
 
 ## 五、研究路徑與教材待辦（2026-10-03 定稿；每做完一站勾掉）
 
@@ -76,7 +76,7 @@
 - 6：選 B（改寫學生版放 Lab-Hub），Paper-Hub 不公開
 
 ### 學生 repo 範本（2026-10-08）
-住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，private、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
+住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，public、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
 ### 2026-10-08 邏輯修正（已做）
 - 七份教材各加一節「審稿人會怎麼看這一站的產出」（README 的宣稱因此成立）；之後新教材也要有這一節
