@@ -22,7 +22,7 @@
 
 ### 1.1 Repo 與 README
 
-你的 repo 在第 0 站就從範本 `SigSpeechAI-NTNU/student-template` 建好了（lab org 底下、private、教授是 collaborator、命名 `〔名字〕_〔題目簡稱〕`）。一個題目一個 repo；partner 做相關題目的另開自己的。結構照範本：
+你的 repo 在第 0 站就從範本 `SigSpeechAI-NTNU/student-template` 建好了（lab org 底下、private、教授是 collaborator、命名 `〔名字〕_〔題目簡稱〕`）。一個題目一個 repo，**所有東西都跟著題目走**——論文筆記、idea log、週報也在裡面，不另開個人 repo。題目結束（投稿後）repo 封存，開新題目時把 `notes/idea_log.md` 與 `notes/papers/` 複製到新 repo，其餘不帶。Repo 名一開始用 Round 1 的題目簡稱，題目收斂後到 GitHub Settings 改名（會自動轉址，本地 `git remote set-url` 即可）。partner 做的是不同題目，各有各的 repo，只互看。結構照範本：
 
 ```
 〔名字〕_〔題目簡稱〕/
@@ -290,6 +290,7 @@ run_id,date,config_path,dataset,split,metric,value,seed,git_commit,note
 ## 修改紀錄
 
 ### v1.3（2026-10-08）
+- §1.1 明定：一切跟著題目走、不開個人 repo；題目結束時 idea log 與 papers 複製到新 repo；repo 可改名
 - §1.1 改為「repo 第 0 站已建」，結構對齊範本，加 README 五段規格（目的／安裝／怎麼跑／目前結果／結構），「目前結果」每週更新
 - §1.3 週小結改為和第 5 站五格一致，加淺讀
 
