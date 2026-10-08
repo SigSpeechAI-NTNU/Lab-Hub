@@ -5,6 +5,7 @@
 [![Language](https://img.shields.io/badge/語言-繁體中文-2E7D32)](#)
 [![Lab](https://img.shields.io/badge/SigSpeechAI-NTNU-1565C0?logo=github&logoColor=white)](https://github.com/SigSpeechAI-NTNU)
 [![Template](https://img.shields.io/badge/學生%20repo-student--template-6A1B9A?logo=github&logoColor=white)](https://github.com/SigSpeechAI-NTNU/student-template)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey?logo=creativecommons&logoColor=white)](LICENSE)
 
 由 [李鴻欣 Hung-Shin Lee](https://hungshinlee.github.io/) 所設計的研究方法教材，給碩博班研究生。它教的是**從拿到一個題目到投出一篇會議論文**這條路上每一步怎麼做：怎麼用 AI 建文獻地圖並核對、怎麼寫出自己的 idea、怎麼設計實驗、怎麼復現與記錄、怎麼在 group meeting 報進度與報論文。目標不是「把題目做對」而已，是**投 top conference**——所以每一站都有「審稿人會怎麼看」的那一段。
 
@@ -112,3 +113,7 @@ flowchart LR
 教材由教授與 AI 共同編寫，教授定稿。改動都記在各檔尾的「修改紀錄」。發現教材寫不清楚、或照著做卡住，在本 repo 開 Issue 或直接跟教授說，那是教材要改的訊號。
 
 repo 規範與待辦在 [`CLAUDE.md`](CLAUDE.md)。
+
+## 授權
+
+本 repo 的教材以 [CC BY 4.0](LICENSE) 授權：可以自由使用、修改、再散布，包括商業用途，只要註明出處（李鴻欣，SigSpeechAI-NTNU Lab-Hub）。其他實驗室要拿去改成自己的版本，歡迎。
