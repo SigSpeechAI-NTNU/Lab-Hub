@@ -1,8 +1,36 @@
 # Lab-Hub
 
+[![Made with Claude](https://img.shields.io/badge/Made%20with-Claude-D97757?logo=anthropic&logoColor=white)](https://claude.ai)
+[![Quarto](https://img.shields.io/badge/Slides-Quarto-75AADB?logo=quarto&logoColor=white)](https://quarto.org)
+[![Language](https://img.shields.io/badge/語言-繁體中文-2E7D32)](#)
+[![Lab](https://img.shields.io/badge/SigSpeechAI-NTNU-1565C0?logo=github&logoColor=white)](https://github.com/SigSpeechAI-NTNU)
+[![Template](https://img.shields.io/badge/學生%20repo-student--template-6A1B9A?logo=github&logoColor=white)](https://github.com/SigSpeechAI-NTNU/student-template)
+
+> **指導教授**：[李鴻欣 Hung-Shin Lee](https://hungshinlee.github.io/)，國立臺灣師範大學 AI 跨域應用研究所助理教授。做語音辨識、語音合成、語音翻譯、說話人辨識與對話 AI，特別關注臺語、客語、臺灣原住民族語等低資源語言。帶學生的兩個目標：**AI quotient**（知道怎麼和 AI 一起工作、用它補自己的缺口）與**人文情懷**（知道系統為誰服務、在哪裡會失敗、失敗時誰負責）。這個 repo 是前者的操作手冊。
+> 個人網站 [hungshinlee.github.io](https://hungshinlee.github.io/)｜[Google Scholar](https://scholar.google.com/citations?user=t4WKLegAAAAJ)｜[Hugging Face formospeech](https://huggingface.co/formospeech)
+
 SigSpeechAI-NTNU 實驗室的研究方法教材，給碩博班研究生。它教的是**從拿到一個題目到投出一篇會議論文**這條路上每一步怎麼做：怎麼用 AI 建文獻地圖並核對、怎麼寫出自己的 idea、怎麼設計實驗、怎麼復現與記錄、怎麼在 group meeting 報進度與報論文。目標不是「把題目做對」而已，是**投 top conference**——所以每一站都有「審稿人會怎麼看」的那一段。
 
 教材是用來照著做的，不是用來讀過就算。每份都有步驟、要自己填的欄位（用 `〔〕` 標示）、產出長什麼樣、怎麼核對，以及「要先問教授的事」。
+
+## 會議資訊
+
+語音與 NLP 的主要會議，**以 2027 年 3 月底前截稿的為主**，按截稿日排序。查證日期 2026-10-08；截稿日常改，**填 Round 2 的「目標會議與截稿日」時自己到官網再查一次**，不要讓 AI 查。
+
+| 截稿 | 會議 | 類型 | 會議日期與地點 | 備註 |
+|---|---|---|---|---|
+| 2026-10-12 | [ACL Rolling Review 10 月週期](https://aclrollingreview.org/dates) | NLP，長／短論文 | 審完可 commit 到 NAACL 2027（commit 截止 2026-12-23；2027-06-01～05 舊金山）或 COLING 2027 | ARR 是先審再選會議；一個週期沒過可以帶著審稿意見投下一個週期 |
+| 2027-01 上旬（待官網確認） | [IJCAI-ECAI 2027](https://2027.ijcai.org/) | 一般 AI | 2027-08-07～13 京都 | 語音論文少，除非題目偏 AI 應用 |
+| 2027-01（週期日期待公布） | [ACL Rolling Review 1 月週期](https://aclrollingreview.org/dates) | NLP | 審完可 commit 到 ACL 2027（2027-08-17～22 京都） | 口語語言處理、語音＋LLM 的題目可投 |
+| 2027-01 下旬（待官網公布；第三方估 1/22–1/28） | [ICML 2027](https://icml.cc/) | ML 主會，長論文 | 2027-07-04～09 南美洲 | 要概念層的主張加完整實驗；第 2 站預設的長論文格式就是為這類 |
+| **2027-02-09**（更新至 02-16） | [Interspeech 2027](https://interspeech2027.org/) | 語音，4 頁 | 2027-08-29～09-02 聖保羅 | **語音領域的主場**，第一篇論文的預設目標；通知 2027-06-02 |
+| 2027-03 下旬（預估，2026 年是 3/31；待公布） | [COLM 2027](https://colm.cc/) | 語言模型，長論文 | 待公布 | 語音＋LLM 的題目可投 |
+
+**本週期已過、下一屆要等的**：ICASSP 2027（截稿 2026-09-16，2027-05-16～21 多倫多；下一屆約 2027 年 9 月截稿）、ICLR 2027（截稿 2026-09-25；下一屆約 2027 年 9 月）、EACL 2027（ARR 8 月週期，commit 已截止）。
+
+**3 月底之後**：NeurIPS 2027（摘要 2027-05-14、全文 05-21，歐洲）、EMNLP 2027（ARR，約 5–6 月）、ASRU 2027（約 7 月）、ICASSP 2028（約 9 月）。
+
+怎麼選：第一篇投 Interspeech 或 ICASSP（4 頁、社群主場、審稿看方法與實驗是否乾淨）；有分析面向與多資料集的第二篇才投 ICML／NeurIPS／ICLR 或 ACL 主會。由教授定，見第 2 站 §2.3。
 
 ## 研究路徑
 
