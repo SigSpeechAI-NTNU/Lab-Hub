@@ -33,7 +33,7 @@
     progress_report/              進度報告：group meeting 怎麼報（group_meeting.md）
     paper_reading/                論文報告：把一篇論文變成投影片與講稿（paper_to_slides.md）
     <主題>/                       之後的教材各自一個資料夾
-  conventions/                    實驗室慣例（建立時再開）
+  conventions/                    實驗室慣例：ask_professor.md（要問教授的事總表）
 ```
 
 ## 四、公開 repo 的界線
@@ -56,7 +56,7 @@
 | 6 寫作 | 把 Table 1 變成初稿 | 初稿 | 從 Paper-Hub 取材改寫學生版；commit 前使用者親審 | ⏸ 保留，使用者約 2026-12 再談 |
 | 貫穿 | 讀論文、做論文報告投影片 | 論文卡＋Quarto 投影片 | `guides/paper_reading/paper_to_slides.md` | ✅ v2，待使用者審 |
 
-橫向文件：AI 使用規範不做（2026-10-08 使用者決定，各教材自己的「怎麼核對」與 AI 規則已足夠）；要問教授的事總表、檔案與命名慣例待使用者決定。
+橫向文件：AI 使用規範不做；要問教授的事總表 ✅ `conventions/ask_professor.md`（各站教材改「要問教授」時同步）；檔案與命名慣例不另寫，在範本 repo 的 README（2026-10-08）。命名：週報 `progress_YYMMDD`、Issue `YYMMDD 進度`；論文報告 `〔會議〕_〔年份〕_〔第一作者的姓〕` 全小寫。
 
 討論順序：2 → 1b → 3+4 → 5 → 貫穿 → 6 與橫向。
 
@@ -71,7 +71,7 @@
 - 6：選 B（改寫學生版放 Lab-Hub），Paper-Hub 不公開
 
 ### 學生 repo 範本（2026-10-08）
-`student-template/` 是暫放：內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
+已搬成獨立 repo `SigSpeechAI-NTNU/student-template`（本 Project 看不到它，要改時請使用者把 `~/student-template` 連進對話）。原暫放說明：內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
 ### Round 2 待補 5 點
 - [ ] §7 每題加「最接近的 2–3 篇 prior work 與差異」

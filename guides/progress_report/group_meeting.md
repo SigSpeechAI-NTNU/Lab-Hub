@@ -80,17 +80,17 @@ repo 裡開 `reports/` 資料夾：
 
 ```
 reports/
-  2026-W41.qmd      本週的投影片原始檔
-  2026-W41.html     render 出來的檔，commit 進去
+  progress_261008.qmd   本週的投影片原始檔
+  progress_261008.html  render 出來的檔，commit 進去
 ```
 
-`W41` 是 ISO 週數；檔名和 Issue 標題一致（§5）。html 一起 commit 是為了教授直接在瀏覽器開；若 lab 有開 GitHub Pages，網址貼進 Issue。
+`261008` 是開會日期（YYMMDD）；檔名和 Issue 標題用同一個日期（§5）。html 一起 commit 是為了教授直接在瀏覽器開；若 lab 有開 GitHub Pages，網址貼進 Issue。
 
 ### 4.2 最小的 qmd 骨架
 
 ```markdown
 ---
-title: "〔題目簡稱〕 進度 W〔41〕"
+title: "〔題目簡稱〕 進度 〔261008〕"
 author: "〔名字〕"
 date: "〔YYYY-MM-DD〕"
 format:
@@ -120,7 +120,7 @@ format:
 後面四頁同樣格式。render：
 
 ```
-quarto render reports/2026-W41.qmd
+quarto render reports/progress_261008.qmd
 ```
 
 ### 4.3 請 AI 做投影片
@@ -153,10 +153,10 @@ AI 做完你要做的事：每一個數字對回 `results.csv`；每一句結論
 
 教授的回饋要留痕，用 repo 的 Issue：
 
-1. **會前**：在自己的 repo 開一個 Issue，標題 `W〔41〕 進度`，內容貼週小結五格＋投影片的連結或路徑。加 label `progress`
+1. **會前**：在自己的 repo 開一個 Issue，標題 `〔261008〕 進度`，內容貼週小結五格＋投影片的連結或路徑。加 label `progress`
 2. **會中**：教授的回饋與決定，由你當場在 Issue 下留言記錄；教授也可能自己留言或另開 Issue。**當場寫**，不要會後憑記憶補——細節會掉。你記的版本教授看過沒異議就算數，有出入以教授的留言為準
 3. **會後**：教授的留言裡有決定的（例如「card C03 通過」「Table 1 砍掉 B 資料集」），同步寫進對應的檔案：`_design.md` 的審核紀錄、`idea_log.md` 的狀態、`notes/log.md`。然後關掉 Issue
-4. **下週**：新 Issue 的第一行引用上週教授的留言（`#41` 之類的連結），對帳就從這裡開始
+4. **下週**：新 Issue 的第一行引用上週教授的留言（`#12` 之類的連結），對帳就從這裡開始
 
 要問教授但不急的事，另開 Issue，label `question`；教授回了就關。這是「要問教授的事」清單的收件匣，比聊天軟體好找。
 
@@ -208,10 +208,10 @@ Label 三種：你開的週報 `progress`、你的問題 `question`、教授自�
 
 對應的投影片第 4 頁（Table 1 現況）就是整張 Table 1，deep biasing 那列的 test-other 兩格加粗；第 5 頁放復現紀錄的那三行（論文數字 20.8、我的 21.4、相對差距 2.9%）；第 6 頁是 OOM 那件事（已解決，一句話帶過）；第 7 頁是 card C03；第 8 頁列「錯誤分析」「pilot 資料準備」兩項與一個要問的問題。
 
-Issue `W42 進度` 的第一行：
+Issue `261015 進度` 的第一行：
 
 ```markdown
-上週教授回饋（#41）：「復現算過了，錯誤分析先做，pilot 等分析結果再定資料集。」
+上週教授回饋（#12）：「復現算過了，錯誤分析先做，pilot 等分析結果再定資料集。」
 → 本週照做；pilot 資料集的問題改到錯誤分析之後再問。
 ```
 
@@ -241,6 +241,7 @@ Issue `W42 進度` 的第一行：
 
 ### v1.2（2026-10-08）
 - §5 補 label 三種（progress／question／prof）與 collaborator 提醒
+- 週報檔名與 Issue 標題改用開會日期 YYMMDD（`progress_261008.qmd`、`261008 進度`），不用週次
 - §3 定稿：由草案六頁改為八頁，前兩頁固定放問題定義示意圖與 idea／架構示意圖，每週沿用；§4.3 指令、§6 時間分配、§9 示例、§10 核對同步
 - §5 第 2 條：回饋由學生當場記進 Issue，教授也可能自己留言或開 Issue
 

@@ -37,6 +37,7 @@ flowchart LR
 | 5 | [進度報告：group meeting 怎麼報](guides/progress_report/group_meeting.md) | 每週 | Quarto 投影片（含講稿）、GitHub Issue 上的教授回饋 |
 | 貫穿 | [論文報告：把一篇論文變成投影片與講稿](guides/paper_reading/paper_to_slides.md) | 輪到你報論文時 | 13 頁 Quarto 投影片（含講稿）、一頁核對紀錄 |
 | 6 | 從結果表到論文初稿 | — | （還沒寫） |
+| 總表 | [要問教授的事](conventions/ask_professor.md) | 任何時候不確定「這該不該自己決定」 | 各站問題按時間排的一頁索引 |
 
 ## 先讀哪份
 
@@ -56,7 +57,7 @@ flowchart LR
 | 工具 | 用在哪 | 哪份教材教 |
 |---|---|---|
 | AI 的 Deep Research 功能 | 第 0、1 站建地圖與深挖 | 第 0、1 站 |
-| GitHub（lab 的 org `SigSpeechAI-NTNU`） | 你的程式碼、實驗紀錄、每週報告的 Issue | 第 3＋4、5 站 |
+| GitHub（lab 的 org `SigSpeechAI-NTNU`） | 你的程式碼、實驗紀錄、每週報告的 Issue；從範本 [`student-template`](https://github.com/SigSpeechAI-NTNU/student-template) 建 repo | 第 3＋4、5 站 |
 | Quarto | 進度與論文的投影片（qmd → html，含講稿） | 第 5 站、論文報告 |
 | Markdown | 日誌、idea log、決策紀錄、核對紀錄——所有給自己看的紀錄 | 各站 |
 
