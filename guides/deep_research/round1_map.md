@@ -97,7 +97,7 @@ flowchart LR
 - **AI 產出要標明。** 拿報告討論時，說清楚哪些是 Deep Research 的產出、哪些是核對過的、哪些是自己的判斷。
 
 ### 事前準備
-0. **先建自己的研究 repo**：到 `SigSpeechAI-NTNU/student-template` 按 Use this template，命名 `〔名字〕_〔題目簡稱〕`，private，教授加為 collaborator（細節見範本 README）。這個題目從現在起的所有東西——Deep Research 報告、設計文件、程式、紀錄、投影片——都放這個 repo。
+0. **先建自己的研究 repo**：到 `SigSpeechAI-NTNU/student-template` 按 Use this template，命名 `〔名字〕_〔題目簡稱〕`，private，教授加為 collaborator。**沒做過的照範本 README「第 0 天：從零到第一個 commit」十步做**，約 20 分鐘。這個題目從現在起的所有東西——Deep Research 報告、設計文件、程式、紀錄、投影片——都放這個 repo。
 1. 在你用的 AI 工具開一個獨立的 Project（例如「Deep Research」）或不掛 Project 的新對話。若實驗室有自己的 Project 規範，不要在那個 Project 裡跑，指令會互相干擾。
 2. 填欄位：日期、身分、實驗室方向、題目、領域。題目可以是既有名稱，也可以是幾句話描述的應用情境（誰在什麼狀況下遇到什麼問題）；後者由報告 §1 對應成文獻裡的正式名稱，第二輪就用那個名稱。
 
