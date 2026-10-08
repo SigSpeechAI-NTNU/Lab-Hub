@@ -6,10 +6,7 @@
 [![Lab](https://img.shields.io/badge/SigSpeechAI-NTNU-1565C0?logo=github&logoColor=white)](https://github.com/SigSpeechAI-NTNU)
 [![Template](https://img.shields.io/badge/學生%20repo-student--template-6A1B9A?logo=github&logoColor=white)](https://github.com/SigSpeechAI-NTNU/student-template)
 
-> **指導教授**：[李鴻欣 Hung-Shin Lee](https://hungshinlee.github.io/)，國立臺灣師範大學 AI 跨域應用研究所助理教授。做語音辨識、語音合成、語音翻譯、說話人辨識與對話 AI，特別關注臺語、客語、臺灣原住民族語等低資源語言。帶學生的兩個目標：**AI quotient**（知道怎麼和 AI 一起工作、用它補自己的缺口）與**人文情懷**（知道系統為誰服務、在哪裡會失敗、失敗時誰負責）。這個 repo 是前者的操作手冊。
-> 個人網站 [hungshinlee.github.io](https://hungshinlee.github.io/)｜[Google Scholar](https://scholar.google.com/citations?user=t4WKLegAAAAJ)｜[Hugging Face formospeech](https://huggingface.co/formospeech)
-
-SigSpeechAI-NTNU 實驗室的研究方法教材，給碩博班研究生。它教的是**從拿到一個題目到投出一篇會議論文**這條路上每一步怎麼做：怎麼用 AI 建文獻地圖並核對、怎麼寫出自己的 idea、怎麼設計實驗、怎麼復現與記錄、怎麼在 group meeting 報進度與報論文。目標不是「把題目做對」而已，是**投 top conference**——所以每一站都有「審稿人會怎麼看」的那一段。
+由 [李鴻欣 Hung-Shin Lee](https://hungshinlee.github.io/) 所設計的研究方法教材，給碩博班研究生。它教的是**從拿到一個題目到投出一篇會議論文**這條路上每一步怎麼做：怎麼用 AI 建文獻地圖並核對、怎麼寫出自己的 idea、怎麼設計實驗、怎麼復現與記錄、怎麼在 group meeting 報進度與報論文。目標不是「把題目做對」而已，是**投 top conference**——所以每一站都有「審稿人會怎麼看」的那一段。
 
 教材是用來照著做的，不是用來讀過就算。每份都有步驟、要自己填的欄位（用 `〔〕` 標示）、產出長什麼樣、怎麼核對，以及「要先問教授的事」。
 
