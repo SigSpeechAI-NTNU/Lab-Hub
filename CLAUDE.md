@@ -33,7 +33,7 @@
     progress_report/              進度報告：group meeting 怎麼報（group_meeting.md）
     paper_reading/                論文報告：把一篇論文變成投影片與講稿（paper_to_slides.md）
     <主題>/                       之後的教材各自一個資料夾
-  conventions/                    實驗室慣例：ask_professor.md（要問教授的事總表）
+  conventions/                    實驗室慣例：ask_professor.md（要問教授的事總表）、review_reconciliation.md（審稿對帳）
   student-template/               學生 repo 範本（巢狀獨立 repo，.gitignore 排除）
 ```
 
@@ -81,6 +81,12 @@
 - 論文報告：淺讀 log（每週 2 篇 5 行）；審稿預測練習（OpenReview，每三次論文報告輪一次）
 - 第 5 站：第 4 頁「距上次新數字 N 週」＋月度停損（> 4 週固定討論）；第 8 頁加淺讀
 - 範本同步：design_template、reading_log.md、進度 qmd、Issue 模板、README
+
+### 品味的循環（2026-10-08 定）
+讀（淺讀 log）→ 猜（card 預測、審稿預測）→ 對答案（教授的判斷、OpenReview、真實審稿）→ 記漏的那一類（reading_log「我容易漏的」）→ 對照規則（`conventions/taste.md`，見下）。已做：1b §5 預測步驟與 idea log 預測紀錄；`conventions/review_reconciliation.md` 審稿對帳。
+
+### 待累積：教授的品味清單 `conventions/taste.md`
+使用者決定不一次寫，改為**在往後對話中逐條說出**。規則：使用者在對話裡講到「我不做 X 因為⋯」「我偏好 Y」這類挑題目的判斷時，Claude 主動提議「這條要不要記進 taste.md」，同意後才寫（第一條進來時建檔）。格式：一條一行，附日期與一個示例或真實案例（真實案例不放學生個資與未發表結果）。學生寫 card 時在「我沒把握的地方」引用條號。
 
 ### 備忘：第 −1 站 bootcamp（使用者計畫 2027 暑假前規劃，現在不做）
 進 lab 前 4–6 週，四項可檢核的產出：(1) 從頭跑通一個標準 recipe 並對上數字（第 3 站預演）；(2) 自己實作最小的 CTC 或 Conformer block 在小資料訓到收斂，不用現成模組；(3) 讀 5 篇論文各填核對紀錄；(4) 一頁英文摘要重寫。另附「新生第一個月」週課表。可能一併處理：Round 1 §8 商機對學生無用，考慮砍或改選填。

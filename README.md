@@ -38,6 +38,7 @@ flowchart LR
 | 貫穿 | [論文報告：把一篇論文變成投影片與講稿](guides/paper_reading/paper_to_slides.md) | 輪到你報論文時 | 13 頁 Quarto 投影片（含講稿）、一頁核對紀錄 |
 | 6 | 從結果表到論文初稿 | — | （還沒寫） |
 | 總表 | [要問教授的事](conventions/ask_professor.md) | 任何時候不確定「這該不該自己決定」 | 各站問題按時間排的一頁索引 |
+| 慣例 | [審稿對帳](conventions/review_reconciliation.md) | 審稿意見回來的 48 小時內 | 一張「每條意見對回當初決策」的表；我容易漏的那一類 |
 
 ## 先讀哪份
 
