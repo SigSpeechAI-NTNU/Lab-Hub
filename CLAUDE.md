@@ -81,6 +81,7 @@
 - 論文報告：淺讀 log（每週 2 篇 5 行）；審稿預測練習（OpenReview，每三次論文報告輪一次）
 - 第 5 站：第 4 頁「距上次新數字 N 週」＋月度停損（> 4 週固定討論）；第 8 頁加淺讀
 - 範本同步：design_template、reading_log.md、進度 qmd、Issue 模板、README
+- 1b §6 改為六段 AI 指令（limitation／future work 挖掘、錯誤分析發散、跨領域移植、挑戰前提、card 壓力測試、novelty 查詢式）
 
 ### 品味的循環（2026-10-08 定）
 讀（淺讀 log）→ 猜（card 預測、審稿預測）→ 對答案（教授的判斷、OpenReview、真實審稿）→ 記漏的那一類（reading_log「我容易漏的」）→ 對照規則（`conventions/taste.md`，見下）。已做：1b §5 預測步驟與 idea log 預測紀錄；`conventions/review_reconciliation.md` 審稿對帳。
