@@ -48,7 +48,7 @@
 | 站 | 學生在做什麼 | 產出 | 教材 | 狀態 |
 |---|---|---|---|---|
 | 0 入門 | 跑 Round 1、核對、親讀 5 篇 | `_r1_checked.md`、10 分鐘報告 | `guides/deep_research/round1_map.md` | ✅ |
-| 1 選路線 | 帶 §9 問教授 → Round 2 → one-pager | `_r2_*.md`、教授改過的 one-pager | `guides/deep_research/round2_dive.md` | ✅ 待補 5 點（見下） |
+| 1 選路線 | 帶 §9 問教授 → Round 2 → one-pager | `_r2_*.md`、教授改過的 one-pager | `guides/deep_research/round2_dive.md` | ✅ v4.1，5 點已補（2026-10-08） |
 | 1b 出題 | 寫 idea card，教授挑；之後每次進度報告帶一張新的或改過的 | idea card、idea log | `guides/ideation/idea_card.md` | ✅ v1，待使用者審 |
 | 2 實驗設計 | 畫 Table 1、消融表、method figure、定 baseline 與資料、pilot | 三張表圖＋一頁決策紀錄，group meeting 審，檔尾留審核紀錄 | `guides/experiment_design/design_table1.md` | ✅ v1，待使用者審 |
 | 3 復現＋錯誤分析 | 復現 baseline 到對上數字；看它在哪類輸入上失敗 → 回 1b 改 card | `reproduce.md`、`error_analysis.csv` | `guides/experiment_log/reproduce_and_log.md`（與 4 合寫） | ✅ v1，待使用者審 |
@@ -75,14 +75,10 @@
 住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，private、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
 ### 交叉引用檢查（2026-10-08 做過一次）
-七份教材＋總表＋範本的節號引用全部對過，一致。兩處引用的是 Round 2 待補的內容（`design_table1.md` §3.2「Round 2 §8 的接受論文解剖」、`idea_card.md` §7「Round 2 §7 的補充點」），補完 5 點就對上。之後改任一教材的節號，grep `§` 與 `第 N 站` 重做一次。
+七份教材＋總表＋範本的節號引用全部對過，一致。`design_table1.md` §3.2 引用的「Round 2 §8 接受論文解剖」與 `idea_card.md` §7 的「Round 2 §7 補充點」在 v4.1 之後都已存在。之後改任一教材的節號，grep `§` 與 `第 N 站` 重做一次。
 
-### Round 2 待補 5 點
-- [ ] §7 每題加「最接近的 2–3 篇 prior work 與差異」
-- [ ] §7 每題加「2 週 pilot 與放棄判準」；one-pager 時程加 pilot 里程碑
-- [ ] §8 改為解剖目標會議近兩年 3 篇同路線接受論文（貢獻類型、baseline 數、資料集數、消融數、主表樣貌）
-- [ ] 操作方法加一步：手動 arXiv 搜尋＋Google Scholar alert 補工具盲區
-- [ ] 「我的條件」加「目標會議屬於短論文／長論文」，§7 排序納入
+### Round 2 的 5 點（2026-10-08 補完，v4.1）
+prior work 欄、pilot 與放棄判準、接受論文解剖、arXiv 手動搜尋與 Scholar alert、短／長論文條件——都已在 `round2_dive.md`。
 
 ### 其他
 - [x] `README.md`：路徑圖、教材清單、先讀哪份、工具表（2026-10-07）
