@@ -4,3 +4,5 @@
 *_files/
 __pycache__/
 *.pyc
+# 學生 repo 範本：巢狀 repo，自己 push 到 SigSpeechAI-NTNU/student-template，不屬於 Lab-Hub
+student-template/

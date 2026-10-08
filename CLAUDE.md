@@ -34,6 +34,7 @@
     paper_reading/                論文報告：把一篇論文變成投影片與講稿（paper_to_slides.md）
     <主題>/                       之後的教材各自一個資料夾
   conventions/                    實驗室慣例：ask_professor.md（要問教授的事總表）
+  student-template/               學生 repo 範本（巢狀獨立 repo，.gitignore 排除）
 ```
 
 ## 四、公開 repo 的界線
@@ -71,7 +72,7 @@
 - 6：選 B（改寫學生版放 Lab-Hub），Paper-Hub 不公開
 
 ### 學生 repo 範本（2026-10-08）
-已搬成獨立 repo `SigSpeechAI-NTNU/student-template`（本 Project 看不到它，要改時請使用者把 `~/student-template` 連進對話）。原暫放說明：內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
+住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，private、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
 ### Round 2 待補 5 點
 - [ ] §7 每題加「最接近的 2–3 篇 prior work 與差異」
