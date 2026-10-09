@@ -1,0 +1,106 @@
+---
+title: "〔專案簡稱〕 雙週報告 〔YYMMDD〕"
+author: "〔報告人〕（〔group 成員〕）"
+date: "〔YYYY-MM-DD〕"
+format:
+  revealjs:
+    width: 1280
+    height: 800
+    margin: 0.04
+    slide-number: c/t
+    center: false
+    navigation-mode: linear
+    html-math-method:
+      method: katex
+    include-after-body:
+      - text: |
+          <script>
+          // 講稿（aside.notes）裡的數學只輸出 MathML，避免 presenter view 重複顯示
+          (function () {
+            var items = [];
+            document.querySelectorAll("aside.notes .math").forEach(function (el) {
+              items.push({ el: el, tex: el.textContent, display: el.classList.contains("display") });
+              el.classList.remove("math");
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+              items.forEach(function (it) {
+                katex.render(it.tex, it.el, { displayMode: it.display, output: "mathml", throwOnError: false });
+              });
+            });
+          })();
+          </script>
+---
+
+<!-- 複製成專案 repo 的 meetings/biweekly_YYMMDD.qmd（會議日期）。6 頁固定，見 Lab-Hub guides/industry_project/industry_track.md §5.3。
+內容含產業方需求與資料的結果：不交給外部 AI 生成，照這份自己填（§3.2）。
+每個數字要對得回 results/acceptance.csv 或研究 repo 的 results.csv。
+render：quarto render meetings/biweekly_YYMMDD.qmd；簡報時按 S 看講稿 -->
+
+## 結論
+
+〔一句話現況〕
+
+| 驗收指標 | 門檻 | 目前最好 | 狀態 | 測在 |
+|---|---|---|---|---|
+| 〔　〕 | 〔　〕 | 〔　〕 | 〔達標／接近／未達〕 | 〔開發集／驗收集〕 |
+
+::: {.notes}
+〔離門檻還多遠；下兩週最重要的一件事〕
+:::
+
+## 上次待辦
+
+來源：`meetings/minutes_〔上次 YYMMDD〕.md`
+
+| 待辦 | 負責 | 狀態 |
+|---|---|---|
+| 〔　〕 | 〔　〕 | 〔完成／進行中／未做：原因〕 |
+
+::: {.notes}
+〔未做的原因，一句〕
+:::
+
+## 本期做了什麼
+
+- 〔已測／進行中／計畫〕〔一行結果，先數字後過程〕
+- 〔已測／進行中／計畫〕〔　〕
+
+::: {.notes}
+〔每一項和哪個驗收指標有關〕
+:::
+
+## 結果與測試條件
+
+〔一張表或一張圖〕
+
+測試條件：資料〔開發集／驗收集，N 筆〕；模型〔名稱與版本〕；硬體〔　〕；指標〔算法，正規化依需求規格表附錄 A〕
+
+::: {.notes}
+〔每個數字來自 acceptance.csv 或 results.csv 的哪一列〕
+:::
+
+## 失敗案例與風險
+
+| 錯誤類別 | 比例 | 代表樣本 |
+|---|---|---|
+| 〔　〕 | 〔　〕% | 〔　〕 |
+
+風險：〔哪個指標可能達不到、為什麼、打算怎麼處理〕
+
+::: {.notes}
+〔人聽得出但模型錯的比例〕
+:::
+
+## 下期計畫與需要貴方協助
+
+下兩週：
+
+1. 〔計畫〕〔具體到實驗〕
+
+需要貴方協助：
+
+1. 〔資料、條件釐清、決定〕
+
+::: {.notes}
+〔哪一項最急、希望什麼時候得到回覆〕
+:::

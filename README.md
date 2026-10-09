@@ -78,6 +78,7 @@ flowchart LR
 | 3＋4 | [復現 baseline、錯誤分析、實驗紀錄](guides/experiment_log/reproduce_and_log.md) | Table 1 審過之後，一直到投稿 | `results.csv`、實驗日誌、復現紀錄、錯誤分析、寫給外人看的 README |
 | 5 | [進度報告：group meeting 怎麼報](guides/progress_report/group_meeting.md) | 每週（第 2 站起） | 8 頁 Quarto 投影片（含講稿）、GitHub Issue 上的教授回饋 |
 | 貫穿 | [論文報告：把一篇論文變成投影片與講稿](guides/paper_reading/paper_to_slides.md) | 輪到你報論文時；每週 2 篇淺讀 | 13 頁英文投影片（中文講稿）、一頁核對紀錄、reading log |
+| 產學 | [產學分支：同一條路，產學計畫多做什麼](guides/industry_project/industry_track.md) | 參與產學計畫的人，拿到產業需求的第一天 | 需求規格表、驗收紀錄、給產業方的雙週報告、研究測試報告、交付包 |
 | 6 | 從結果表到論文初稿 | — | （還沒寫） |
 | 總表 | [要問教授的事](conventions/ask_professor.md) | 任何時候不確定「這該不該自己決定」 | 各站問題按時間排的一頁索引 |
 | 慣例 | [審稿對帳](conventions/review_reconciliation.md) | 審稿意見回來的 48 小時內 | 一張「每條意見對回當初決策」的表；我容易漏的那一類 |
@@ -88,6 +89,7 @@ flowchart LR
 - **已經有題目、要開始做實驗**：1b → 2 → 3＋4，照順序，不要跳。第 2 站的 Table 1 沒經教授審過不要寫程式。
 - **這週要報進度**：第 5 站。它假設你已經在做第 2–4 站的事。
 - **這週輪到報論文**：貫穿那份。每三次輪到一次審稿預測練習（同一份教材 §10）。
+- **參與產學計畫**：先讀產學分支 §0–§3（分工、路徑、需求規格表、資料紀律），再照各站教材做；每站多做的事在 §4，雙週報告在 §5。
 - **不確定某件事該自己決定還是問教授**：總表。
 
 ## 四件先講清楚的事

@@ -32,7 +32,7 @@
     experiment_log/               復現 baseline、錯誤分析、實驗紀錄（reproduce_and_log.md）
     progress_report/              進度報告：group meeting 怎麼報（group_meeting.md）
     paper_reading/                論文報告：把一篇論文變成投影片與講稿（paper_to_slides.md）
-    industry_project/             產學分支：產學計畫在各站多做什麼（industry_track.md，待寫）
+    industry_project/             產學分支：產學計畫在各站多做什麼（industry_track.md）；templates/ 放專案 repo 用的五份模板
     <主題>/                       之後的教材各自一個資料夾
   conventions/                    實驗室慣例：ask_professor.md（要問教授的事總表）、review_reconciliation.md（審稿對帳）
   student-template/               學生 repo 範本（巢狀獨立 repo，.gitignore 排除）
@@ -59,7 +59,7 @@
 | 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | Quarto 投影片＋GitHub Issue | `guides/progress_report/group_meeting.md` | ✅ v1.2，使用者已審（2026-10-08） |
 | 6 寫作 | 把 Table 1 變成初稿 | 初稿 | 從 Paper-Hub 取材改寫學生版；commit 前使用者親審 | ⏸ 保留，使用者約 2026-12 再談 |
 | 貫穿 | 讀論文、做論文報告投影片 | 論文卡＋Quarto 投影片 | `guides/paper_reading/paper_to_slides.md` | ✅ v2.1，使用者已審（2026-10-08） |
-| 產學分支 | 產學計畫的學生：需求 → 驗收指標 → 測現有最優解 → 符合就交研究測試報告，不符合走 1b→2→4 | 需求規格表、雙週報告、研究測試報告、交付包 | `guides/industry_project/industry_track.md`（疊在各站上，不改寫各站） | ⏳ 骨架待審（2026-10-09） |
+| 產學分支 | 產學計畫的學生：需求 → 驗收指標 → 測現有最優解 → 符合就交研究測試報告，不符合走 1b→2→4 | 需求規格表、雙週報告、研究測試報告、交付包 | `guides/industry_project/industry_track.md`（疊在各站上，不改寫各站） | ⏳ v1 草稿，待使用者審（2026-10-09） |
 
 橫向文件：AI 使用規範不做；要問教授的事總表 ✅ `conventions/ask_professor.md`（各站教材改「要問教授」時同步）；檔案與命名慣例不另寫，在範本 repo 的 README（2026-10-08）。命名：週報 `progress_YYMMDD`、Issue `YYMMDD 進度`；論文報告 `〔會議〕_〔年份〕_〔第一作者的姓〕` 全小寫。
 
@@ -84,7 +84,9 @@
 - 交付的是研究與測試報告、程式、實驗結果；不做產品，產品化由產業方工程師依報告自行分析、打包、延伸
 - 學生只知道產業需求（與測試資料），不知道合約與其他細節
 - 一個專案由一個 group 負責，雙週對產業方技術人員報告一次，要符合業界標準、專業；每週 group meeting 仍是同一份 8 頁
-- 待定（骨架審過再寫全文）：雙週報告形式與語言、group 內論文怎麼切、產業方資料能否進外部 AI 服務、發表限制怎麼告知學生
+- 2026-10-09 補定：雙週報告＝Quarto 投影片＋會後一頁紀錄，中文，group 協調誰報，教授出席；group 一起完成產學，研究各自做；產業方的東西預設不進外部 AI 服務；發表限制由教授每案告知學生三件（能不能投、投稿前給產業方看多久、產業方資料的結果能不能寫進論文）
+- 模板（需求規格表、雙週報告 qmd、會後紀錄、研究測試報告 qmd、acceptance.csv）放 `guides/industry_project/templates/`，**不進 student-template**：專案 repo 是 group 的，不是從範本建的個人 repo
+- v1 裡由 AI 先訂、待使用者審的細節：雙週報告固定 6 頁的頁面；報告 15 分鐘；雙週報告前一次 group meeting 給教授看草稿 5 分鐘；第 3 站的前置在產學版改為「需求規格表經技術人員確認」；專案 repo 結構；驗收集紀律（依通話或說話人切、每跑一次記一行、驗收腳本兩人各寫）；交付包附授權表
 
 ### 學生 repo 範本（2026-10-08）
 住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，public、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
@@ -118,7 +120,7 @@
 其他建議未採行、留待使用者決定：雙週 15 分鐘一對一；第一篇投 Interspeech、第二篇才投 ML 主會的投稿順序。
 
 ### 交叉引用檢查（2026-10-08 做過一次）
-七份教材＋總表＋範本的節號引用全部對過，一致。`design_table1.md` §3.2 引用的「Round 2 §8 接受論文解剖」與 `idea_card.md` §7 的「Round 2 §7 補充點」在 v4.1 之後都已存在。之後改任一教材的節號，grep `§` 與 `第 N 站` 重做一次。
+七份教材＋總表＋範本的節號引用全部對過，一致。`design_table1.md` §3.2 引用的「Round 2 §8 接受論文解剖」與 `idea_card.md` §7 的「Round 2 §7 補充點」在 v4.1 之後都已存在。之後改任一教材的節號，grep `§` 與 `第 N 站` 重做一次。2026-10-09：產學分支加入，五份教材開頭各加一行指引（引用產學分支 §3.1–§5），總表加產學段。
 
 ### Round 2 的 5 點（2026-10-08 補完，v4.1）
 prior work 欄、pilot 與放棄判準、接受論文解剖、arXiv 手動搜尋與 Scholar alert、短／長論文條件——都已在 `round2_dive.md`。
