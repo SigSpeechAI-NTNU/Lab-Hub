@@ -5,7 +5,7 @@
 
 ## 一、目的與讀者
 
-教指導的碩博生怎麼做研究：入門題目、用 Deep Research 建地圖、讀論文、做論文閱讀投影片、記錄實驗、報告進度。讀者是研究生；教授決定教什麼，AI 寫成學生能照著做的版本。
+教指導的碩博生怎麼做研究：入門題目、用 Deep Research 建地圖、讀論文、做論文閱讀投影片、記錄實驗、報告進度；以及參與產學計畫時，怎麼把產業需求做成研究與測試報告。讀者是研究生；教授決定教什麼，AI 寫成學生能照著做的版本。
 
 ## 二、與其他 Hub 的關係
 
@@ -32,6 +32,7 @@
     experiment_log/               復現 baseline、錯誤分析、實驗紀錄（reproduce_and_log.md）
     progress_report/              進度報告：group meeting 怎麼報（group_meeting.md）
     paper_reading/                論文報告：把一篇論文變成投影片與講稿（paper_to_slides.md）
+    industry_project/             產學分支：產學計畫在各站多做什麼（industry_track.md，待寫）
     <主題>/                       之後的教材各自一個資料夾
   conventions/                    實驗室慣例：ask_professor.md（要問教授的事總表）、review_reconciliation.md（審稿對帳）
   student-template/               學生 repo 範本（巢狀獨立 repo，.gitignore 排除）
@@ -39,7 +40,7 @@
 
 ## 四、公開 repo 的界線
 
-不放：學生個資、未發表的實驗結果、授權語料的內容或路徑、其他 Hub 的內部規範、金鑰。
+不放：學生個資、未發表的實驗結果、授權語料的內容或路徑、產業方的名稱、需求文件、測試資料、計畫名稱與案號、其他 Hub 的內部規範、金鑰。
 
 本 repo 自 2026-10-08 起為 **public**，授權 CC BY 4.0（`LICENSE`）。`student-template/` 也是 public 且 CC BY 4.0（2026-10-08）；學生從它建出的 repo 才是 private。`conventions/taste.md` 的每一條進來時先問使用者能不能公開。
 
@@ -58,6 +59,7 @@
 | 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | Quarto 投影片＋GitHub Issue | `guides/progress_report/group_meeting.md` | ✅ v1.2，使用者已審（2026-10-08） |
 | 6 寫作 | 把 Table 1 變成初稿 | 初稿 | 從 Paper-Hub 取材改寫學生版；commit 前使用者親審 | ⏸ 保留，使用者約 2026-12 再談 |
 | 貫穿 | 讀論文、做論文報告投影片 | 論文卡＋Quarto 投影片 | `guides/paper_reading/paper_to_slides.md` | ✅ v2.1，使用者已審（2026-10-08） |
+| 產學分支 | 產學計畫的學生：需求 → 驗收指標 → 測現有最優解 → 符合就交研究測試報告，不符合走 1b→2→4 | 需求規格表、雙週報告、研究測試報告、交付包 | `guides/industry_project/industry_track.md`（疊在各站上，不改寫各站） | ⏳ 骨架待審（2026-10-09） |
 
 橫向文件：AI 使用規範不做；要問教授的事總表 ✅ `conventions/ask_professor.md`（各站教材改「要問教授」時同步）；檔案與命名慣例不另寫，在範本 repo 的 README（2026-10-08）。命名：週報 `progress_YYMMDD`、Issue `YYMMDD 進度`；論文報告 `〔會議〕_〔年份〕_〔第一作者的姓〕` 全小寫。
 
@@ -75,6 +77,14 @@
 - 語言：進度投影片可中文；論文報告投影片本體一律英文、講稿中文（2026-10-08）
 - 論文報告：固定 13 頁（一句話／背景／痛點／架構／訓練／推論／走線／物理意義／設定與公平性／主結果／消融與賣點圖／我的判斷／啟發）、方法 8 分鐘、走線必講；架構圖可截圖但必加標註，沒有就自己畫或請 AI 畫；流程為 PDF 餵 AI 生草稿 → 學生帶著草稿讀論文逐頁核對 → 和 AI 對話修正；走線、我的判斷、啟發三頁 AI 不生、學生自己寫；講稿格式【講述】＋【提示】、YAML 1280×800 與講稿數學 MathML 腳本（機制取自 Course-Hub，改寫）
 - 6：選 B（改寫學生版放 Lab-Hub），Paper-Hub 不公開
+
+### 產學分支（2026-10-09 定）
+- 放 Lab-Hub，不另開 Hub 給學生；教授端的產學管理（合約、經費、申請書、與產業方往來）不在本 repo
+- 流程：產業方提出專案，教授要求寫清楚需求或提供測試資料 → 教授與學生分析需求、查有沒有現有最優解，有沒有都做學術思考 → 有最優解就測是否符合需求：符合交完整測試報告；不符合就改善或提出新方法。目前的需求都能當學術題目
+- 交付的是研究與測試報告、程式、實驗結果；不做產品，產品化由產業方工程師依報告自行分析、打包、延伸
+- 學生只知道產業需求（與測試資料），不知道合約與其他細節
+- 一個專案由一個 group 負責，雙週對產業方技術人員報告一次，要符合業界標準、專業；每週 group meeting 仍是同一份 8 頁
+- 待定（骨架審過再寫全文）：雙週報告形式與語言、group 內論文怎麼切、產業方資料能否進外部 AI 服務、發表限制怎麼告知學生
 
 ### 學生 repo 範本（2026-10-08）
 住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，public、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。

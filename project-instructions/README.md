@@ -9,3 +9,4 @@
 | v1.2 | 2026-10-03 | `Lab-Hub_instructions_v1.2.md` | GitHub org 改名：`SigSpeech-NTNU` → `SigSpeechAI-NTNU`；其餘不變 |
 | v1.3 | 2026-10-03 | `Lab-Hub_instructions_v1.3.md` | 不讀 Course-Hub（取材範圍只剩 Research-Hub `docs/`、Paper-Hub `writer/`）；其餘不變 |
 | v1.4 | 2026-10-08 | `Lab-Hub_instructions_v1.4.md` | 加 `student-template/`：巢狀獨立 repo，可讀寫，git 指令分開列；教材模板改動要同步到範本 |
+| v1.5 | 2026-10-09 | `Lab-Hub_instructions_v1.5.md` | 納入產學計畫的學生端教材（管／不管表加一列；各案合約、經費、往來屬教授端，不在本 repo）；公開界線與禁止事項加產業方名稱、需求文件、測試資料；student-template 的公開狀態移出指令（變動事實歸 `CLAUDE.md`） |
