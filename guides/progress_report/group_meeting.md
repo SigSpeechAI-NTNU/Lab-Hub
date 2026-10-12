@@ -1,4 +1,4 @@
-# 進度報告：group meeting 怎麼報（v1.6，2026-10-09）
+# 進度報告：group meeting 怎麼報（v1.7，2026-10-12）
 
 > 位置：第 5 站。每週一次，**從第 2 站（Table 1 審過）起**一直到投稿。第 0、1 站不做每週進度報告，只報兩次：Round 1 做完報一次（第 0 站結尾 (b) 的 10 分鐘骨架，可請 AI 做成 Quarto），Round 2 做完把 one-pager 給教授看一次（§1 末尾）。
 > 這一站沒有新方法，材料全部來自前幾站：日誌的週小結（第 4 站）、Table 1 的填格進度（第 2 站）、一張 idea card（1b）。教材教的是怎麼把這些組裝成 30 分鐘，以及怎麼留下教授說過的話。
@@ -109,7 +109,7 @@ reports/
 
 ### 4.2 qmd 骨架
 
-範本 repo 的 `reports/_template_progress.qmd` 就是 8 頁的骨架，YAML（1280×800、講稿數學腳本）已設好；複製成 `progress_〔YYMMDD〕.qmd` 填內容。每頁長這樣：
+範本 repo 的 `reports/_template_progress.qmd` 就是 8 頁的骨架，YAML（1280×800、樣式表 `theme.scss`、講稿數學腳本）已設好；複製成 `progress_〔YYMMDD〕.qmd` 填內容。每頁長這樣：
 
 ```markdown
 ## Table 1 現況
@@ -134,7 +134,7 @@ quarto render reports/progress_261008.qmd
 可以把日誌週小結、Table 1、card 一起丟給 AI，請它產生 qmd。可整段複製的指令：
 
 ```
-附件是我本週的實驗日誌週小結、目前的 Table 1、以及一張 idea card。
+附件是我本週的實驗日誌週小結、目前的 Table 1、一張 idea card，以及投影片範本 _template_progress.qmd。
 請依下面的八頁結構產生一份 Quarto revealjs 投影片的 .qmd 原始檔，每頁附 ::: {.notes} 演講稿：
 1 問題定義（放我附的示意圖 figs/problem.png，講稿一句話）
 2 Idea 或架構（放我附的示意圖 figs/idea.png，講稿一句話）
@@ -147,11 +147,67 @@ quarto render reports/progress_261008.qmd
 要求：
 - 只用我提供的數字與文字，不要補任何數字、不要替我下結論；資料裡沒有的格子留〔〕讓我填
 - 演講稿用口語，每頁 3–5 句，繁體中文（臺灣用語），專有名詞保留英文
-- 不要加主題或樣式設定，用 revealjs 預設
+- YAML 逐字用範本的（含 theme: [default, theme.scss]），不要在 qmd 裡寫 CSS、不要用 {.smaller}；可用的類別只有 .claim（含 .warn／.ok）、.metrics、.cite、.prose、.wrap、.small、.meta、.tag，而且 .claim 一頁最多一個
+- 第 5 頁的結論一句包在 ::: {.claim} 裡；第 6 頁卡住的那句用 ::: {.claim .warn}
 - 輸出單一 .qmd 檔的完整內容
 ```
 
 AI 做完你要做的事：每一個數字對回 `results.csv`；每一句結論問自己「這是我的判斷還是它的」；演講稿自己念一遍，不順的改掉。
+
+### 4.4 樣式表 `theme.scss`
+
+範本 repo 的 `reports/theme.scss` 是 lab 的投影片樣式（改自教授課程投影片的 theme），進度與論文兩份範本的 YAML 都已設 `theme: [default, theme.scss]`。它只做三件事：字級固定五級、幾個可用的框、表格一律同一個字級。你要做的只有**用對類別**，不要自己調字級與顏色。
+
+字級五級（錨在內文 26px，1280×800 的畫布）：
+
+| 級 | px | 誰用 |
+|---|---|---|
+| T1 | 42 | `##` 頁標題；`.metrics` 的數字 |
+| T2 | 31 | `.claim`：一頁的那句話 |
+| T3 | 26 | bullet、段落、公式（預設） |
+| T4 | 22 | 表格、程式碼、`.small` |
+| T5 | 18 | `.cite`、`.tag`、`.meta`、`.footer` |
+
+兩條規則：**一頁最多用四級**；**`.claim` 一頁最多一個**。塞不下就砍內容，不要縮字——教授坐在後排。
+
+可用的類別與寫法：
+
+```markdown
+::: {.claim}
+本週結論一句：**baseline 對上了**，WER 7.9 對論文 7.6（+4%）。
+:::
+
+::: {.claim .warn}
+卡住：biasing list 超過 50 個詞就掉 2 點，還不知道為什麼。
+:::
+
+<div class="metrics">
+<div class="metric good"><span class="num">7.9</span><span class="lab">WER，test-clean，run 20261008_ctxbias_s1</span></div>
+<div class="metric"><span class="num">7.6</span><span class="lab">論文表 2</span></div>
+</div>
+
+![架構圖](figs/arch.png)
+
+[取自原論文 Fig. 2，標註為本人所加]{.cite}
+
+::: {.prose}
+| 問題 | 答案 |
+|---|---|
+| 同 backbone？ | 是，皆為 Conformer-M |
+:::
+```
+
+- `.claim`／`.claim .warn`／`.claim .ok`：一頁的那句話；卡住用 `.warn`，對上了用 `.ok`
+- `.metrics`：一兩個數字就是重點時用，數字 T1、標籤 T5；`.good`／`.bad` 標方向
+- `.cite`：每張圖、每個數字的出處
+- `.prose`：表格的格子是整句話、而且表格就是這頁的內容時，整張表升到 T3；預設的表格是 T4
+- `.wrap`：表格首欄太長被推寬時，讓首欄換行
+- `.small`、`.meta`：某一段局部降級
+- `.tag`、`.tag .ok`、`.tag .warn`：小標籤（run_id、AI／✓／我 來源標記）
+- `::: {.columns}` ＋ `::: {.column width="55%"}`：圖在左、三行說明在右
+- 圖下面還要放三行字時，圖限高：`![...](figs/arch.png){height=430}`，不然字會被推出畫面
+
+不要做的：在 qmd 裡寫 `<style>` 或 `css:`；用 Quarto 的 `{.smaller}`（內文會縮、標題不縮，表格大小也會漂）；改 `theme.scss`——覺得哪裡不對，開 Lab-Hub 的 Issue。
 
 ---
 
@@ -258,6 +314,9 @@ Issue `261015 進度` 的第一行：
 ---
 
 ## 修改紀錄
+
+### v1.7（2026-10-12）
+- 加 §4.4 樣式表：範本 repo 的 `reports/theme.scss`（改自教授課程投影片的 theme，拿掉教室專用部分），兩份 qmd 範本的 YAML 加 `theme: [default, theme.scss]`；§4.3 指令改為 YAML 照範本、只能用 theme 的類別，不自己寫樣式
 
 ### v1.6（2026-10-09）
 - 開頭加一行產學分支的指引

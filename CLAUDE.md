@@ -75,8 +75,9 @@
 - 2 的但書：seed 數與顯著性依目標會議、資料量、算力和教授討論後定（語音會議通常不要求 multi-seed）
 - 5：group meeting 每週一次、partner 一定出席；進度報告每人每週都報（每人 30 分鐘），論文報告在 partner 組內輪流（一篇 20 分鐘）；順序：先全部人的進度，再論文；學生先報 card、教授後講。學生自己的紀錄用 Markdown（第 4 站）；對教授用固定格式投影片，由學生請 AI 以 Quarto（qmd → html）製作、附演講稿；進度投影片固定 8 頁：問題定義示意圖、idea／架構示意圖（每週沿用）、對帳、Table 1 現況、關鍵結果、卡住、card、下週與要問（2026-10-08 定稿）；30 分鐘含討論，報告 10 分鐘以內。書面不用提前交。教授回饋用 GitHub Issue 留痕（不用 Notion／Teams 做紀錄）：學生當場記，教授也可自己留言或開 Issue；partner 不另外報告
 - 語言：進度投影片可中文；論文報告投影片本體一律英文、講稿中文（2026-10-08）
-- 論文報告：固定 13 頁（一句話／背景／痛點／架構／訓練／推論／走線／物理意義／設定與公平性／主結果／消融與賣點圖／我的判斷／啟發）、方法 8 分鐘、走線必講；架構圖可截圖但必加標註，沒有就自己畫或請 AI 畫；流程為 PDF 餵 AI 生草稿 → 學生帶著草稿讀論文逐頁核對 → 和 AI 對話修正；走線、我的判斷、啟發三頁 AI 不生、學生自己寫；講稿格式【講述】＋【提示】、YAML 1280×800 與講稿數學 MathML 腳本（機制取自 Course-Hub，改寫）
+- 論文報告：固定 13 頁（一句話／背景／痛點／架構／**推論／訓練**／走線／物理意義／設定與公平性／主結果／消融與賣點圖／我的判斷／啟發；2026-10-12 使用者定：任何 AI 論文先講 inference 流程、再講 training 原理，第 5、6 頁依此對調）、方法 8 分鐘、走線必講；架構圖可截圖但必加標註，沒有就自己畫或請 AI 畫；流程為 PDF 餵 AI 生草稿 → 學生帶著草稿讀論文逐頁核對 → 和 AI 對話修正；走線、我的判斷、啟發三頁 AI 不生、學生自己寫；講稿格式【講述】＋【提示】、YAML 1280×800 與講稿數學 MathML 腳本（機制取自 Course-Hub，改寫）
 - 6：選 B（改寫學生版放 Lab-Hub），Paper-Hub 不公開
+- 投影片樣式（2026-10-12 使用者定）：進度與論文投影片共用一份 `theme.scss`，正本在範本 repo 的 `reports/`（Lab-Hub 不另放副本，教材只引用），改自使用者課程投影片的 theme（`hungshinlee/Speech-AI` 的 `slides/theme.scss`，公開），拿掉教室專用的 `.ask` 與音訊樣式；五級字級與兩條規則（一頁四級、`.claim` 一頁一個）照課程版；類別清單在第 5 站 §4.4；AI 指令規定只能用 theme 的類別。課程 theme 的字級數值若改，這份要不要跟改由使用者決定
 
 ### 產學分支（2026-10-09 定）
 - 放 Lab-Hub，不另開 Hub 給學生；教授端的產學管理（合約、經費、申請書、與產業方往來）不在本 repo
@@ -89,7 +90,7 @@
 - v1 裡由 AI 先訂、待使用者審的細節：雙週報告固定 6 頁的頁面；報告 15 分鐘；雙週報告前一次 group meeting 給教授看草稿 5 分鐘；第 3 站的前置在產學版改為「需求規格表經技術人員確認」；專案 repo 結構；驗收集紀律（依通話或說話人切、每跑一次記一行、驗收腳本兩人各寫）；交付包附授權表
 
 ### 學生 repo 範本（2026-10-08）
-住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，public、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
+住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，public、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、`reports/theme.scss` 樣式表、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
 ### 2026-10-08 邏輯修正（已做）
 - 七份教材各加一節「審稿人會怎麼看這一站的產出」（README 的宣稱因此成立）；之後新教材也要有這一節
