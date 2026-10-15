@@ -1,9 +1,16 @@
 ---
-title: "〔專案簡稱〕 雙週報告 〔YYMMDD〕"
+# 複製成專案 repo 的 meetings/monthly_YYMMDD.qmd（會議日期）；theme.scss 從 student-template 的 reports/ 複製到同一個資料夾。
+# 6 頁固定，見 Lab-Hub guides/industry_project/industry_track.md §5.3；第一次會議（kickoff）不用這 6 頁，改用需求規格表逐格確認。
+# 樣式一律用 theme.scss：不在 qmd 裡寫 CSS、不用 {.smaller}；類別見第 5 站 §4.4，.claim 一頁最多一個。
+# 可以請 AI 起草（§5.3 的指令）；每個數字要對得回 results/acceptance.csv 或 results/results.csv。
+# render：quarto render meetings/monthly_YYMMDD.qmd（已開 embed-resources，產生單一 html，可直接寄）；簡報時按 S 看講稿
+title: "〔專案簡稱〕 月報 〔YYMMDD〕"
 author: "〔報告人〕（〔group 成員〕）"
 date: "〔YYYY-MM-DD〕"
 format:
   revealjs:
+    theme: [default, theme.scss]
+    embed-resources: true
     width: 1280
     height: 800
     margin: 0.04
@@ -31,21 +38,19 @@ format:
           </script>
 ---
 
-<!-- 複製成專案 repo 的 meetings/biweekly_YYMMDD.qmd（會議日期）。6 頁固定，見 Lab-Hub guides/industry_project/industry_track.md §5.3。
-內容含產業方需求與資料的結果：不交給外部 AI 生成，照這份自己填（§3.2）。
-每個數字要對得回 results/acceptance.csv 或研究 repo 的 results.csv。
-render：quarto render meetings/biweekly_YYMMDD.qmd；簡報時按 S 看講稿 -->
 
 ## 結論
 
+::: {.claim}
 〔一句話現況〕
+:::
 
-| 驗收指標 | 門檻 | 目前最好 | 狀態 | 測在 |
-|---|---|---|---|---|
-| 〔　〕 | 〔　〕 | 〔　〕 | 〔達標／接近／未達〕 | 〔開發集／驗收集〕 |
+| 驗收指標 | 門檻 | 目前最好 | 差距 | 狀態 | 測在 |
+|---|---|---|---|---|---|
+| 〔　〕 | 〔　〕 | 〔　〕 | 〔　〕 | 〔達標／未達／未測〕 | 〔開發集／驗收集〕 |
 
 ::: {.notes}
-〔離門檻還多遠；下兩週最重要的一件事〕
+〔離門檻還多遠；下個月最重要的一件事〕
 :::
 
 ## 上次待辦
@@ -60,7 +65,7 @@ render：quarto render meetings/biweekly_YYMMDD.qmd；簡報時按 S 看講稿 -
 〔未做的原因，一句〕
 :::
 
-## 本期做了什麼
+## 本月做了什麼
 
 - 〔已測／進行中／計畫〕〔一行結果，先數字後過程〕
 - 〔已測／進行中／計畫〕〔　〕
@@ -73,7 +78,7 @@ render：quarto render meetings/biweekly_YYMMDD.qmd；簡報時按 S 看講稿 -
 
 〔一張表或一張圖〕
 
-測試條件：資料〔開發集／驗收集，N 筆〕；模型〔名稱與版本〕；硬體〔　〕；指標〔算法，正規化依需求規格表附錄 A〕
+[測試條件：資料〔開發集／驗收集，N 筆〕；模型〔名稱與版本〕；硬體〔　〕；指標〔算法，正規化依需求規格表附錄 A〕]{.small}
 
 ::: {.notes}
 〔每個數字來自 acceptance.csv 或 results.csv 的哪一列〕
@@ -85,15 +90,17 @@ render：quarto render meetings/biweekly_YYMMDD.qmd；簡報時按 S 看講稿 -
 |---|---|---|
 | 〔　〕 | 〔　〕% | 〔　〕 |
 
+::: {.claim .warn}
 風險：〔哪個指標可能達不到、為什麼、打算怎麼處理〕
+:::
 
 ::: {.notes}
 〔人聽得出但模型錯的比例〕
 :::
 
-## 下期計畫與需要貴方協助
+## 下月計畫與需要貴方協助
 
-下兩週：
+下個月：
 
 1. 〔計畫〕〔具體到實驗〕
 

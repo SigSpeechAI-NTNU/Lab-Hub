@@ -15,9 +15,9 @@ format:
 
 <!-- 複製成專案 repo 的 report/test_report_v〔N〕.qmd，每次交付版本號加一。教材：Lab-Hub guides/industry_project/industry_track.md §6。
 標準：工程師不用問你，就能重跑出第 5 節的數字，並知道它在哪裡會失效。
-內容含產業方需求與資料的結果：不交給外部 AI 生成（§3.2）。
+可以請 AI 依本模板起草（§3.2、§6）：不補數字；第 1 節的建議、第 7 節、第 9 節自己寫。
 render：quarto render report/test_report_v〔N〕.qmd（同時產生 html 與 docx；docx 可另存 PDF）。
-交出去之前，group 另一個人照第 8 節在乾淨環境重跑一次。 -->
+交出去之前，group 另一個人照第 8 節在乾淨環境重跑一次，對上才打 tag delivery-v〔N〕（§7）。 -->
 
 # 摘要
 
@@ -35,9 +35,9 @@ render：quarto render report/test_report_v〔N〕.qmd（同時產生 html 與 d
 
 # 測試資料與環境
 
-- 資料：〔筆數、時數、切分方式、標註方式〕
+- 資料：〔筆數、時數、切分方式與兩邊都有的說話人、標註方式〕
 - 硬體：〔GPU 型號 × 數量、記憶體〕
-- 軟體：Python 〔版本〕、CUDA 〔版本〕、PyTorch 〔版本〕、〔toolkit 與版本〕；完整版本見交付包的 `uv.lock`
+- 軟體：Python 〔版本〕、CUDA 〔版本〕、PyTorch 〔版本〕、〔toolkit 與版本〕；完整版本見 repo 的 `uv.lock`
 
 # 比較的方法
 
@@ -81,8 +81,9 @@ render：quarto render report/test_report_v〔N〕.qmd（同時產生 html 與 d
 # 重現步驟
 
 ```
-git clone 〔交付包位置〕
+git clone 〔專案 repo〕
 cd 〔資料夾〕
+git checkout delivery-v〔N〕
 uv sync
 uv run 〔驗收指令〕 〔驗收集路徑〕
 ```
@@ -102,6 +103,8 @@ uv run 〔驗收指令〕 〔驗收集路徑〕
 〔每個方法的解碼設定、超參數、checkpoint〕
 
 # 附錄 C：授權 {.unnumbered}
+
+<!-- 這就是交付的授權表（§7）；README 指到這裡，不另做一份 -->
 
 | 項目 | 類型 | 授權 | 可否商用 | 查證來源 |
 |---|---|---|---|---|

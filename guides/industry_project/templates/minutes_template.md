@@ -1,12 +1,12 @@
 # 會後紀錄 〔YYMMDD〕
 
 <!-- 複製成專案 repo 的 meetings/minutes_YYMMDD.md（會議日期）。教材：Lab-Hub guides/industry_project/industry_track.md §5.5。
-報告的人會後寫，先給教授看，由教授寄出或教授同意後再寄。出席寫角色。
-下次雙週報告第 2 頁「上次待辦」從這份的待辦表開始。 -->
+報告的人會後寫，先給教授看，由教授寄出或教授同意後再寄。出席寫姓名與角色。
+下次月報第 2 頁「上次待辦」從這份的待辦表開始。 -->
 
 - 日期：〔YYYY-MM-DD〕
-- 出席：教授；〔報告人〕；〔group 其他人〕；產業方〔技術人員 N 位〕
-- 本次報告：`meetings/biweekly_〔YYMMDD〕.html`；需求規格表 v〔N〕
+- 出席：〔姓名（教授）〕；〔姓名（報告人）〕；〔姓名（group 成員）〕；〔姓名（產業方技術人員）〕
+- 本次報告：`meetings/monthly_〔YYMMDD〕.html`；需求規格表 v〔N〕
 
 ## 決議
 

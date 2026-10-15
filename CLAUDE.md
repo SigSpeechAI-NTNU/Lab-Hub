@@ -51,15 +51,17 @@
 | 站 | 學生在做什麼 | 產出 | 教材 | 狀態 |
 |---|---|---|---|---|
 | 0 入門 | 跑 Round 1、核對、親讀 5 篇 | `_r1_checked.md`、10 分鐘報告 | `guides/deep_research/round1_map.md` | ✅ |
-| 1 選路線 | 帶 §9 問教授 → Round 2 → one-pager | `_r2_*.md`、教授改過的 one-pager | `guides/deep_research/round2_dive.md` | ✅ v4.1，5 點已補（2026-10-08） |
-| 1b 出題 | 寫 idea card，教授挑；之後每次進度報告帶一張新的或改過的 | idea card、idea log | `guides/ideation/idea_card.md` | ✅ v1，使用者已審（2026-10-08） |
-| 2 實驗設計 | 畫 Table 1、消融表、method figure、定 baseline 與資料、pilot | 三張表圖＋一頁決策紀錄，group meeting 審，檔尾留審核紀錄 | `guides/experiment_design/design_table1.md` | ✅ v1.1，使用者已審（2026-10-08） |
-| 3 復現＋錯誤分析 | 復現 baseline 到對上數字；看它在哪類輸入上失敗 → 回 1b 改 card | `reproduce.md`、`error_analysis.csv` | `guides/experiment_log/reproduce_and_log.md`（與 4 合寫） | ✅ v1.1，使用者已審（2026-10-08） |
+| 1 選路線 | 帶 §9 問教授 → Round 2 → one-pager | `_r2_*.md`、教授改過的 one-pager | `guides/deep_research/round2_dive.md` | ✅ 5 點已補（2026-10-08） |
+| 1b 出題 | 寫 idea card，教授挑；之後每次進度報告帶一張新的或改過的 | idea card、idea log | `guides/ideation/idea_card.md` | ✅ 使用者已審（2026-10-08） |
+| 2 實驗設計 | 畫 Table 1、消融表、method figure、定 baseline 與資料、pilot | 三張表圖＋一頁決策紀錄，group meeting 審，檔尾留審核紀錄 | `guides/experiment_design/design_table1.md` | ✅ 使用者已審（2026-10-08） |
+| 3 復現＋錯誤分析 | 復現 baseline 到對上數字；看它在哪類輸入上失敗 → 回 1b 改 card | `reproduce.md`、`error_analysis.csv` | `guides/experiment_log/reproduce_and_log.md`（與 4 合寫） | ✅ 使用者已審（2026-10-08） |
 | 4 執行與紀錄 | 填 Table 1；實驗日誌、config、版本管理 | repo、`results.csv`、`notes/log.md` | 同上 | ✅ 同上 |
-| 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | Quarto 投影片＋GitHub Issue | `guides/progress_report/group_meeting.md` | ✅ v1.2，使用者已審（2026-10-08） |
+| 5 進度報告 | group meeting：先報進度與自己的 card，教授後講 | Quarto 投影片＋GitHub Issue | `guides/progress_report/group_meeting.md` | ✅ 使用者已審（2026-10-08） |
 | 6 寫作 | 把 Table 1 變成初稿 | 初稿 | 從 Paper-Hub 取材改寫學生版；commit 前使用者親審 | ⏸ 保留，使用者約 2026-12 再談 |
-| 貫穿 | 讀論文、做論文報告投影片 | 論文卡＋Quarto 投影片 | `guides/paper_reading/paper_to_slides.md` | ✅ v2.1，使用者已審（2026-10-08） |
-| 產學分支 | 產學計畫的學生：需求 → 驗收指標 → 測現有最優解 → 符合就交研究測試報告，不符合走 1b→2→4 | 需求規格表、雙週報告、研究測試報告、交付包 | `guides/industry_project/industry_track.md`（疊在各站上，不改寫各站） | ⏳ v1 草稿，待使用者審（2026-10-09） |
+| 貫穿 | 讀論文、做論文報告投影片 | 論文卡＋Quarto 投影片 | `guides/paper_reading/paper_to_slides.md` | ✅ 使用者已審（2026-10-08） |
+| 產學分支 | 產學計畫的學生：需求 → 驗收指標 → 測現有最優解 → 符合就交研究測試報告，不符合走 1b→2→4 | 需求規格表、月報、研究測試報告；交付包＝專案 repo | `guides/industry_project/industry_track.md`（疊在各站上，不改寫各站） | ✅ 使用者已審（2026-10-15） |
+
+狀態欄不記版本號，版本以各檔檔頭為準（2026-10-15）。
 
 橫向文件：AI 使用規範不做；要問教授的事總表 ✅ `conventions/ask_professor.md`（各站教材改「要問教授」時同步）；檔案與命名慣例不另寫，在範本 repo 的 README（2026-10-08）。命名：週報 `progress_YYMMDD`、Issue `YYMMDD 進度`；論文報告 `〔會議〕_〔年份〕_〔第一作者的姓〕` 全小寫。
 
@@ -77,17 +79,18 @@
 - 語言：進度投影片可中文；論文報告投影片本體一律英文、講稿中文（2026-10-08）
 - 論文報告：固定 13 頁（一句話／背景／痛點／架構／**推論／訓練**／走線／物理意義／設定與公平性／主結果／消融與賣點圖／我的判斷／啟發；2026-10-12 使用者定：任何 AI 論文先講 inference 流程、再講 training 原理，第 5、6 頁依此對調）、方法 8 分鐘、走線必講；架構圖可截圖但必加標註，沒有就自己畫或請 AI 畫；流程為 PDF 餵 AI 生草稿 → 學生帶著草稿讀論文逐頁核對 → 和 AI 對話修正；走線、我的判斷、啟發三頁 AI 不生、學生自己寫；講稿格式【講述】＋【提示】、YAML 1280×800 與講稿數學 MathML 腳本（機制取自 Course-Hub，改寫）
 - 6：選 B（改寫學生版放 Lab-Hub），Paper-Hub 不公開
-- 投影片樣式（2026-10-12 使用者定）：進度與論文投影片共用一份 `theme.scss`，正本在範本 repo 的 `reports/`（Lab-Hub 不另放副本，教材只引用），改自使用者課程投影片的 theme（`hungshinlee/Speech-AI` 的 `slides/theme.scss`，公開），拿掉教室專用的 `.ask` 與音訊樣式；五級字級與兩條規則（一頁四級、`.claim` 一頁一個）照課程版；類別清單在第 5 站 §4.4；AI 指令規定只能用 theme 的類別。課程 theme 的字級數值若改，這份要不要跟改由使用者決定
+- 投影片樣式（2026-10-12 使用者定）：進度、論文與產學月報投影片共用一份 `theme.scss`，正本在範本 repo 的 `reports/`（Lab-Hub 不另放副本，教材只引用），改自使用者課程投影片的 theme（`hungshinlee/Speech-AI` 的 `slides/theme.scss`，公開），拿掉教室專用的 `.ask` 與音訊樣式；五級字級與兩條規則（一頁四級、`.claim` 一頁一個）照課程版；類別清單在第 5 站 §4.4；AI 指令規定只能用 theme 的類別。課程 theme 的字級數值若改，這份要不要跟改由使用者決定。製作投影片與講稿一律依 `theme.scss`，教材不再寫「用 Quarto 預設」（2026-10-15）
 
 ### 產學分支（2026-10-09 定）
 - 放 Lab-Hub，不另開 Hub 給學生；教授端的產學管理（合約、經費、申請書、與產業方往來）不在本 repo
 - 流程：產業方提出專案，教授要求寫清楚需求或提供測試資料 → 教授與學生分析需求、查有沒有現有最優解，有沒有都做學術思考 → 有最優解就測是否符合需求：符合交完整測試報告；不符合就改善或提出新方法。目前的需求都能當學術題目
 - 交付的是研究與測試報告、程式、實驗結果；不做產品，產品化由產業方工程師依報告自行分析、打包、延伸
 - 學生只知道產業需求（與測試資料），不知道合約與其他細節
-- 一個專案由一個 group 負責，雙週對產業方技術人員報告一次，要符合業界標準、專業；每週 group meeting 仍是同一份 8 頁
-- 2026-10-09 補定：雙週報告＝Quarto 投影片＋會後一頁紀錄，中文，group 協調誰報，教授出席；group 一起完成產學，研究各自做；產業方的東西預設不進外部 AI 服務；發表限制由教授每案告知學生三件（能不能投、投稿前給產業方看多久、產業方資料的結果能不能寫進論文）
-- 模板（需求規格表、雙週報告 qmd、會後紀錄、研究測試報告 qmd、acceptance.csv）放 `guides/industry_project/templates/`，**不進 student-template**：專案 repo 是 group 的，不是從範本建的個人 repo
-- v1 裡由 AI 先訂、待使用者審的細節：雙週報告固定 6 頁的頁面；報告 15 分鐘；雙週報告前一次 group meeting 給教授看草稿 5 分鐘；第 3 站的前置在產學版改為「需求規格表經技術人員確認」；專案 repo 結構；驗收集紀律（依通話或說話人切、每跑一次記一行、驗收腳本兩人各寫）；交付包附授權表
+- 一個專案由一個 group 負責，每月對產業方技術人員報告一次（月報；2026-10-15 由雙週改為每月），要符合業界標準、專業；每週 group meeting 仍是同一份 8 頁
+- 2026-10-09 補定：月報＝Quarto 投影片＋會後一頁紀錄，中文，group 協調誰報，教授出席；group 一起完成產學，研究各自做；產業方的東西預設不進外部 AI 服務（2026-10-15 修正，見下）；發表限制由教授每案告知學生三件（能不能投、投稿前給產業方看多久、產業方資料的結果能不能寫進論文）
+- 模板（需求規格表、月報 qmd `monthly_template.qmd`、會後紀錄、研究測試報告 qmd、acceptance.csv）放 `guides/industry_project/templates/`，**不進 student-template**：專案 repo 是 group 的，不是從範本建的個人 repo
+- 2026-10-15 使用者審過 v1，定稿為 v1.1。照 v1：月報固定 6 頁的頁面、報告 15 分鐘、月報前一週的 group meeting 給教授看草稿 5 分鐘、第 3 站的前置在產學版改為「需求規格表經技術人員確認」、驗收集每跑一次記一行、驗收腳本兩人各寫、交付附授權表（＝研究測試報告附錄 C）
+- 2026-10-15 使用者定：(1) 產業方的數字與我們自己寫的文件（需求規格表、月報、會後紀錄、報告）可以進 AI、進 repo；AI 寫程式工具可用。音檔、逐字稿、原始需求文件與來信仍放 repo 外、不進 AI（使用者說的是「數字」；要放寬時改 §3.2） (2) 對產業方的報告改為每月一次 (3) 交付包就是專案 repo：private，在 tag `delivery-vN` 交，commit 歷史一起給，拿掉 `delivery/` (4) 其餘照審閱建議：切分原則「驗收集要像上線後的新資料」、產學學生的每週 8 頁從第 3 站起報（Table 1 之前第 4 頁放驗收狀態）、kickoff 會議用需求規格表逐格確認、狀態達標／未達／未測加差距欄、確認紀錄與出席寫姓名與角色、交付日到了未達也照樣交、第 0 站就先用現成模型拿第一個數字、產業方自留驗收集列為選項、月報與研究測試報告可請 AI 起草（月報附指令）
 
 ### 學生 repo 範本（2026-10-08）
 住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，public、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、`reports/theme.scss` 樣式表、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
@@ -121,7 +124,7 @@
 其他建議未採行、留待使用者決定：雙週 15 分鐘一對一；第一篇投 Interspeech、第二篇才投 ML 主會的投稿順序。
 
 ### 交叉引用檢查（2026-10-08 做過一次）
-七份教材＋總表＋範本的節號引用全部對過，一致。`design_table1.md` §3.2 引用的「Round 2 §8 接受論文解剖」與 `idea_card.md` §7 的「Round 2 §7 補充點」在 v4.1 之後都已存在。之後改任一教材的節號，grep `§` 與 `第 N 站` 重做一次。2026-10-09：產學分支加入，五份教材開頭各加一行指引（引用產學分支 §3.1–§5），總表加產學段。
+七份教材＋總表＋範本的節號引用全部對過，一致。`design_table1.md` §3.2 引用的「Round 2 §8 接受論文解剖」與 `idea_card.md` §7 的「Round 2 §7 補充點」在 v4.1 之後都已存在。之後改任一教材的節號，grep `§` 與 `第 N 站` 重做一次。2026-10-09：產學分支加入，五份教材開頭各加一行指引（引用產學分支 §3.1–§5），總表加產學段。2026-10-15：產學分支 v1.1 後重做一次，一致；round2 也加了產學指引（共六份）。
 
 ### Round 2 的 5 點（2026-10-08 補完，v4.1）
 prior work 欄、pilot 與放棄判準、接受論文解剖、arXiv 手動搜尋與 Scholar alert、短／長論文條件——都已在 `round2_dive.md`。
