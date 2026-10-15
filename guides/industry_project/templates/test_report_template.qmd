@@ -17,7 +17,8 @@ format:
 標準：工程師不用問你，就能重跑出第 5 節的數字，並知道它在哪裡會失效。
 可以請 AI 依本模板起草（§3.2、§6）：不補數字；第 1 節的建議、第 7 節、第 9 節自己寫。
 render：quarto render report/test_report_v〔N〕.qmd（同時產生 html 與 docx；docx 可另存 PDF）。
-交出去之前，group 另一個人照第 8 節在乾淨環境重跑一次，對上才打 tag delivery-v〔N〕（§7）。 -->
+交出去之前，group 另一個人在乾淨環境 checkout 要交付的 commit，照第 8 節其餘步驟重跑一次；對上才在同一個 commit 打 tag delivery-v〔N〕（§7）。
+代表樣本只寫 sample_id 加一句描述，不貼逐字稿原文（§3.2）。 -->
 
 # 摘要
 
@@ -36,6 +37,7 @@ render：quarto render report/test_report_v〔N〕.qmd（同時產生 html 與 d
 # 測試資料與環境
 
 - 資料：〔筆數、時數、切分方式與兩邊都有的說話人、標註方式〕
+- 切分清單：`eval/splits/dev.txt`、`eval/splits/accept.txt`（只有檔案 ID）
 - 硬體：〔GPU 型號 × 數量、記憶體〕
 - 軟體：Python 〔版本〕、CUDA 〔版本〕、PyTorch 〔版本〕、〔toolkit 與版本〕；完整版本見 repo 的 `uv.lock`
 
@@ -69,7 +71,7 @@ render：quarto render report/test_report_v〔N〕.qmd（同時產生 html 與 d
 
 | 錯誤類別 | 比例 | 代表樣本 |
 |---|---|---|
-| 〔　〕 | 〔　〕% | 〔　〕 |
+| 〔　〕 | 〔　〕% | 〔sample_id：一句描述，不貼原文〕 |
 
 人聽得出但模型錯的比例：〔　〕%
 

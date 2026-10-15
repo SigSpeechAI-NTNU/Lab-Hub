@@ -1,6 +1,6 @@
 ---
 # 複製成專案 repo 的 meetings/monthly_YYMMDD.qmd（會議日期）；theme.scss 從 student-template 的 reports/ 複製到同一個資料夾。
-# 6 頁固定，見 Lab-Hub guides/industry_project/industry_track.md §5.3；第一次會議（kickoff）不用這 6 頁，改用需求規格表逐格確認。
+# 6 頁固定，見 Lab-Hub guides/industry_project/industry_track.md §5.3。第一次會議（kickoff）不用這 6 頁：複製本檔成 meetings/kickoff_YYMMDD.qmd，YAML 不動，六頁換成需求規格表各格與附錄 A。
 # 樣式一律用 theme.scss：不在 qmd 裡寫 CSS、不用 {.smaller}；類別見第 5 站 §4.4，.claim 一頁最多一個。
 # 可以請 AI 起草（§5.3 的指令）；每個數字要對得回 results/acceptance.csv 或 results/results.csv。
 # render：quarto render meetings/monthly_YYMMDD.qmd（已開 embed-resources，產生單一 html，可直接寄）；簡報時按 S 看講稿
@@ -88,7 +88,7 @@ format:
 
 | 錯誤類別 | 比例 | 代表樣本 |
 |---|---|---|
-| 〔　〕 | 〔　〕% | 〔　〕 |
+| 〔　〕 | 〔　〕% | 〔sample_id：一句描述，不貼原文〕 |
 
 ::: {.claim .warn}
 風險：〔哪個指標可能達不到、為什麼、打算怎麼處理〕

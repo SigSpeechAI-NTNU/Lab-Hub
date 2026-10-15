@@ -6,7 +6,7 @@
 
 - 日期：〔YYYY-MM-DD〕
 - 出席：〔姓名（教授）〕；〔姓名（報告人）〕；〔姓名（group 成員）〕；〔姓名（產業方技術人員）〕
-- 本次報告：`meetings/monthly_〔YYMMDD〕.html`；需求規格表 v〔N〕
+- 本次報告：`meetings/〔monthly 或 kickoff〕_〔YYMMDD〕.html`；需求規格表 v〔N〕
 
 ## 決議
 
