@@ -32,7 +32,7 @@
     experiment_log/               復現 baseline、錯誤分析、實驗紀錄（reproduce_and_log.md）
     progress_report/              進度報告：group meeting 怎麼報（group_meeting.md）
     paper_reading/                論文報告：把一篇論文變成投影片與講稿（paper_to_slides.md）
-    industry_project/             產學分支：產學計畫在各站多做什麼（industry_track.md）；templates/ 放專案 repo 用的五份模板
+    industry_project/             產學分支：產學計畫在各站多做什麼（industry_track.md）；templates/ 放專案 repo 用的五份模板，與給產業方填的需求提供表（requirement_intake.qmd＋Word 樣式 intake_reference.docx）
     <主題>/                       之後的教材各自一個資料夾
   conventions/                    實驗室慣例：ask_professor.md（要問教授的事總表）、review_reconciliation.md（審稿對帳）
   student-template/               學生 repo 範本（巢狀獨立 repo，.gitignore 排除）
@@ -92,6 +92,7 @@
 - 2026-10-15 使用者審過 v1，定稿為 v1.1。照 v1：月報固定 6 頁的頁面、報告 15 分鐘、月報前一週的 group meeting 給教授看草稿 5 分鐘、第 3 站的前置在產學版改為「需求規格表經技術人員確認」、驗收集每跑一次記一行、驗收腳本兩人各寫、交付附授權表（＝研究測試報告附錄 C）
 - 2026-10-15 使用者定：(1) 產業方的數字與我們自己寫的文件（需求規格表、月報、會後紀錄、報告）可以進 AI、進 repo；AI 寫程式工具可用。音檔、逐字稿、原始需求文件與來信仍放 repo 外、不進 AI（使用者說的是「數字」；要放寬時改 §3.2） (2) 對產業方的報告改為每月一次 (3) 交付包就是專案 repo：private，在 tag `delivery-vN` 交，commit 歷史一起給，拿掉 `delivery/` (4) 其餘照審閱建議：切分原則「驗收集要像上線後的新資料」、產學學生的每週 8 頁從第 3 站起報（Table 1 之前第 4 頁放驗收狀態）、kickoff 會議用需求規格表逐格確認、狀態達標／未達／未測加差距欄、確認紀錄與出席寫姓名與角色、交付日到了未達也照樣交、第 0 站就先用現成模型拿第一個數字、產業方自留驗收集列為選項、月報與研究測試報告可請 AI 起草（月報附指令）
 - 2026-10-15 二次審閱後定（產學分支 v1.2）：代表樣本只寫 sample_id 加不含原文的描述（方案 A）；自己的新方法能不能進專案 repo，在第一次 commit 前問；驗收一律從專案 repo 跑，`commit` 欄寫專案 repo 的；切分清單（只有檔案 ID）放 `eval/splits/`；交付前重跑候選 commit，對上後在同一個 commit 打 tag；kickoff 加附錄 A、門檻給不出來先放第 9 格、檔名 `kickoff_YYMMDD.qmd`；產學學生第 2 站之前的每週 8 頁，第 1 頁畫需求規格表第 1 格、第 2 頁畫正在驗收的方法架構、第 4 頁放驗收狀態
+- 2026-10-15 加給產業方填的需求提供表 `templates/requirement_intake.qmd`（方案 A：通用表、不含任何一案內容，放公開的 Lab-Hub）：教授 render 成 Word 寄出；填好的那份是產業方原檔，不進 repo、不進 AI，學生照它改寫需求規格表；表裡不問合約、經費、保密條款與發表限制
 
 ### 學生 repo 範本（2026-10-08）
 住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，public、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、`reports/theme.scss` 樣式表、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。

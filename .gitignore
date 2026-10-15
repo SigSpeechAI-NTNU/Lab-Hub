@@ -6,3 +6,7 @@ __pycache__/
 *.pyc
 # 學生 repo 範本：巢狀 repo，自己 push 到 SigSpeechAI-NTNU/student-template，不屬於 Lab-Hub
 student-template/
+# 產學模板在原地 render 的產物（寄出前另存，不進 git）
+guides/industry_project/templates/*.html
+guides/industry_project/templates/requirement_intake.docx
+guides/industry_project/templates/test_report_template.docx
