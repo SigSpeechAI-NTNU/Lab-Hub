@@ -1,4 +1,4 @@
-# 論文報告：把一篇論文變成投影片與講稿（v2.5，2026-10-12）
+# 論文報告：把一篇論文變成投影片與講稿（v2.6，2026-10-16）
 
 > 位置：貫穿各站。group meeting 的論文報告每週一人、partner 組內輪流（第 5 站 §7），一篇 20 分鐘。
 > 這一站的目的：報告一篇論文，讓聽的人知道它做了什麼、**方法怎麼推論、怎麼訓練**、數字可不可信、對我們有什麼用。重點是方法——你要能拿一個具體的輸入，從頭走到尾講完。
@@ -128,7 +128,7 @@ reports/
   figs/                 截圖與自己畫的圖
 ```
 
-YAML 固定用這段（`theme` 指向 `reports/theme.scss`，lab 的樣式表，範本 repo 已附，可用的類別見第 5 站 §4.4；1280×800 是以筆電螢幕為準的畫布；`include-after-body` 那段讓講稿裡的 LaTeX 在 presenter view 正常顯示——沒有它，presenter view 會把公式印兩次）：
+YAML 固定用這段（`theme` 指向 `reports/theme.scss`，lab 的樣式表，範本 repo 已附，可用的類別見第 5 站 §4.4；1280×800 是以筆電螢幕為準的畫布；`include-after-body` 那段讓講稿裡的 LaTeX 在 presenter view 正常顯示——沒有它，presenter view 會把公式印兩次；`embed-resources: true` 讓 render 出的 html 是單一檔，reveal.js、樣式、圖都包在裡面，別人 clone 下來直接開得起來——沒有它，只有你自己的電腦看得到，因為 `_files/` 不進 git）：
 
 ```yaml
 ---
@@ -139,6 +139,7 @@ date: "〔YYYY-MM-DD〕"
 format:
   revealjs:
     theme: [default, theme.scss]
+    embed-resources: true
     width: 1280
     height: 800
     margin: 0.04
@@ -168,6 +169,8 @@ format:
 ```
 
 qmd 裡放圖：`![架構圖，取自原論文 Fig. 2，標註為本人所加](figs/arch.png)`。第 1 頁那句話包在 `::: {.claim}` 裡；圖的出處用 `[取自原論文 Fig. 2，標註為本人所加]{.cite}`；設定與公平性那張表前加 `::: {.prose}`。其他類別與兩條規則（一張最多四級、`.claim` 一張一次）見第 5 站 §4.4。
+
+架構圖用 Mermaid 畫時，放在 Quarto 的 `{mermaid}` 區塊：區塊開頭寫 ```` ```{mermaid} ````，**大括號不能省**——寫成 ```` ```mermaid ```` 的話，Quarto 只會把它當程式碼原樣印出來。截圖存 PNG；自己畫、不是框和箭頭的圖存 SVG（做法見第 5 站 §4.5）。
 
 ### 4.2 講稿的格式
 
@@ -206,6 +209,7 @@ date: "〔今天 YYYY-MM-DD〕"
 format:
   revealjs:
     theme: [default, theme.scss]
+    embed-resources: true
     width: 1280
     height: 800
     margin: 0.04
@@ -236,7 +240,7 @@ format:
 1  一句話（## One-sentence claim）：「在〔任務〕上，〔方法〕讓〔主指標〕在〔資料集〕從〔A〕到〔B〕，代價是〔　〕」包在 ::: {.claim} 區塊裡；A、B 註明來自論文哪個表。下方一行作者、會議、年份、URL，加 {.cite}
 2  背景（## Background）：原本的 pipeline 怎麼做，2–3 句；圖用 ![原本的 pipeline](figs/background.png) 佔位
 3  痛點（## Pain point）：原本的做法在哪個具體情況下壞掉；給一個論文裡有的失敗例子（輸入→錯成什麼）；圖用 ![](figs/painpoint.png) 佔位
-4  架構（## Architecture）：先用文字列出節點與邊，再用 Mermaid flowchart LR 畫架構圖；這篇新加的模組用 style 加粗邊框（stroke-width:4px）；
+4  架構（## Architecture）：先用文字列出節點與邊，再用 Mermaid flowchart LR 畫架構圖，放在 Quarto 的 {mermaid} 區塊（區塊開頭的語言標記寫 {mermaid}，大括號不能省，否則只會顯示成程式碼）；這篇新加的模組用 style 加粗邊框（stroke-width:4px）；
    邊上標資料的形狀（例 T×D）；節點標籤不含括號、引號、斜線
 5  推論（## Inference）：同一張架構圖，只留推論時走的路徑，訓練才有的節點不畫；下方三行：輸入是什麼、輸出怎麼產生（一次出／自回歸、有沒有 beam search）、哪些模組推論時不用。先講推論再講訓練，順序不可對調
 6  訓練（## Training）：同一張架構圖，加損失節點與梯度流向的邊；凍結的模組 style 填灰（fill:#ddd）；下方四行：資料從哪來、損失是什麼、更新哪些參數、和推論哪裡不同（teacher forcing、訓練才有的東西）
@@ -402,6 +406,10 @@ decoder 走到要輸出人名那一步時，它的 hidden state 當 query，對�
 ---
 
 ## 修改紀錄
+
+### v2.6（2026-10-16）
+- YAML 加 `embed-resources: true`（§4.1、§4.3 指令、範本 `_template_paper.qmd`）：原本漏了，html 依賴不進 git 的 `_files/`，別人 clone 下來開不起來
+- §4.1、§4.3：Mermaid 一律放 `{mermaid}` 區塊，大括號不能省；圖的格式：截圖 PNG、自己畫的非框箭頭圖 SVG
 
 ### v2.5（2026-10-12）
 - 第 5、6 頁對調：**先 Inference 再 Training**（使用者定：任何 AI 論文先把推論流程講清楚，再講訓練原理）；開頭加順序鐵律，§1 流程圖與第 3 步、§2 核對紀錄、§3 頁表、§4.3 指令、§5 核對清單同步；範本 `_template_paper.qmd`、`notes/papers/_template.md` 同步

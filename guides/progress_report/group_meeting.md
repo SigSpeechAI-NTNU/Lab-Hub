@@ -1,4 +1,4 @@
-# 進度報告：group meeting 怎麼報（v1.9，2026-10-15）
+# 進度報告：group meeting 怎麼報（v1.10，2026-10-16）
 
 > 位置：第 5 站。每週一次，**從第 2 站（Table 1 審過）起**一直到投稿。第 0、1 站不做每週進度報告，只報兩次：Round 1 做完報一次（第 0 站結尾 (b) 的 10 分鐘骨架，可請 AI 做成 Quarto），Round 2 做完把 one-pager 給教授看一次（§1 末尾）。
 > 這一站沒有新方法，材料全部來自前幾站：日誌的週小結（第 4 站）、Table 1 的填格進度（第 2 站）、一張 idea card（1b）。教材教的是怎麼把這些組裝成 30 分鐘，以及怎麼留下教授說過的話。
@@ -76,8 +76,8 @@ flowchart LR
 
 | 頁 | 標題 | 內容 | 演講稿寫什麼 |
 |---|---|---|---|
-| 1 | 問題定義 | 一張示意圖：你的題目在解什麼、原本的做法在哪裡壞掉（第 2 站決策紀錄的「一句話主張」畫成圖） | 一句話：我在解什麼 |
-| 2 | Idea 或架構 | 一張示意圖：你的 idea card 的假設，或第 2 站的 method figure（新成分用不同框標出） | 一句話：我動的是哪一格 |
+| 1 | 問題定義 | 一張示意圖：你的題目在解什麼、原本的做法在哪裡壞掉（第 2 站決策紀錄的「一句話主張」畫成圖）；存成 `figs/problem.svg`（§4.5） | 一句話：我在解什麼 |
+| 2 | Idea 或架構 | 一張示意圖：你的 idea card 的假設，或第 2 站的 method figure（新成分用不同框標出）；存成 `figs/idea.svg`（§4.5） | 一句話：我動的是哪一格 |
 | 3 | 對帳 | 兩欄：上週說要做／實際做到。沒做到的標紅 | 沒做到的原因，一句 |
 | 4 | Table 1 現況 | 整張 Table 1；本週新填的格子加粗；還空的格子留 `—`；右上角一行「距上次新數字：N 週」 | 每個新格子的數字從哪個 run 來 |
 | 5 | 本週關鍵結果 | 一張圖或一張小表；只放最重要的一個 | 這個結果代表什麼、和預期差在哪 |
@@ -87,7 +87,7 @@ flowchart LR
 
 **月度停損**：第 4 頁那行「距上次新數字」超過 **4 週**，那次 meeting 固定討論一件事：換題、砍格子，還是再給兩週。規則寫死是為了不用誰先開口——學生不會提，教授也可能因為沉沒成本不提。
 
-規則：每頁一件事；表格不縮小到看不見，Table 1 太寬就拆成兩頁；圖要有軸標籤與單位；**不要自己美化**——樣式一律用 `theme.scss`（§4.4），時間花在內容上。前兩頁的圖畫一次之後每週沿用，題目或 idea 變了才重畫；它們的用途是讓聽的人（和三週沒看你 repo 的教授）先回到你的題目。
+規則：每頁一件事；表格不縮小到看不見，Table 1 太寬就拆成兩頁；圖要有軸標籤與單位；**不要自己美化**——樣式一律用 `theme.scss`（§4.4），時間花在內容上。前兩頁的圖畫一次之後每週沿用，題目或 idea 變了才重畫，存成 SVG 檔（§4.5）；它們的用途是讓聽的人（和三週沒看你 repo 的教授）先回到你的題目。
 
 ---
 
@@ -103,13 +103,16 @@ repo 裡開 `reports/` 資料夾：
 reports/
   progress_261008.qmd   本週的投影片原始檔
   progress_261008.html  render 出來的檔，commit 進去
+  figs/problem.svg      第 1 頁的圖（第 2 頁是 idea.svg），每週沿用
 ```
 
 `261008` 是開會日期（YYMMDD）；檔名和 Issue 標題用同一個日期（§5）。html 一起 commit 是為了教授直接在瀏覽器開；若 lab 有開 GitHub Pages，網址貼進 Issue。
 
+範本的 YAML 開了 `embed-resources: true`：html 是單一檔，reveal.js、樣式、圖都包在裡面，所以 commit html 就夠，`_files/` 不用（`.gitignore` 已擋）。這一行不要拿掉：少了它，html 會去讀 `_files/`，別人 clone 下來開是壞的——你自己的電腦上看不出來，因為 `_files/` 還在。
+
 ### 4.2 qmd 骨架
 
-範本 repo 的 `reports/_template_progress.qmd` 就是 8 頁的骨架，YAML（1280×800、樣式表 `theme.scss`、講稿數學腳本）已設好；複製成 `progress_〔YYMMDD〕.qmd` 填內容。每頁長這樣：
+範本 repo 的 `reports/_template_progress.qmd` 就是 8 頁的骨架，YAML（1280×800、樣式表 `theme.scss`、`embed-resources`、講稿數學腳本）已設好；複製成 `progress_〔YYMMDD〕.qmd` 填內容。每頁長這樣：
 
 ```markdown
 ## Table 1 現況
@@ -136,8 +139,8 @@ quarto render reports/progress_261008.qmd
 ```
 附件是我本週的實驗日誌週小結、目前的 Table 1、一張 idea card，以及投影片範本 _template_progress.qmd。
 請依下面的八頁結構產生一份 Quarto revealjs 投影片的 .qmd 原始檔，每頁附 ::: {.notes} 演講稿：
-1 問題定義（放我附的示意圖 figs/problem.png，講稿一句話）
-2 Idea 或架構（放我附的示意圖 figs/idea.png，講稿一句話）
+1 問題定義（放我附的示意圖 figs/problem.svg，講稿一句話）
+2 Idea 或架構（放我附的示意圖 figs/idea.svg，講稿一句話）
 3 對帳（上週說要做／做到了沒）
 4 Table 1 現況（整張表，本週新填的格子加粗）
 5 本週關鍵結果（只放一個）
@@ -147,8 +150,9 @@ quarto render reports/progress_261008.qmd
 要求：
 - 只用我提供的數字與文字，不要補任何數字、不要替我下結論；資料裡沒有的格子留〔〕讓我填
 - 演講稿用口語，每頁 3–5 句，繁體中文（臺灣用語），專有名詞保留英文
-- YAML 逐字用範本的（含 theme: [default, theme.scss]），不要在 qmd 裡寫 CSS、不要用 {.smaller}；可用的類別只有 .claim（含 .warn／.ok）、.metrics、.cite、.prose、.wrap、.small、.meta、.tag，而且 .claim 一頁最多一個
+- YAML 逐字用範本的（含 theme: [default, theme.scss] 與 embed-resources: true），不要在 qmd 裡寫 CSS、不要用 {.smaller}；可用的類別只有 .claim（含 .warn／.ok）、.metrics、.cite、.prose、.wrap、.small、.meta、.tag，而且 .claim 一頁最多一個
 - 第 5 頁的結論一句包在 ::: {.claim} 裡；第 6 頁卡住的那句用 ::: {.claim .warn}
+- 第 1、2 頁的圖已經是 SVG 檔，照範本的寫法放（含 {width=1100}），不要改畫成 Mermaid
 - 輸出單一 .qmd 檔的完整內容
 ```
 
@@ -208,6 +212,53 @@ AI 做完你要做的事：每一個數字對回 `results.csv`；每一句結論
 - 圖下面還要放三行字時，圖限高：`![...](figs/arch.png){height=430}`，不然字會被推出畫面
 
 不要做的：在 qmd 裡寫 `<style>` 或 `css:`；用 Quarto 的 `{.smaller}`（內文會縮、標題不縮，表格大小也會漂）；改 `theme.scss`——覺得哪裡不對，開 Lab-Hub 的 Issue。
+
+### 4.5 第 1、2 頁的圖：存成 SVG
+
+這兩張每週沿用，最後會變成論文的 Figure 1 和方法圖，所以存成檔案：`reports/figs/problem.svg`、`reports/figs/idea.svg`。不用 PNG（放大會糊，也進不了論文）；也不在 qmd 裡直接寫 Mermaid 區塊（每週的 html 都會多包一份 Mermaid 的程式，見 §4.1 的 `embed-resources`）。
+
+放進投影片一律寫寬度：`![〔一句話〕](figs/problem.svg){width=1100}`，範本已寫好。
+
+先看你的圖是哪一種：
+
+| 圖長什麼樣 | 怎麼做 |
+|---|---|
+| 框和箭頭：流程、架構、模組之間的資料流 | 用 Mermaid 寫，匯出成 SVG |
+| 不是框和箭頭：一段語音被辨識成什麼、錯在哪幾個字；音框和 token 怎麼對齊；頻譜上哪一段出問題 | 請 AI 直接寫 SVG |
+
+**用 Mermaid 寫、匯出成 SVG**
+
+1. 原始碼存 `reports/figs/problem.mmd`，和 SVG 一起 commit。之後要改就改 `.mmd` 再匯出一次，不要直接改 SVG
+2. `.mmd` 第一行放下面這段。它讓文字存成 SVG 本身的文字（之後轉 PDF 放進論文、用向量軟體開，才不會掉字），字級設 22px：
+
+   ```
+   %%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}, "themeVariables": {"fontSize": "22px"}}}%%
+   ```
+
+3. 貼到 Mermaid Live Editor（mermaid.live），下載 SVG，存成 `figs/problem.svg`。也可以用 Mermaid 的命令列工具 mermaid-cli，用法請自行查證
+4. 用 `flowchart LR`（左到右），投影片是橫的；節點標籤和 Deep Research 報告的規則一樣，不含括號、引號、斜線；新成分用 `style` 加粗邊框（`stroke-width:4px`），和論文報告的架構圖一致
+5. 匯出的圖寬高比不固定：圖太高、超出畫面時，把 `{width=1100}` 改成 `{height=480}`
+
+**請 AI 直接寫 SVG**（整段複製，〔〕自己填）：
+
+```
+請寫一張 SVG 示意圖，我會存成 reports/figs/〔problem 或 idea〕.svg，放在 1280×800 投影片的標題下方，顯示寬度 1100。
+這張圖要讓人看懂的一句話：〔例：使用者講的人名，辨識系統認成同音的普通詞〕
+要畫的東西：〔例：左邊一段語音波形，上面標原句；中間一個 STT 框；右邊是輸出文字，認錯的兩個字用紅框標出，下面一行寫正確的字〕
+規格：
+- 根元素寫成 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="〔不超過 520〕" viewBox="0 0 1100 〔同上〕">，width、height 和 viewBox 同尺寸
+- 文字一律用 <text>，font-family="PingFang TC, Noto Sans TC, Helvetica, sans-serif"，字級只用 22 或 26
+- 顏色只用：文字 #1f2328、強調 #0b5cad、錯的或壞掉的地方 #dc2626、對的 #15803d、次要 #6b7280、框線 #d1d5db、底色 #f8fafc
+- 不用 foreignObject、外部字型、外部圖片、漸層、陰影、濾鏡
+- 每個框要放得下裡面的字：中文一個字約等於字級寬，英文一個字母約半個字級寬，左右各再留 16
+- 箭頭的頭尾要接在框的邊上
+- 只畫我寫的東西，不要加我沒提的模組、數字或文字
+- 只輸出 SVG 原始碼，不要說明
+```
+
+為什麼是這些數字：SVG 放進投影片時，會照 viewBox 縮放到它在畫面上的寬度。viewBox 寬 1100、畫面上也是 1100，SVG 裡寫 22 就真的是 22px，和表格的字（T4）一樣大。AI 常給 `viewBox="0 0 400 300"` 之類的小畫布，放上去字會被放大將近三倍；反過來，整頁寬的圖塞進 `::: {.columns}` 的半欄，字會縮成一半。
+
+**放進投影片之後看一次**：render、在瀏覽器開，和同一份投影片裡表格的字比。圖裡的字明顯比表格小或大很多，就是縮放不對：AI 寫的檢查 viewBox，Mermaid 匯出的調 `{width=…}`。字超出框、箭頭沒接上，請 AI 只改那一處（問法同論文報告 §4.4）。AI 畫的圖，講的時候要標明（§8）。
 
 ---
 
@@ -287,6 +338,7 @@ Issue `261015 進度` 的第一行：
 2. 第 3 頁的「上週說要做」和上週 Issue 的第 5 格一字不差
 3. 每個「教授說」在 Issue 留言裡找得到；Issue 裡的決定都已同步到對應檔案（審核紀錄、idea log）
 4. 演講稿自己念過
+5. 第 1、2 頁的圖：每個框、每個箭頭都講得出意思；圖裡的字和表格的字差不多大（§4.5）
 
 ---
 
@@ -314,6 +366,10 @@ Issue `261015 進度` 的第一行：
 ---
 
 ## 修改紀錄
+
+### v1.10（2026-10-16）
+- 第 1、2 頁的圖改存 SVG（`figs/problem.svg`、`figs/idea.svg`，放進投影片寫 `{width=1100}`）；加 §4.5 做法：框和箭頭用 Mermaid 寫好匯出，其他請 AI 直接寫 SVG（附指令與尺寸規則）；§3、§4.1、§4.3 指令、§10 與範本 `_template_progress.qmd` 同步
+- 範本 YAML 補 `embed-resources: true`：原本漏了，html 依賴不進 git 的 `_files/`，別人 clone 下來開不起來；§4.1–§4.3 同步
 
 ### v1.9（2026-10-15）
 - 開頭的產學指引改指向產學分支 §4 的替代頁面

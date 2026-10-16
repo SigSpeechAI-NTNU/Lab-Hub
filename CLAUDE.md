@@ -32,7 +32,7 @@
     experiment_log/               復現 baseline、錯誤分析、實驗紀錄（reproduce_and_log.md）
     progress_report/              進度報告：group meeting 怎麼報（group_meeting.md）
     paper_reading/                論文報告：把一篇論文變成投影片與講稿（paper_to_slides.md）
-    industry_project/             產學分支：產學計畫在各站多做什麼（industry_track.md）；templates/ 放專案 repo 用的五份模板，與給產業方填的需求提供表（requirement_intake.qmd＋Word 樣式 intake_reference.docx）
+    industry_project/             產學分支：產學計畫在各站多做什麼（industry_track.md）；templates/project_repo/ 是專案 repo 的骨架（整個複製）；templates/intake/ 是給產業方填的需求提供表（requirement_intake.qmd＋Word 樣式 intake_reference.docx）
     <主題>/                       之後的教材各自一個資料夾
   conventions/                    實驗室慣例：ask_professor.md（要問教授的事總表）、review_reconciliation.md（審稿對帳）
   student-template/               學生 repo 範本（巢狀獨立 repo，.gitignore 排除）
@@ -80,6 +80,7 @@
 - 論文報告：固定 13 頁（一句話／背景／痛點／架構／**推論／訓練**／走線／物理意義／設定與公平性／主結果／消融與賣點圖／我的判斷／啟發；2026-10-12 使用者定：任何 AI 論文先講 inference 流程、再講 training 原理，第 5、6 頁依此對調）、方法 8 分鐘、走線必講；架構圖可截圖但必加標註，沒有就自己畫或請 AI 畫；流程為 PDF 餵 AI 生草稿 → 學生帶著草稿讀論文逐頁核對 → 和 AI 對話修正；走線、我的判斷、啟發三頁 AI 不生、學生自己寫；講稿格式【講述】＋【提示】、YAML 1280×800 與講稿數學 MathML 腳本（機制取自 Course-Hub，改寫）
 - 6：選 B（改寫學生版放 Lab-Hub），Paper-Hub 不公開
 - 投影片樣式（2026-10-12 使用者定）：進度、論文與產學月報投影片共用一份 `theme.scss`，正本在範本 repo 的 `reports/`（Lab-Hub 不另放副本，教材只引用），改自使用者課程投影片的 theme（`hungshinlee/Speech-AI` 的 `slides/theme.scss`，公開），拿掉教室專用的 `.ask` 與音訊樣式；五級字級與兩條規則（一頁四級、`.claim` 一頁一個）照課程版；類別清單在第 5 站 §4.4；AI 指令規定只能用 theme 的類別。課程 theme 的字級數值若改，這份要不要跟改由使用者決定。製作投影片與講稿一律依 `theme.scss`，教材不再寫「用 Quarto 預設」（2026-10-15）
+- 投影片的圖（2026-10-16 使用者定）：框和箭頭的圖用 Mermaid；不是框和箭頭的示意圖用 SVG（AI 寫、render 後檢查）；數字圖用 matplotlib 存 SVG，畫圖程式進 repo；論文的圖截圖存 PNG 並加標註。Mermaid 放在 qmd 裡一律用 `{mermaid}` 區塊（大括號不能省）。進度第 1、2 頁的圖存成 `figs/problem.svg`、`figs/idea.svg` 每週沿用（Mermaid 寫的匯出成 SVG，`.mmd` 一起 commit；放進投影片寫 `{width=1100}`，AI 寫的 viewBox 寬 1100），做法在第 5 站 §4.5。進度與論文範本補 `embed-resources: true`（原本漏了，html 依賴不進 git 的 `_files/`；月報與測試報告本來就有）
 
 ### 產學分支（2026-10-09 定）
 - 放 Lab-Hub，不另開 Hub 給學生；教授端的產學管理（合約、經費、申請書、與產業方往來）不在本 repo
@@ -88,11 +89,11 @@
 - 學生只知道產業需求（與測試資料），不知道合約與其他細節
 - 一個專案由一個 group 負責，每月對產業方技術人員報告一次（月報；2026-10-15 由雙週改為每月），要符合業界標準、專業；每週 group meeting 仍是同一份 8 頁
 - 2026-10-09 補定：月報＝Quarto 投影片＋會後一頁紀錄，中文，group 協調誰報，教授出席；group 一起完成產學，研究各自做；產業方的東西預設不進外部 AI 服務（2026-10-15 修正，見下）；發表限制由教授每案告知學生三件（能不能投、投稿前給產業方看多久、產業方資料的結果能不能寫進論文）
-- 模板（需求規格表、月報 qmd `monthly_template.qmd`、會後紀錄、研究測試報告 qmd、acceptance.csv）放 `guides/industry_project/templates/`，**不進 student-template**：專案 repo 是 group 的，不是從範本建的個人 repo。範本只放兩處提示，指回產學分支：README「第一天要做的」第 7 點（原檔不進研究 repo、`error_analysis.csv` 文字欄留空、專案的東西放專案 repo、第 3 站起報）與 `_template_progress.qmd` 的 YAML 註解（第 2 站之前第 1、2、4 頁的替代內容）；產學分支 §3.2、§4 改了要同步這兩處（2026-10-15）
+- 模板放 `guides/industry_project/templates/project_repo/`，排成專案 repo 的骨架（需求規格表、月報 qmd `monthly_template.qmd`、會後紀錄、研究測試報告 qmd、acceptance.csv、README、`.gitignore`、`pyproject.toml`；2026-10-15 由平放改為骨架；骨架的 `.gitignore`、`pyproject.toml` 改自 student-template，範本那兩份改了要一起看），**不進 student-template**：專案 repo 是 group 的，不是從範本建的個人 repo。範本只放兩處提示，指回產學分支：README「第一天要做的」第 7 點（原檔不進研究 repo、`error_analysis.csv` 文字欄留空、專案的東西放專案 repo、第 3 站起報）與 `_template_progress.qmd` 的 YAML 註解（第 2 站之前第 1、2、4 頁的替代內容）；產學分支 §3.2、§4 改了要同步這兩處（2026-10-15）
 - 2026-10-15 使用者審過 v1，定稿為 v1.1。照 v1：月報固定 6 頁的頁面、報告 15 分鐘、月報前一週的 group meeting 給教授看草稿 5 分鐘、第 3 站的前置在產學版改為「需求規格表經技術人員確認」、驗收集每跑一次記一行、驗收腳本兩人各寫、交付附授權表（＝研究測試報告附錄 C）
 - 2026-10-15 使用者定：(1) 產業方的數字與我們自己寫的文件（需求規格表、月報、會後紀錄、報告）可以進 AI、進 repo；AI 寫程式工具可用。音檔、逐字稿、原始需求文件與來信仍放 repo 外、不進 AI（使用者說的是「數字」；要放寬時改 §3.2） (2) 對產業方的報告改為每月一次 (3) 交付包就是專案 repo：private，在 tag `delivery-vN` 交，commit 歷史一起給，拿掉 `delivery/` (4) 其餘照審閱建議：切分原則「驗收集要像上線後的新資料」、產學學生的每週 8 頁從第 3 站起報（Table 1 之前第 4 頁放驗收狀態）、kickoff 會議用需求規格表逐格確認、狀態達標／未達／未測加差距欄、確認紀錄與出席寫姓名與角色、交付日到了未達也照樣交、第 0 站就先用現成模型拿第一個數字、產業方自留驗收集列為選項、月報與研究測試報告可請 AI 起草（月報附指令）
 - 2026-10-15 二次審閱後定（產學分支 v1.2）：代表樣本只寫 sample_id 加不含原文的描述（方案 A）；自己的新方法能不能進專案 repo，在第一次 commit 前問；驗收一律從專案 repo 跑，`commit` 欄寫專案 repo 的；切分清單（只有檔案 ID）放 `eval/splits/`；交付前重跑候選 commit，對上後在同一個 commit 打 tag；kickoff 加附錄 A、門檻給不出來先放第 9 格、檔名 `kickoff_YYMMDD.qmd`；產學學生第 2 站之前的每週 8 頁，第 1 頁畫需求規格表第 1 格、第 2 頁畫正在驗收的方法架構、第 4 頁放驗收狀態
-- 2026-10-15 加給產業方填的需求提供表 `templates/requirement_intake.qmd`（方案 A：通用表、不含任何一案內容，放公開的 Lab-Hub）：教授 render 成 Word 寄出；填好的那份是產業方原檔，不進 repo、不進 AI，學生照它改寫需求規格表；表裡不問合約、經費、保密條款與發表限制
+- 2026-10-15 加給產業方填的需求提供表 `templates/intake/requirement_intake.qmd`（方案 A：通用表、不含任何一案內容，放公開的 Lab-Hub）：教授 render 成 Word 寄出；填好的那份是產業方原檔，不進 repo、不進 AI，學生照它改寫需求規格表；表裡不問合約、經費、保密條款與發表限制
 
 ### 學生 repo 範本（2026-10-08）
 住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，public、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文 13 頁的 qmd、`reports/theme.scss` 樣式表、Issue 模板）。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
@@ -133,3 +134,4 @@ prior work 欄、pilot 與放棄判準、接受論文解剖、arXiv 手動搜尋
 
 ### 其他
 - [x] `README.md`：路徑圖、教材清單、先讀哪份、工具表（2026-10-07）
+- [ ] Round 1、Round 2 的報告投影片（各 8 頁草案）與跨站教材 `guides/slides/figures_and_tables.md`（圖與表怎麼做）：2026-10-15 已在對話提出頁面草案與骨架，待使用者審；待定的還有 Round 2 做不做投影片（方案 A 做／B 只交 one-pager）、兩輪投影片的語言。畫法分工已定（見「投影片的圖」）。測試用 qmd 在使用者電腦上 render 的結果出來後，§4.5 的尺寸規則依實測修正
