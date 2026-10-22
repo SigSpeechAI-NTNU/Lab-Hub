@@ -1,6 +1,6 @@
 # 需求規格表 v〔N〕（〔YYYY-MM-DD〕）
 
-<!-- 複製到專案 repo 的 spec/requirement_spec.md。教材：Lab-Hub guides/industry_project/industry_track.md §2。
+<!-- 專案 repo 的 spec/requirement_spec.md，直接在這裡填。教材：Lab-Hub guides/industry_project/industry_track.md §2。
 每格都要能檢查；不確定的寫進第 9 格「待確認」，不要自己補。kickoff 時門檻給不出來，也先寫進第 9 格，第一次月報再定。
 改版時版本號加一，舊版另存成 requirement_spec_v〔舊版號〕.md，不覆蓋。改規格要經教授同意。
 產業方給的原始需求文件放 repo 外；這份是我們改寫的規格，可以進 repo、進 AI（§3.2）。 -->

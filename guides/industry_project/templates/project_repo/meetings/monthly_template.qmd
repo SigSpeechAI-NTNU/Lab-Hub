@@ -1,5 +1,5 @@
 ---
-# 複製成專案 repo 的 meetings/monthly_YYMMDD.qmd（會議日期）；theme.scss 從 student-template 的 reports/ 複製到同一個資料夾。
+# 在 meetings/ 裡複製成 monthly_YYMMDD.qmd（會議日期）；theme.scss 從 student-template 的 reports/ 複製到 meetings/。
 # 6 頁固定，見 Lab-Hub guides/industry_project/industry_track.md §5.3。第一次會議（kickoff）不用這 6 頁：複製本檔成 meetings/kickoff_YYMMDD.qmd，YAML 不動，六頁換成需求規格表各格與附錄 A。
 # 樣式一律用 theme.scss：不在 qmd 裡寫 CSS、不用 {.smaller}；類別見第 5 站 §4.4，.claim 一頁最多一個。
 # 可以請 AI 起草（§5.3 的指令）；每個數字要對得回 results/acceptance.csv 或 results/results.csv。

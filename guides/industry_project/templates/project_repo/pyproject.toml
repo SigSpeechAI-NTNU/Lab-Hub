@@ -1,0 +1,18 @@
+[project]
+name = "〔專案簡稱，小寫〕"
+version = "0.1.0"
+description = "〔一句話〕"
+requires-python = ">=3.11"
+dependencies = [
+    # 用 uv add <套件> 加，不要手打版本；uv 會寫進這裡並更新 uv.lock（規則同 Lab-Hub 第 3＋4 站 §2）
+]
+
+# PyTorch 的 CUDA 版本要指定 index（寫法請照 PyTorch 官網與 uv 文件，請自行查證）。範例形狀：
+# [tool.uv.sources]
+# torch = { index = "pytorch-cu〔xxx〕" }
+# torchaudio = { index = "pytorch-cu〔xxx〕" }
+#
+# [[tool.uv.index]]
+# name = "pytorch-cu〔xxx〕"
+# url = "https://download.pytorch.org/whl/cu〔xxx〕"
+# explicit = true

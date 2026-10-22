@@ -1,0 +1,37 @@
+# 產學專案 repo 的 .gitignore（改自 student-template 的那份）
+# 注意：這裡只擋音檔與模型檔，不擋文字檔。逐字稿、原始需求文件等產業方的原檔一律放在 repo 資料夾外，不要靠這個檔擋
+# 資料、模型、大檔不進 git
+data/
+datasets/
+checkpoints/
+ckpt/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.npy
+*.npz
+# 金鑰（注意：不要用 *token* 這種寬鬆規則，會把 tokenizer.py 一起擋掉）
+.env
+.env.*
+*.key
+*.pem
+secrets/
+# Quarto 產物（html 要 commit，_files 不用）
+meetings/*_files/
+report/*_files/
+.quarto/
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# 大 log
+logs/
+*.log
+# OS
+.DS_Store

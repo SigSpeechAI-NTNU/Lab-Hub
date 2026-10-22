@@ -13,7 +13,7 @@ format:
     number-sections: true
 ---
 
-<!-- 複製成專案 repo 的 report/test_report_v〔N〕.qmd，每次交付版本號加一。教材：Lab-Hub guides/industry_project/industry_track.md §6。
+<!-- 在 report/ 裡複製成 test_report_v〔N〕.qmd，每次交付版本號加一。教材：Lab-Hub guides/industry_project/industry_track.md §6。
 標準：工程師不用問你，就能重跑出第 5 節的數字，並知道它在哪裡會失效。
 可以請 AI 依本模板起草（§3.2、§6）：不補數字；第 1 節的建議、第 7 節、第 9 節自己寫。
 render：quarto render report/test_report_v〔N〕.qmd（同時產生 html 與 docx；docx 可另存 PDF）。

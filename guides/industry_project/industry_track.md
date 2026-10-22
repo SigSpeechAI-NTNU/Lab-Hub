@@ -1,10 +1,10 @@
-# 產學分支：同一條路，產學計畫多做什麼（v1.3，2026-10-15）
+# 產學分支：同一條路，產學計畫多做什麼（v1.5，2026-10-22）
 
 > 位置：貫穿。**參與產學計畫的人讀**；沒參與的不用讀。
 > 實驗室的產學計畫是一魚兩吃：產業方提出需求，我們把它當研究題目做。交給產業方的是**研究與測試報告、程式、實驗結果**，不是產品；產品化是產業方的工程師拿到這些之後，自己分析、打包、延伸的事。
 > 你會拿到的只有**產業需求與測試資料**。合約、經費和其他細節由教授處理，你不需要知道；有疑問問教授。
 > 這份教材不改寫各站：每站照原教材做，這裡只寫產學計畫**多做什麼**。
-> 產出：需求規格表、驗收紀錄、月報（Quarto 投影片＋會後紀錄）、研究測試報告；交付包就是專案 repo 本身（§7）。模板在本資料夾的 [`templates/`](templates/)，給產業方填的需求提供表也在那裡（§2）。
+> 產出：需求規格表、驗收紀錄、月報（Quarto 投影片＋會後紀錄）、研究測試報告；交付包就是專案 repo 本身（§7）。專案 repo 的骨架在本資料夾的 [`templates/project_repo/`](templates/project_repo/)（§0），給產業方填的需求提供表在 [`templates/intake/`](templates/intake/)（§2）。
 
 ---
 
@@ -22,7 +22,7 @@
 
 **專案 repo 就是交付包（§7）：交付時整個 repo 連同 commit 歷史給產業方，所以裡面的東西都要是產業方可以看的。** 不能給產業方看的——你的 idea log、論文筆記、還沒發表的想法、lab 其他人的研究——留在研究 repo，不搬進來；也不要先 commit 再刪，刪掉的檔案在歷史裡還看得到。守住這條，交付就不會出錯。
 
-專案 repo 的結構（建議；放在哪、叫什麼、誰有權限由教授定，一律 private）：
+專案 repo 放在哪、叫什麼、誰有權限由教授定，一律 private。骨架就是本資料夾的 [`templates/project_repo/`](templates/project_repo/)，結構和下面這棵樹一樣：
 
 ```
 〔專案 repo〕/
@@ -44,10 +44,17 @@
   report/
     test_report_vN.qmd    研究測試報告與 render 出的 html、docx（§6）
   pyproject.toml          uv 環境，規則同第 3＋4 站 §2；uv.lock、.python-version 一起進 git
-  .gitignore              從 student-template 複製，再加 meetings/*_files/、report/*_files/（§3.2）
+  .gitignore              骨架已附：改自 student-template 那份，擋 meetings/*_files/、report/*_files/（§3.2）
 ```
 
-專案 repo 不是從 `student-template` 建的（那是個人研究 repo 的範本）；建好之後把本資料夾 `templates/` 的模板複製進去，`.gitignore` 與 `theme.scss` 從範本複製。測試資料不在這棵樹裡：它放在教授指定的機器與路徑（§3.2）。
+專案 repo 不是從 `student-template` 建的（那是個人研究 repo 的範本）。建法：
+
+1. 在教授指定的地方開一個空的 private repo，clone 下來
+2. 把骨架整個複製進去，隱藏檔（`.gitignore`、`.python-version`）也要：`cp -R 〔Lab-Hub〕/guides/industry_project/templates/project_repo/. 〔專案 repo〕/`（結尾的 `/.` 會連隱藏檔一起複製）
+3. 從 student-template 的 `reports/` 複製 `theme.scss` 到 `meetings/`
+4. 改 `pyproject.toml` 的專案名稱、填 README；`uv sync` 之後把 `uv.lock` 一起 commit
+
+測試資料不在這棵樹裡：它放在教授指定的機器與路徑（§3.2）。`templates/intake/` 是給產業方填的，不複製進專案 repo。
 
 ---
 
@@ -85,7 +92,7 @@ flowchart LR
 
 產業方寫的需求通常是業務語言：「客服錄音裡的產品型號要辨識得準」。你的工作是把它改寫成**每一格都能檢查**的規格，讓「符不符合」變成一個算得出來的答案。這是業界做專案的基本功：需求沒寫到能驗收，報告交出去就只能寫「效果不錯」，最容易起爭議。
 
-教授會先請產業方填一份**需求提供表**（模板 [`templates/requirement_intake.qmd`](templates/requirement_intake.qmd)，render 成 Word 寄給產業方）：用他們的話回答現在怎麼做、哪裡不夠好、能給什麼資料、怎樣算做得好。你拿到的就是填好的那份。它是產業方給的原檔（§3.2）：放在教授指定的地方，不進 repo、不進 AI；需求規格表由你照它自己改寫。兩份的對照：
+教授會先請產業方填一份**需求提供表**（模板 [`templates/intake/requirement_intake.qmd`](templates/intake/requirement_intake.qmd)，render 成 Word 寄給產業方）：用他們的話回答現在怎麼做、哪裡不夠好、能給什麼資料、怎樣算做得好。你拿到的就是填好的那份。它是產業方給的原檔（§3.2）：放在教授指定的地方，不進 repo、不進 AI；需求規格表由你照它自己改寫。兩份的對照：
 
 | 需求提供表 | 需求規格表 |
 |---|---|
@@ -100,7 +107,7 @@ flowchart LR
 
 需求提供表沒問的——文字正規化規則（附錄 A）、驗收集怎麼切——是我們自己的紀律，由你寫好，kickoff 時請技術人員確認。
 
-模板 [`templates/requirement_spec.md`](templates/requirement_spec.md) 有十格：
+模板 [`spec/requirement_spec.md`](templates/project_repo/spec/requirement_spec.md) 有十格：
 
 | 格 | 寫什麼 | 為什麼要你自己寫 |
 |---|---|---|
@@ -154,7 +161,7 @@ flowchart LR
 - 切好之後，開發集與驗收集的**檔案 ID 清單**（只有 ID，不含內容）存成 `eval/splits/dev.txt`、`eval/splits/accept.txt`，進 git。驗收腳本照清單讀資料，別人才能一行重跑；產業方也憑這兩份清單知道哪些是驗收集。檔名本身含電話號碼之類的資訊時，改用編號，對照表留在資料那台機器
 - 資料太少、切不出有意義的驗收集 → 拿到資料當天問教授
 - 最乾淨的做法是產業方自己另留一份驗收集，拿我們交的 repo 去跑，「不看驗收集」就不靠自律。要不要這樣約定由教授和產業方談；有的話，我們自己切的那份仍照本節的規矩用
-- **驗收集每跑一次都記一行，寫明為什麼跑。** 跑太多次，就等於拿它調參數了。`acceptance.csv` 的表頭（模板 [`templates/acceptance.csv`](templates/acceptance.csv)）：
+- **驗收集每跑一次都記一行，寫明為什麼跑。** 跑太多次，就等於拿它調參數了。`acceptance.csv` 的表頭（骨架的 [`results/acceptance.csv`](templates/project_repo/results/acceptance.csv)）：
 
 ```
 date,commit,system,test_set,metric,value,threshold,pass,conditions,reason
@@ -173,7 +180,7 @@ date,commit,system,test_set,metric,value,threshold,pass,conditions,reason
 | 我們產生的 | 實驗數字（`results.csv`、`acceptance.csv`）、錯誤分析的類別與比例、需求規格表、月報、會後紀錄、研究測試報告、程式與 config | 可以 | 可以 |
 | 產業方給的原檔 | 音檔、逐字稿、原始需求文件（含填好的需求提供表）、技術人員的來信 | 不可以 | 不可以（例外由教授決定） |
 
-- 測試資料放教授指定的機器與路徑；專案 repo 的 README 裡，關於測試資料只寫路徑、檔案數、總時數與檔案清單的 md5（切分清單在 `eval/splits/`）。`.gitignore` 從第 3＋4 站的範本複製，再加 `meetings/*_files/`、`report/*_files/`；範本只擋音檔、不擋文字檔，所以**逐字稿和其他原檔一律放在 repo 資料夾外**，不靠 `.gitignore` 擋
+- 測試資料放教授指定的機器與路徑；專案 repo 的 README 裡，關於測試資料只寫路徑、檔案數、總時數與檔案清單的 md5（切分清單在 `eval/splits/`）。骨架附的 `.gitignore` 改自第 3＋4 站的範本，擋 `meetings/*_files/`、`report/*_files/`；它只擋音檔與模型檔、不擋文字檔，所以**逐字稿和其他原檔一律放在 repo 資料夾外**，不靠 `.gitignore` 擋
 - 錯誤分析要看逐字稿：在產業方資料上，研究 repo 的 `error_analysis.csv` 只填 `sample_id`、`category`、`human_can_tell`、`note`，`reference` 與 `hypothesis` 留空；有文字的完整版放在測試資料那台機器上
 - **代表樣本只寫 `sample_id` 加一句不含原文的描述**（例：「型號後兩碼被認成同音數字」）——月報、研究測試報告、idea card 都一樣。產業方手上有原始資料，憑 ID 就能自己對；原文不寫進任何 repo 裡的檔案
 - **AI 寫程式工具可以用**（Copilot、Cursor、Claude Code 等），專案 repo 和研究 repo 都可以。它會讀整個資料夾——原檔放在 repo 外，它就讀不到；不要叫它去開測試資料的路徑
@@ -209,7 +216,7 @@ AI 在產學裡能用在哪：
 | 2 | Table 1 | 產業方的驗收集放 C 層的位置（第二組列或分析表），不是唯一評測集；運行條件有速度限制的，RTF 一定要報（第 2 站 §3.3 第 6 條） |
 | 4 | 執行與紀錄 | `results.csv` 照舊記在研究 repo；驗收集一律從專案 repo 跑，結果記在專案 repo 的 `acceptance.csv`（§3.1） |
 | 5 | 每週 8 頁 | 格式不變，但**從第 3 站（驗收測試）起就每週報**，不等第 2 站。第 2 站之前還沒有主張、method figure 與 Table 1，這三頁改放：第 1 頁畫需求規格表第 1 格（任務、輸入、輸出）；第 2 頁畫正在驗收的現有方法的架構；第 4 頁放驗收狀態表（同月報第 1 頁），「距上次新數字」算開發集上的新數字。第 7 頁的 card 照常（第 1 站做完就能寫）。Table 1 畫好之後回到原本的 8 頁：「距上次新數字」改算 Table 1，驗收狀態有變化時當第 5 頁的本週關鍵結果。另有給產業方的月報（§5） |
-| 6 | 寫作 | 投稿前要給產業方看，時間由教授告訴你，從截稿日倒推（§8） |
+| 6 | 寫作 | 投稿前要給產業方看，時間由教授告訴你，從截稿日倒推（§8），排進第 6 站 §0 的時程表；產業方資料的結果能不能寫、怎麼寫，動筆前問（§3.3） |
 
 ---
 
@@ -235,7 +242,7 @@ AI 在產學裡能用在哪：
 
 ### 5.3 頁面：固定 6 頁
 
-模板 [`templates/monthly_template.qmd`](templates/monthly_template.qmd)，和第 5 站一樣用 Quarto 產生 html、每頁附講稿，樣式一律用 `theme.scss`（類別與兩條規則見第 5 站 §4.4）。檔名 `meetings/monthly_〔YYMMDD〕.qmd`（會議日期）；`theme.scss` 從 student-template 的 `reports/` 複製到 `meetings/`。模板已設 `embed-resources: true`，render 出的 html 是單一檔，可以直接寄。
+模板 [`meetings/monthly_template.qmd`](templates/project_repo/meetings/monthly_template.qmd)，和第 5 站一樣用 Quarto 產生 html、每頁附講稿，樣式一律用 `theme.scss`（類別與兩條規則見第 5 站 §4.4）。檔名 `meetings/monthly_〔YYMMDD〕.qmd`（會議日期）；`theme.scss` 從 student-template 的 `reports/` 複製到 `meetings/`。模板已設 `embed-resources: true`，render 出的 html 是單一檔，可以直接寄。
 
 | 頁 | 標題 | 內容 |
 |---|---|---|
@@ -284,7 +291,7 @@ AI 做完你要做的事：每個數字對回 `acceptance.csv` 或 `results.csv`
 
 ### 5.5 會後紀錄
 
-報告的人會後寫，模板 [`templates/minutes_template.md`](templates/minutes_template.md)，檔名 `meetings/minutes_〔YYMMDD〕.md`。內容：日期、出席（姓名與角色）、決議、待辦（事項、負責、期限）、產業方提出的需求變更（一律標「待教授確認」）、會中答不出的問題、下次會議日期。
+報告的人會後寫，模板 [`meetings/minutes_template.md`](templates/project_repo/meetings/minutes_template.md)，檔名 `meetings/minutes_〔YYMMDD〕.md`。內容：日期、出席（姓名與角色）、決議、待辦（事項、負責、期限）、產業方提出的需求變更（一律標「待教授確認」）、會中答不出的問題、下次會議日期。
 
 寫好先給教授看，由教授寄出，或教授同意後由你寄出。下次月報的第 2 頁就從這份的待辦開始——和第 5 站「新 Issue 第一行引用上週回饋」同一個道理。
 
@@ -294,7 +301,7 @@ AI 做完你要做的事：每個數字對回 `acceptance.csv` 或 `results.csv`
 
 驗收測試做完並達標，或每一輪改善做完，交一版研究測試報告；交付日到了還沒達標也要交（§1 第 5 步）。讀者是產業方的工程師：他們要靠這份報告和你的程式，自己去分析、打包、延伸。所以標準只有一個：**工程師不用問你，就能重跑出報告裡的數字，並且知道它在哪裡會失效。**
 
-模板 [`templates/test_report_template.qmd`](templates/test_report_template.qmd)，Quarto 一次 render 出 html 與 docx（Word 檔可另存 PDF）。檔名 `report/test_report_v〔N〕.qmd`，每次交付版本號加一。九節：
+模板 [`report/test_report_template.qmd`](templates/project_repo/report/test_report_template.qmd)，Quarto 一次 render 出 html 與 docx（Word 檔可另存 PDF）。檔名 `report/test_report_v〔N〕.qmd`，每次交付版本號加一。九節：
 
 | 節 | 寫什麼 |
 |---|---|
@@ -387,6 +394,12 @@ AI 做完你要做的事：每個數字對回 `acceptance.csv` 或 `results.csv`
 ---
 
 ## 修改紀錄
+
+### v1.5（2026-10-22）
+- §4 第 6 站一列：接到第 6 站教材的時程表，並提醒動筆前問 §3.3
+
+### v1.4（2026-10-15）
+- `templates/` 由平放改為兩個資料夾：`project_repo/` 是專案 repo 的骨架（結構同 §0 的樹，加 README、`.gitignore`、`pyproject.toml`、`.python-version`、空資料夾的 `.gitkeep`），整個複製就是專案 repo 的起點；`intake/` 是給產業方填的需求提供表。§0 改寫建法四步，各處模板連結改到新位置
 
 ### v1.3（2026-10-15）
 - 加給產業方填的需求提供表 `templates/requirement_intake.qmd`（render 成 Word，表格樣式在 `intake_reference.docx`）；§1、§2 說明學生拿到的需求就是填好的這份、它算原檔，§2 加需求提供表對需求規格表的對照

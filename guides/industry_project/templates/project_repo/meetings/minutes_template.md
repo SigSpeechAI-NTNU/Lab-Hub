@@ -1,6 +1,6 @@
 # 會後紀錄 〔YYMMDD〕
 
-<!-- 複製成專案 repo 的 meetings/minutes_YYMMDD.md（會議日期）。教材：Lab-Hub guides/industry_project/industry_track.md §5.5。
+<!-- 在 meetings/ 裡複製成 minutes_YYMMDD.md（會議日期）。教材：Lab-Hub guides/industry_project/industry_track.md §5.5。
 報告的人會後寫，先給教授看，由教授寄出或教授同意後再寄。出席寫姓名與角色。
 下次月報第 2 頁「上次待辦」從這份的待辦表開始。 -->
 
