@@ -76,7 +76,7 @@ flowchart LR
 | 2 | [實驗設計：先畫 Table 1](guides/experiment_design/design_table1.md) | 教授挑定你的 card 之後、寫任何程式之前 | Table 1 空表、消融表、方法圖、論文骨架、一頁決策紀錄（教授審過才開始寫程式） |
 | 3＋4 | [復現 baseline、錯誤分析、實驗紀錄](guides/experiment_log/reproduce_and_log.md) | Table 1 審過之後，一直到投稿 | `results.csv`、實驗日誌、復現紀錄、錯誤分析、寫給外人看的 README |
 | 5 | [進度報告：group meeting 怎麼報](guides/progress_report/group_meeting.md) | 每週（第 2 站起） | 8 頁 Quarto 投影片（含講稿）、GitHub Issue 上的教授回饋 |
-| 貫穿 | [論文報告：把一篇論文變成投影片與講稿](guides/paper_reading/paper_to_slides.md) | 輪到你報論文時；每週 2 篇淺讀 | 13 頁英文投影片（中文講稿）、一頁核對紀錄、reading log |
+| 貫穿 | [論文報告：把一篇論文變成投影片與講稿](guides/paper_reading/paper_to_slides.md) | 輪到你報論文時；每週 2 篇淺讀 | 13 段英文投影片（每段頁數不限，中文講稿）、一頁核對紀錄（有官方 repo 的附程式對照）、reading log |
 | 產學 | [產學分支：同一條路，產學計畫多做什麼](guides/industry_project/industry_track.md) | 參與產學計畫的人，拿到產業需求的第一天 | 需求規格表、驗收紀錄、給產業方的月報、研究測試報告、可以直接交付的專案 repo |
 | 6 | [寫作：從填滿的 Table 1 到投稿](guides/paper_writing/table1_to_paper.md) | 主實驗與消融跑完，截稿前約 6 週（長論文） | 一節一檔的 LaTeX 論文（repo 的 `paper/`）、投稿規定表、主張–證據表與篇幅預算（教授審過才寫正文）、每個數字的出處、AI 冷讀與 partner 盲讀的處理表 |
 | 總表 | [要問教授的事](conventions/ask_professor.md) | 任何時候不確定「這該不該自己決定」 | 各站問題按時間排的一頁索引 |
