@@ -54,8 +54,8 @@ flowchart LR
 
 | 週 | 站 | 做什麼 | 結束時交什麼 |
 |---|---|---|---|
-| 1–4 | 0 | 建 repo、跑 Round 1、核對、親讀 5 篇 | 10 分鐘報告＋§9 問題，教授定路線 |
-| 5–6 | 1 | Round 2、核對、補盲區 | one-pager，教授定題目與里程碑 |
+| 1–4 | 0 | 建 repo、跑 Round 1、核對、親讀 5 篇 | 報告投影片＋§9 問題，教授定路線 |
+| 5–6 | 1 | Round 2、核對、補盲區 | 報告投影片＋one-pager，教授定題目與里程碑 |
 | 7–8 | 1b＋2 | 寫 3–5 張 card，教授挑一張；畫 Table 1、消融表、method figure、論文骨架 | 設計文件，教授審過 |
 | 9–11 | 3 | 復現必備 baseline 到對上數字；錯誤分析 100 個樣本 | 復現紀錄、錯誤分析；card 改版 |
 | 12–13 | 2 | Pilot | 假設成立／放棄；不成立回 1b |
@@ -70,8 +70,8 @@ flowchart LR
 
 | 站 | 教材 | 什麼時候用 | 做完會有什麼 |
 |---|---|---|---|
-| 0 | [Deep Research 第一輪：建地圖](guides/deep_research/round1_map.md) | 教授給了一個題目或一段應用情境，你完全不熟，要在一個月內看懂全貌 | 核對過的地圖報告 `_r1_checked.md`、10 分鐘口頭報告 |
-| 1 | [Deep Research 第二輪：深挖路線](guides/deep_research/round2_dive.md) | 和教授討論、選定一條技術路線後，以投一篇會議論文為目標 | `_r2_*.md`、教授改過的研究提案 one-pager |
+| 0 | [Deep Research 第一輪：建地圖](guides/deep_research/round1_map.md) | 教授給了一個題目或一段應用情境，你完全不熟，要在一個月內看懂全貌 | 核對過的地圖報告 `_r1_checked.md`、12 段的報告投影片（Quarto） |
+| 1 | [Deep Research 第二輪：深挖路線](guides/deep_research/round2_dive.md) | 和教授討論、選定一條技術路線後，以投一篇會議論文為目標 | `_r2_*.md`、13 段的報告投影片（Quarto）、教授改過的研究提案 one-pager |
 | 1b | [出題：idea card 與 idea log](guides/ideation/idea_card.md) | Round 2 之後第一次寫；之後每次進度報告帶一張新的或改過的 | idea card、累積的 idea log（退掉的也留）、預測紀錄 |
 | 2 | [實驗設計：先畫 Table 1](guides/experiment_design/design_table1.md) | 教授挑定你的 card 之後、寫任何程式之前 | Table 1 空表、消融表、方法圖、論文骨架、一頁決策紀錄（教授審過才開始寫程式） |
 | 3＋4 | [復現 baseline、錯誤分析、實驗紀錄](guides/experiment_log/reproduce_and_log.md) | Table 1 審過之後，一直到投稿 | `results.csv`、實驗日誌、復現紀錄、錯誤分析、寫給外人看的 README |
@@ -84,7 +84,7 @@ flowchart LR
 
 ## 先讀哪份
 
-- **剛進實驗室、教授剛給題目**：先從範本建自己的研究 repo（第 0 站操作方法第 0 步），然後第 0 站。跑完核對完，在 group meeting 報一次 10 分鐘，問 §9 的問題，教授定路線，再看第 1 站。
+- **剛進實驗室、教授剛給題目**：先從範本建自己的研究 repo（第 0 站操作方法第 0 步），然後第 0 站。跑完核對完，做成投影片在 group meeting 報一次，問 §9 的問題，教授定路線，再看第 1 站。
 - **已經有題目、要開始做實驗**：1b → 2 → 3＋4，照順序，不要跳。第 2 站的 Table 1 沒經教授審過不要寫程式。
 - **主實驗跑完、要開始寫論文**：第 6 站。先做三張表給教授審，再動筆；分析的「為什麼」和 Limitations 自己寫。
 - **這週要報進度**：第 5 站。它假設你已經在做第 2–4 站的事。
@@ -107,7 +107,7 @@ flowchart LR
 | AI 的一般對話 | 核對報告、發散 idea、壓力測試 card、生投影片草稿、解釋看不懂的段落——每份教材都有「AI 怎麼用」與「不可以」 | 各站 |
 | GitHub（lab 的 org `SigSpeechAI-NTNU`） | 你這個題目的一切：Deep Research 報告、設計文件、程式碼、實驗紀錄、投影片、每週報告的 Issue。拿到題目第一天就從範本 [`student-template`](https://github.com/SigSpeechAI-NTNU/student-template) 建，一題一個 repo | 第 0 站建，第 3＋4、5 站用 |
 | uv | 所有 Python 環境：`uv sync`、`uv add`、`uv run`；不用 conda 或裸 pip | 第 3＋4 站 §2 |
-| Quarto | 進度與論文的投影片（qmd → html，含講稿，按 `S` 看講稿）；樣式表 `theme.scss` 在範本 repo 的 `reports/`，用法見第 5 站 §4.4 | 第 5 站、論文報告 |
+| Quarto | Deep Research 兩輪、進度與論文的投影片（qmd → html，含講稿，按 `S` 看講稿）；樣式表 `theme.scss` 在範本 repo 的 `reports/`，用法見第 5 站 §4.4 | 第 0、1、5 站、論文報告 |
 | Markdown | 日誌、idea log、決策紀錄、核對紀錄——所有給自己看的紀錄 | 各站 |
 | LaTeX（latexmk）、BibTeX | 論文：一節一檔，放 repo 的 `paper/`；BibTeX 從出版方頁面匯出，不跟 AI 要 | 第 6 站 |
 | arXiv、Google Scholar、OpenReview | novelty 檢查、Scholar alert、審稿預測練習 | 1b、第 1 站、論文報告 |

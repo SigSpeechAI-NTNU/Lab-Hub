@@ -51,8 +51,8 @@
 
 | 站 | 學生在做什麼 | 產出 | 教材 | 狀態 |
 |---|---|---|---|---|
-| 0 入門 | 跑 Round 1、核對、親讀 5 篇 | `_r1_checked.md`、10 分鐘報告 | `guides/deep_research/round1_map.md` | ✅ |
-| 1 選路線 | 帶 §9 問教授 → Round 2 → one-pager | `_r2_*.md`、教授改過的 one-pager | `guides/deep_research/round2_dive.md` | ✅ 5 點已補（2026-10-08） |
+| 0 入門 | 跑 Round 1、核對、親讀 5 篇 | `_r1_checked.md`、報告投影片（12 段） | `guides/deep_research/round1_map.md` | ✅；2026-10-22 加報告投影片，待使用者看過 |
+| 1 選路線 | 帶 §9 問教授 → Round 2 → one-pager | `_r2_*.md`、報告投影片（13 段）、教授改過的 one-pager | `guides/deep_research/round2_dive.md` | ✅ 5 點已補（2026-10-08）；2026-10-22 加報告投影片，待使用者看過 |
 | 1b 出題 | 寫 idea card，教授挑；之後每次進度報告帶一張新的或改過的 | idea card、idea log | `guides/ideation/idea_card.md` | ✅ 使用者已審（2026-10-08） |
 | 2 實驗設計 | 畫 Table 1、消融表、method figure、定 baseline 與資料、pilot | 三張表圖＋一頁決策紀錄，group meeting 審，檔尾留審核紀錄 | `guides/experiment_design/design_table1.md` | ✅ 使用者已審（2026-10-08） |
 | 3 復現＋錯誤分析 | 復現 baseline 到對上數字；看它在哪類輸入上失敗 → 回 1b 改 card | `reproduce.md`、`error_analysis.csv` | `guides/experiment_log/reproduce_and_log.md`（與 4 合寫） | ✅ 使用者已審（2026-10-08） |
@@ -82,7 +82,8 @@
 - 6：選 B（改寫學生版放 Lab-Hub），Paper-Hub 不公開
 - 6（2026-10-22 使用者定）：學生寫段落大綱（每段一句重點，用 LaTeX 註解寫在節檔），AI 照大綱起草、學生逐句核對；分析的「為什麼」與 Limitations 學生自己寫（方案 B）。教材自成一體，任何 AI 工具都能用；Paper-Hub 的寫作 kit 由使用者私下給，不放進本 repo，教材只留一行（方案 A）。學生寫到內部審過為止，使用者看兩次：動筆前看 `plan.md`（主張–證據表與篇幅預算，審核紀錄留一行）、截稿前 10 天看全文，之後使用者接手修改與投稿；教材不寫 rebuttal 與 camera-ready 的細節（方案 A）。預設長論文，4 頁照長論文修剪。`paper/` 的結構和使用者寫論文用的資料夾一致（一節一檔、`results/index.md`），接手時整個複製
 - 投稿目標（2026-10-22 使用者定）：學生一律預設挑戰長論文（正文 8 頁以上：ACL 主會、EMNLP、ICML、NeurIPS、ICLR、COLM 等），第一篇也是；4 頁的 Interspeech／ICASSP 只當長論文修剪後的退路，由教授定。README 會議資訊（「類型」欄加粗長論文、Interspeech 不再標預設、「怎麼選」）與會議週期示例（約 30 週，含 3 週長論文分析、寫作 6 週對齊第 6 站）照此；round2 論文類型選項長論文排前並標預設；範本 `paper/plan.md` 預填「預設長論文」。之後會議資訊重新查證時維持這個標法
-- 投影片樣式（2026-10-12 使用者定）：進度、論文與產學月報投影片共用一份 `theme.scss`，正本在範本 repo 的 `reports/`（Lab-Hub 不另放副本，教材只引用），改自使用者課程投影片的 theme（`hungshinlee/Speech-AI` 的 `slides/theme.scss`，公開），拿掉教室專用的 `.ask` 與音訊樣式；五級字級與兩條規則（一頁四級、`.claim` 一頁一個）照課程版；類別清單在第 5 站 §4.4；AI 指令規定只能用 theme 的類別。課程 theme 的字級數值若改，這份要不要跟改由使用者決定。製作投影片與講稿一律依 `theme.scss`，教材不再寫「用 Quarto 預設」（2026-10-15）
+- Deep Research 兩輪的報告投影片（2026-10-22 使用者定）：兩輪都做 Quarto 投影片（原待定的「Round 2 做不做」採方案 A）；中文，術語與論文標題保留英文；段落固定、每段頁數不限（第一頁固定標題，加的頁寫「段標題: 子題」），不設時限、教授當場控制（Round 1 原「10 分鐘」拿掉，第一輪指令結尾 (b) 同步）。Round 1 12 段：題目一句話／問題在哪裡／概念邊界／技術路線地圖／各路線的架構／評測現況／成熟度與動態／未解問題／核對結果／親讀 5 篇／我的判斷／要問教授（§8 商機不上投影片）。Round 2 13 段：路線與條件／與第一輪的出入／路線演進／近期文獻／方法比較／基線與復現／風險／候選題目／第一名題目／目標會議要什麼／時程／核對結果／我的判斷。只用核對過的內容，表格最後一欄標來源 ✓／AI／我；路線與方法的架構圖同一種畫法、對過原論文才放；時程用 Mermaid gantt；核對結果、親讀、我的判斷等段 AI 不生。共通規則寫在 `round1_map.md`，`round2_dive.md` 只寫 13 段與多出來的圖；範本 `reports/_template_r1.qmd`、`_template_r2.qmd`（YAML 與論文報告範本逐字相同）
+- 投影片樣式（2026-10-12 使用者定）：Deep Research 兩輪、進度、論文與產學月報投影片共用一份 `theme.scss`，正本在範本 repo 的 `reports/`（Lab-Hub 不另放副本，教材只引用），改自使用者課程投影片的 theme（`hungshinlee/Speech-AI` 的 `slides/theme.scss`，公開），拿掉教室專用的 `.ask` 與音訊樣式；五級字級與兩條規則（一頁四級、`.claim` 一頁一個）照課程版；類別清單在第 5 站 §4.4；AI 指令規定只能用 theme 的類別。課程 theme 的字級數值若改，這份要不要跟改由使用者決定。製作投影片與講稿一律依 `theme.scss`，教材不再寫「用 Quarto 預設」（2026-10-15）
 - 投影片的圖（2026-10-16 使用者定）：框和箭頭的圖用 Mermaid；不是框和箭頭的示意圖用 SVG（AI 寫、render 後檢查）；數字圖用 matplotlib 存 SVG，畫圖程式進 repo；論文的圖截圖存 PNG 並加標註。Mermaid 放在 qmd 裡一律用 `{mermaid}` 區塊（大括號不能省）。進度第 1、2 頁的圖存成 `figs/problem.svg`、`figs/idea.svg` 每週沿用（Mermaid 寫的匯出成 SVG，`.mmd` 一起 commit；放進投影片寫 `{width=1100}`，AI 寫的 viewBox 寬 1100），做法在第 5 站 §4.5。進度與論文範本補 `embed-resources: true`（原本漏了，html 依賴不進 git 的 `_files/`；月報與測試報告本來就有）
 
 ### 產學分支（2026-10-09 定）
@@ -99,7 +100,7 @@
 - 2026-10-15 加給產業方填的需求提供表 `templates/intake/requirement_intake.qmd`（方案 A：通用表、不含任何一案內容，放公開的 Lab-Hub）：教授 render 成 Word 寄出；填好的那份是產業方原檔，不進 repo、不進 AI，學生照它改寫需求規格表；表裡不問合約、經費、保密條款與發表限制
 
 ### 學生 repo 範本（2026-10-08）
-住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，public、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文報告 13 段的 qmd、`reports/theme.scss` 樣式表、Issue 模板、`paper/` 論文骨架與 `notes/writing_errors.md`（2026-10-22））。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
+住在 `~/Lab-Hub/student-template/`，但是**巢狀的獨立 repo**（自己的 `.git`，push 到 `SigSpeechAI-NTNU/student-template`，public、設為 template），Lab-Hub 的 `.gitignore` 排除它。改它的檔案後，git 指令要 `cd ~/Lab-Hub/student-template` 分開做。內容是學生研究 repo 的骨架（README、.gitignore、design 模板、results.csv 表頭、日誌／復現／idea log／論文核對模板、進度 8 頁與論文報告 13 段的 qmd、`reports/theme.scss` 樣式表、Issue 模板、Deep Research 兩輪報告投影片的 qmd、`paper/` 論文骨架與 `notes/writing_errors.md`（2026-10-22））。使用者會把它搬成獨立 repo `SigSpeechAI-NTNU/student-template` 並設為 template；搬走後本資料夾刪除，README 的工具表改連到那個 repo。範本內容與教材的模板要同步：改教材模板時一起改範本。
 
 ### 2026-10-08 邏輯修正（已做）
 - 七份教材各加一節「審稿人會怎麼看這一站的產出」（README 的宣稱因此成立）；之後新教材也要有這一節
@@ -130,11 +131,12 @@
 其他建議未採行、留待使用者決定：雙週 15 分鐘一對一。（「第一篇投 Interspeech、第二篇才投 ML 主會」的投稿順序，2026-10-22 使用者不採，改為預設長論文，見已定的設計決策。）
 
 ### 交叉引用檢查（2026-10-08 做過一次）
-七份教材＋總表＋範本的節號引用全部對過，一致。`design_table1.md` §3.2 引用的「Round 2 §8 接受論文解剖」與 `idea_card.md` §7 的「Round 2 §7 補充點」在 v4.1 之後都已存在。之後改任一教材的節號，grep `§` 與 `第 N 站` 重做一次。2026-10-09：產學分支加入，五份教材開頭各加一行指引（引用產學分支 §3.1–§5），總表加產學段。2026-10-15：產學分支 v1.1 後重做一次，一致；round2 也加了產學指引（共六份）。2026-10-22：第 6 站 v1 加入後重做一次：教材內節號、對第 2 站（§2.3、§3.3、§7）與產學分支（§3.2、§3.3、§8）的引用、總表第 6 站段，全部一致；第 2 站 §2.2b、產學分支 §4 第 6 站一列改為指向第 6 站。2026-10-22 論文報告 v3.0：「第 N 頁」改「第 N 段」、新增 §5b，總表、範本、第 5 站 §1 與 §7 同步後重做一次，一致。
+七份教材＋總表＋範本的節號引用全部對過，一致。`design_table1.md` §3.2 引用的「Round 2 §8 接受論文解剖」與 `idea_card.md` §7 的「Round 2 §7 補充點」在 v4.1 之後都已存在。之後改任一教材的節號，grep `§` 與 `第 N 站` 重做一次。2026-10-09：產學分支加入，五份教材開頭各加一行指引（引用產學分支 §3.1–§5），總表加產學段。2026-10-15：產學分支 v1.1 後重做一次，一致；round2 也加了產學指引（共六份）。2026-10-22：第 6 站 v1 加入後重做一次：教材內節號、對第 2 站（§2.3、§3.3、§7）與產學分支（§3.2、§3.3、§8）的引用、總表第 6 站段，全部一致；第 2 站 §2.2b、產學分支 §4 第 6 站一列改為指向第 6 站。2026-10-22 論文報告 v3.0：「第 N 頁」改「第 N 段」、新增 §5b，總表、範本、第 5 站 §1 與 §7 同步後重做一次，一致。同日兩輪加「報告投影片」節（不編節號，以節名引用）：第 5 站開頭與 §1、round2 操作方法第 2、10、12 步、產學分支 §4、README、範本 README 同步。
 
 ### Round 2 的 5 點（2026-10-08 補完，v4.1）
 prior work 欄、pilot 與放棄判準、接受論文解剖、arXiv 手動搜尋與 Scholar alert、短／長論文條件——都已在 `round2_dive.md`。
 
 ### 其他
 - [x] `README.md`：路徑圖、教材清單、先讀哪份、工具表（2026-10-07）
-- [ ] Round 1、Round 2 的報告投影片（各 8 頁草案）與跨站教材 `guides/slides/figures_and_tables.md`（圖與表怎麼做）：2026-10-15 已在對話提出頁面草案與骨架，待使用者審；待定的還有 Round 2 做不做投影片（方案 A 做／B 只交 one-pager）、兩輪投影片的語言。畫法分工已定（見「投影片的圖」）。測試用 qmd 在使用者電腦上 render 的結果出來後，§4.5 的尺寸規則依實測修正
+- [x] Round 1、Round 2 的報告投影片：2026-10-22 做了（12／13 段，見已定的設計決策），待使用者看過
+- [ ] 跨站教材 `guides/slides/figures_and_tables.md`（圖與表怎麼做）：2026-10-15 提過骨架，待使用者審。目前圖的做法分散在第 5 站 §4.5、論文報告 §3、兩輪的「報告投影片」，要不要收成一份由使用者定。畫法分工已定（見「投影片的圖」）。測試用 qmd 在使用者電腦上 render 的結果出來後，§4.5 的尺寸規則依實測修正
