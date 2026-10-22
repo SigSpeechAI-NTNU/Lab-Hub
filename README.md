@@ -109,12 +109,6 @@ flowchart LR
 | Markdown | 日誌、idea log、決策紀錄、核對紀錄——所有給自己看的紀錄 | 各站 |
 | arXiv、Google Scholar、OpenReview | novelty 檢查、Scholar alert、審稿預測練習 | 1b、第 1 站、論文報告 |
 
-## 這個 repo 怎麼維護
-
-教材由教授與 AI 共同編寫，教授定稿。改動都記在各檔尾的「修改紀錄」。發現教材寫不清楚、或照著做卡住，在本 repo 開 Issue 或直接跟教授說，那是教材要改的訊號。
-
-repo 規範與待辦在 [`CLAUDE.md`](CLAUDE.md)。
-
 ## 授權
 
 本 repo 的教材以 [CC BY-SA 4.0](LICENSE) 授權：可以自由使用、修改、再散布，包括商業用途，條件是註明出處（李鴻欣，SigSpeechAI-NTNU Lab-Hub），而且改作後的版本要以同樣的 CC BY-SA 4.0 授權釋出。其他實驗室要拿去改成自己的版本，歡迎。

@@ -42,7 +42,7 @@
 
 不放：學生個資、未發表的實驗結果、授權語料的內容或路徑、產業方的名稱、需求文件、測試資料、計畫名稱與案號、其他 Hub 的內部規範、金鑰。
 
-本 repo 自 2026-10-08 起為 **public**，授權 CC BY 4.0（`LICENSE`）。`student-template/` 也是 public 且 CC BY 4.0（2026-10-08）；學生從它建出的 repo 才是 private。`conventions/taste.md` 的每一條進來時先問使用者能不能公開。
+本 repo 自 2026-10-08 起為 **public**，授權 CC BY-SA 4.0（`LICENSE`；2026-10-22 由 CC BY 4.0 改）。`student-template/` 也是 public，授權維持 CC BY 4.0（2026-10-08；2026-10-22 定不跟著加 SA：學生 repo 從範本建，日後公開程式碼時不受相同授權限制，且 CC 授權不適合程式碼）；學生從它建出的 repo 才是 private。`conventions/taste.md` 的每一條進來時先問使用者能不能公開。
 
 ## 五、研究路徑與教材待辦（2026-10-03 定稿；每做完一站勾掉）
 
