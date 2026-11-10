@@ -12,21 +12,28 @@
 
 ## 會議資訊
 
-語音與 NLP 的主要會議，**以 2027 年 3 月底前截稿的為主**，按截稿日排序。查證日期 2026-10-22；截稿日常改，**填 Round 2 的「目標會議與截稿日」時自己到官網再查一次**，不要讓 AI 查。標「預估」的是官網還沒公布、從往年推的。**預設挑戰長論文**：「類型」欄加粗的是預設目標，怎麼選見表後。
+語音 AI 能投的主要會議（語音、音訊、NLP、ML、綜合 AI、多媒體），**以 2027 年 6 月底前截稿的為主**，按截稿日排序。查證日期 2026-11-10；截稿日常改，**填 Round 2 的「目標會議與截稿日」時自己到官網再查一次**，不要讓 AI 查。標「預估」的是官網還沒公布、從往年推的。**預設挑戰長論文**：「類型」欄加粗的是預設目標，怎麼選見表後。
 
 | 截稿 | 會議 | 類型 | 會議日期與地點 | 備註 |
 |---|---|---|---|---|
 | **2027-01-04** | [ACL Rolling Review 1 月週期](https://aclrollingreview.org/dates) | NLP，**長論文**（也收短論文） | 審完可 commit 到 [ACL 2027](https://2027.aclweb.org/)（commit 截止待公布；2027-08-17～22 [日本京都](https://www.google.com/maps/search/?api=1&query=Kyoto%2C+Japan)，主會 08-20～22） | 截稿日以 ACL 2027 官網為準（ARR 的日期表還只寫「2027 年 1 月」）。ARR 是先審再選會議；一個週期沒過可以帶著審稿意見投下一個週期。口語語言處理、語音＋LLM 的題目可投 |
-| 2027-01 下旬（預估：摘要約 1/16、全文約 1/22；待官網公布） | [ICML 2027](https://icml.cc/) | ML 主會，**長論文** | 2027 年 7 月（預估），南美洲（城市待公布） | 要概念層的主張加完整實驗；第 2 站預設的長論文格式就是為這類 |
+| 2027-01-04（摘要）、01-11（全文） | [IJCAI-27](https://2027.ijcai.org/) | 綜合 AI，正文 7 頁＋參考文獻 2 頁（往年規定，以今年 call 為準） | 2027-08-07～13 [日本京都](https://www.google.com/maps/search/?api=1&query=Kyoto%2C+Japan)；08-15～17 另有[中國橫琴](https://www.google.com/maps/search/?api=1&query=Hengqin%2C+Zhuhai%2C+China)分會場 | 和 ARR 1 月週期同一週截稿，同一篇不能兩邊都投；審稿人不全是語音或 NLP 背景，動機要寫到一般 AI 讀者看得懂；通知 2027-04-21 |
+| 2027-01 下旬（預估：摘要約 1/16、全文約 1/22；待官網公布） | [ICML 2027](https://icml.cc/) | ML 主會，**長論文** | 2027-07-31～08-06 [巴西里約熱內盧](https://www.google.com/maps/search/?api=1&query=Rio+de+Janeiro%2C+Brazil)（主會 08-02～04） | 要概念層的主張加完整實驗；第 2 站預設的長論文格式就是為這類 |
 | 2027-02-06 | [EUSIPCO 2027](https://eusipco2027.de/) | 訊號處理（含語音與音訊 track），5 頁（含參考文獻） | 2027-08-30～09-03 [德國達姆城](https://www.google.com/maps/search/?api=1&query=Darmstadt%2C+Germany) | EURASIP 主辦、IEEE SPS 協辦；和 Interspeech 只差 3 天，同一篇只能投一邊——適合偏訊號處理、增強、前端的題目，或 Interspeech 沒把握時的替代 |
 | 2027-02-09（更新至 02-16） | [Interspeech 2027](https://interspeech2027.org/) | 語音，4 頁 | 2027-08-29～09-02 [巴西聖保羅](https://www.google.com/maps/search/?api=1&query=S%C3%A3o+Paulo%2C+Brazil) | 語音領域的主場；4 頁，是長論文修剪後的退路，不是預設目標（第 6 站 §4.3）；通知 2027-06-02 |
 | 2027-03 下旬（預估；2026 年是摘要 3/26、全文 3/31） | [COLM 2027](https://colm.cc/) | 語言模型，**長論文** | 待公布 | 語音＋LLM 的題目可投 |
+| 2027-04-01 | [SSW14](https://nilc-nlp.github.io/ssw-2027/) | 語音合成，4＋2 頁；也收 8＋2 頁的長論文（多的 2 頁只放參考文獻等） | 2027-09-06～08 [巴西馬塞約](https://www.google.com/maps/search/?api=1&query=Macei%C3%B3%2C+Brazil) | ISCA 的語音合成 workshop，兩年一次，是 Interspeech 2027 的衛星會議；TTS、voice conversion 的題目可投；通知 2027-06-21 |
+| 2027-04（預估；官方只說通常 4 月截稿） | [ACM MM 2027](https://acmmm.org/) | 多媒體，6–8 頁＋參考文獻（2025 年的規定） | [香港](https://www.google.com/maps/search/?api=1&query=Hong+Kong)，日期待公布（往年在 10 月下半到 11 月初） | ACM 的多媒體旗艦會議；語音和影像、文字結合的多模態題目可投 |
+| 2027-04-14（摘要）、04-21（全文）；官網標暫定 | [WASPAA 2027](https://waspaa.com/) | 音訊訊號處理，4＋1 頁（第 5 頁只放參考文獻；2025 年的規定） | 2027-09-19～22 [芬蘭 Levi](https://www.google.com/maps/search/?api=1&query=Levi%2C+Finland) | IEEE SPS 音訊與聲學技術委員會的 workshop，兩年一次；偏音訊：增強、分離、空間音訊、音訊生成；通知 2027-07-02 |
+| 2027-04-21（修改至 04-28） | [ASLI 2027](https://2027.ieeeasli.org/) | 語音與語言，正文 6 頁（參考文獻與附錄不限） | 2027-11-29～12-04 [新加坡](https://www.google.com/maps/search/?api=1&query=Singapore)，和 ICIP 2027、IEEE CAI 2027 在 IEEE Signal Processing Summit 合辦 | IEEE SPS 把 ASRU 與 SLT 合併成的新會議，**以後沒有 ASRU／SLT**；主會錄取率目標約 20%，其他錄取的論文收進 Findings（也進 IEEE Xplore）；通知 07-28、camera-ready 08-11；challenge 提案截止 2026-12-03 |
+| 2027-05 中（預估：摘要約 5/14、全文約 5/21） | [NeurIPS 2027](https://neurips.cc/) | ML 主會，**長論文** | 歐洲（城市與日期待公布） | 和 ICML 同類：要概念層的主張加完整實驗 |
+| 2027-05～06（預估；2026 年是 5 月 25 日的 ARR 週期） | ARR 5 月前後的週期 → EMNLP 2027 | NLP，**長論文**（也收短論文） | 暫定 2027 年 11 月初，墨西哥或中美洲（城市待公布） | ARR 2027 年的週期日期還沒公布；地點與月份出自 ACL 2027 年度的 workshop 徵稿公告 |
 
-**本週期已過、下一屆要等的**：ARR 10 月週期（截稿 2026-10-12；已經投了的人，2026-12-23 前 commit 到 NAACL 2027〔2027-06-01～05 [美國舊金山](https://www.google.com/maps/search/?api=1&query=San+Francisco%2C+CA%2C+USA)〕或 COLING 2027〔2027-05-09～14 [中國澳門](https://www.google.com/maps/search/?api=1&query=Macau)〕）、ICASSP 2027（截稿 2026-09-23，2027-05-16～21 [加拿大多倫多](https://www.google.com/maps/search/?api=1&query=Toronto%2C+Canada)；下一屆約 2027 年 9 月截稿）、ICLR 2027（截稿 2026-09-25，2027-04-26～30，地點待公布；下一屆約 2027 年 9 月）、EACL 2027（ARR 8 月週期，commit 已截止）。
+**本週期已過、下一屆要等的**：ARR 10 月週期（截稿 2026-10-12；已經投了的人，2026-12-23 前 commit 到 NAACL 2027〔2027-06-01～05 [美國舊金山](https://www.google.com/maps/search/?api=1&query=San+Francisco%2C+CA%2C+USA)〕或 COLING 2027〔2027-05-09～14 [中國澳門](https://www.google.com/maps/search/?api=1&query=Macau)〕）、ICASSP 2027（截稿 2026-09-23、通知 2027-01-13；2027-05-16～21 [加拿大多倫多](https://www.google.com/maps/search/?api=1&query=Toronto%2C+Canada)；下一屆約 2027 年 9 月截稿）、ICLR 2027（截稿 2026-09-25；2027-04-26～30 [美國舊金山](https://www.google.com/maps/search/?api=1&query=San+Francisco%2C+CA%2C+USA)；下一屆約 2027 年 9 月）、AAAI-27（截稿 2026-07-28；2027-02-16～23 [加拿大蒙特婁](https://www.google.com/maps/search/?api=1&query=Montr%C3%A9al%2C+Canada)；下一屆約 2027 年 7 月）、EACL 2027（ARR 8 月週期，commit 已截止）、Odyssey 2026（語者與語言辨識的 workshop，2026 年 6 月在里斯本辦完；兩年一次，下一屆 2028 年，約 3 月截稿〔預估〕）。
 
-**3 月底之後**：[ASLI 2027](https://2027.ieeeasli.org/)（**已公布**：截稿 2027-04-21、通知 07-28、camera-ready 08-11；2027-11-29～12-04 [新加坡](https://www.google.com/maps/search/?api=1&query=Singapore)，與 ICIP 2027 合辦。ASLI 是 IEEE SPS 把 ASRU 與 SLT 合併成的新會議，**以後沒有 ASRU／SLT**；challenge 提案截止 2026-12-03，查證 2026-10-22）。以下截稿日都是預估：NeurIPS 2027（摘要約 05-14、全文約 05-21；官網只公布在歐洲）、EMNLP 2027（ARR，約 5–6 月）、ICASSP 2028（約 9 月；會議已公布：2028-05-28～06-03 [日本東京](https://www.google.com/maps/search/?api=1&query=Tokyo%2C+Japan)）。
+**6 月底之後**：以下截稿日都是預估：AAAI-28（約 2027 年 7 月下旬；AAAI-27 是摘要 07-21、全文 07-28）、ICASSP 2028（約 9 月；會議已公布：2028-05-28～06-02 [日本東京](https://www.google.com/maps/search/?api=1&query=Tokyo%2C+Japan)）、ICLR 2028（約 9 月）。
 
-怎麼選：**預設挑戰長論文，第一篇也是**——目標是 ACL 主會（經 ARR）、EMNLP、ICML、NeurIPS、ICLR、COLM 這類正文 8 頁以上的會議，第 2 站設計實驗、第 6 站寫作都照長論文做（多資料集、分析表、代價表、失敗案例，見第 2 站 §2.3）。4 頁的 Interspeech、ICASSP 與 5 頁的 EUSIPCO 是退路：長論文的實驗修剪成 4 頁做得到，反過來做不到（第 6 站 §4.3）。投哪一個、要不要改投 4 頁，由教授定。
+怎麼選：**預設挑戰長論文，第一篇也是**——目標是 ACL 主會（經 ARR）、EMNLP、ICML、NeurIPS、ICLR、COLM 這類正文 8 頁以上的會議，第 2 站設計實驗、第 6 站寫作都照長論文做（多資料集、分析表、代價表、失敗案例，見第 2 站 §2.3）。4 頁的 Interspeech、ICASSP 與 5 頁的 EUSIPCO 是退路：長論文的實驗修剪成 4 頁做得到，反過來做不到（第 6 站 §4.3）。表裡其他的會議——語音與音訊子領域的 ASLI、SSW、WASPAA，綜合 AI 的 IJCAI、AAAI，多媒體的 ACM MM——是題目剛好落在那裡時的選項。投哪一個、要不要改投 4 頁，由教授定。
 
 ## 研究路徑
 
